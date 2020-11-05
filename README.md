@@ -1,1 +1,1 @@
-# Point-of-Service
+# Point-of-Sale
