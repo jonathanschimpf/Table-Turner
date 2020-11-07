@@ -44,17 +44,19 @@ require('./passportConfig')(passport);
 
 
 
-// -- End of Middleware -- //
+// ------------- End of Middleware ------------- //
 
 
-// --- Routes for login --- //   !! Can be Moved to routes foldder when finished !! //
+// -------------- Routes for login ------------ //   
+
+// !! Can be Moved to routes foldder when finished !! //
 
 
 
 app.post ("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
-    if (!user) resourceUsage.send("No User Exists");
+    if (!user) res.send("No User Exists");
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
@@ -64,6 +66,7 @@ app.post ("/login", (req, res, next) => {
     }
   })(req, res, next) 
 })
+
 
 app.post ("/register", (req, res) => {
   User.findOne({username: req.body.username}, async (err, doc) => {

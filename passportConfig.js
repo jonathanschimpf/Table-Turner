@@ -24,7 +24,11 @@ module.exports = function (passport) {
     })
     passport.deserializeUser((id, cb) => {
         User.findOne({ _id: id }, (err, user) => {
-            cb(err, user);
+            const userInformation = {
+                username: user.username,
+                title: user.title
+            };
+            cb(err, userInformation)
         });
     });
 };
