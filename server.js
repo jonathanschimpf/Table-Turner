@@ -2,20 +2,40 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const mongoose = require ("mongoose");
-const express = require("express");
 const cors = require("cors");
 const passport = require("passport");
 const passportLocal = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
-const bcrypt = require("bcrypt.js");
-const expressSession = require("express-session");
+const bcrypt = require("bcryptjs");
+const session = require("express-session");
 const bodyParser = require("body-parser")
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors({
+  origin: "http://localhost:3000 ", // <-- location of the react app we're connecting to
+  credentials: true
+}))
 
 
+app.use(session({
+  secret: "secretcode",
+  resave: true,
+  saveUnintialized: true
+}));
+
+app.use(cookieParser("secretcode"))
+// Routes for login // Can be Moved to routes foldder when finished //
+app.post ("/login", (req, res) => {
+  console.log(req.body)
+})
+
+app.post ("/register", (req, res) => {
+  console.log(req.body)
+})
+
+app.get ("/user", (req, res) => {})
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
