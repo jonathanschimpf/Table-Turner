@@ -8,7 +8,7 @@ function App() {
   const [registerTitle, setRegisterTitle] = useState("");
   const [loginUsername, setloginUsername] = useState("");
   const [loginPassword, setloginPassword] = useState("");
-  const register = () => {}
+  const register = () => {
   axios({
     method:"POST",
     data: {
@@ -19,8 +19,9 @@ function App() {
     withCredentials: true,
     url: "http://localhost:3001/register",
   }).then((res) => console.log(res))
+  };
 
-  const login = () => {}
+  const login = () => {
   axios({
     method:"POST",
     data: {
@@ -30,14 +31,15 @@ function App() {
     withCredentials: true,
     url: "http://localhost:3001/login",
   }).then((res) => console.log(res))
-  const getUser = () => {}
+};
+  const getUser = () => {
   axios({
     method:"GET",
   
     withCredentials: true,
-    url: "http://localhost:3001/getUser",
+    url: "http://localhost:3001/user",
   }).then((res) => console.log(res))
-  
+};
     
     return (
       <>
