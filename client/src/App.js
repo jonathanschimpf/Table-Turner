@@ -1,17 +1,17 @@
 import React from "react";
+import Passport from "./components/Passport/Passport";
 
 
 
 function App() {
-    
-    return (
-      <>
+  return(
+    <>
+    <Passport />
 
-        <h1><strong> HELLO WORLD! </strong></h1>
+    </>
+  )
 
-      </>
-    );
-  };
+};
 
 
 export default App;
