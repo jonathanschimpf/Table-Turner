@@ -1,7 +1,11 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+//Connect to Mongoose
+mongoose.connect(process.envMONGOD_URI || "mongodb://localhost/projectThree", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
