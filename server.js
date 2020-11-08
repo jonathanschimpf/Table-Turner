@@ -12,12 +12,15 @@ const bodyParser = require("body-parser");
 const User = require("./models/user");
 const { emitWarning, resourceUsage } = require("process");
 const app = express();
+const routes = require("./routes/api");
 
 // -------------- End Of Imports ------------------- //
 
 // --- Connect to Mongoose --- //
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
+// Add routes, both API and view
+app.use(routes);
 
 
 // --- Middleware --- //
