@@ -1,0 +1,39 @@
+.Navbar, .navbar, nav {
+
+    padding-top: 4px !important;
+    padding-bottom: 4.8px !important; 
+    background: black !important;
+    background-color: #888888 !important;
+
+}
+
+.navbar-brand {
+
+    font-size: 16.5px !important;
+    padding-bottom: 3px !important;
+
+}
+
+.blackFont {
+
+    color:rgb(0, 0, 0)!important;
+
+}
+
+.whiteFont {
+    color: white;
+}
+
+.nav-item {
+
+    color: rgb(167, 167, 167);
+    margin-left: auto !important;
+
+}
+
+
+.pointer-link { 
+
+    cursor: pointer; 
+    
+  } 

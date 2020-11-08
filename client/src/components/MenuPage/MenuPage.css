@@ -1,0 +1,31 @@
+body {
+    padding-top: 1em;
+
+    }	
+
+    button {
+      
+        
+        color: white !important;
+        border-radius: 5px !important;
+        border: none !important;
+        padding: 3px 6px 10px 6px !important;
+        height: 30px !important;
+        /* width: 30px !important; */
+        background: black !important;
+        
+      }
+
+
+      button:hover {
+      
+        background: #636363 !important;
+        transition: all 0.65s ease-in-out !important;
+      
+      }
+
+
+      .buttonDivRight {
+
+        text-align: right !important;
+      }
