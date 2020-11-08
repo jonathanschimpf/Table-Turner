@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export default {
-	getPosts: () => {
+	getTables: () => {
 		return axios.get("/api/post");
 	},
-	savePost: newPost => {
-		return axios.post("/api/post/", newPost)
+	saveTables: newTable => {
+		return axios.post("/api/post/", newTable)
 	}
 }

@@ -1,3 +1,5 @@
 module.exports = {
-    Table: require("./Table")
+    Table: require("./Table"),
+    Menu: require("./Menu")
+
 }
