@@ -141,7 +141,7 @@ const orderSeed = [
           shellfish: false,
           alcohol: false,
         }],
-        extra_notes: "no walnuts please",
+        extra_notes: "no walnuts",
         label: "4"
     },
     {
