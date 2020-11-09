@@ -22,7 +22,7 @@ function App() {
 
       {/* <Router>
         <Route exact path={["/", "/menus"]}><Menus /></Route>
-      </Router> */}
+      </Router>  */}
 
       {/* <Passport /> */}
       <NavbarComp />

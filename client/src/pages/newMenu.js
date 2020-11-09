@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
+import { Form } from "react-bootstrap";
 
 
 function Menus() {
@@ -40,12 +41,13 @@ function Menus() {
     function handleFormSubmit(event) {
       event.preventDefault();
       
-      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.info ) {
+      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.info && menuObj.section ) {
         API.saveMenu({
           item: menuObj.item,
           price: menuObj.price,
           ingredients: menuObj.ingredients,
           info: menuObj.info,
+          section: menuObj.section
   
         })
           .then(res => loadItems())
@@ -79,10 +81,19 @@ function Menus() {
                   name="info"
                   placeholder="info"
                 />
-                
+                <Form.Control 
+                onChange={handleInputChange}
+                name="section"
+                as="select" 
+                multiple>
+                  <option>Small Plates</option>
+                  <option>Shared Plates</option>
+                  <option>Main Course</option>
+                  <option>Dessert</option>                
+                </Form.Control>
                 <button
                 
-                  disabled={!(menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item)}
+                  disabled={!(menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
                   onClick={handleFormSubmit}
                 >
                   Add new Item

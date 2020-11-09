@@ -41,6 +41,7 @@ const orderSchema = new Schema({
     }],
     extra_notes: String,
     label: String,
+    course: Number
 
 })
 

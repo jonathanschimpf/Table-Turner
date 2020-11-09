@@ -23,7 +23,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "Please put the sauce on the side",
-        label: "1"
+        label: "1",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -40,7 +41,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "",
-        label: "2"
+        label: "2",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -57,7 +59,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "",
-        label: "3"
+        label: "3",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -74,7 +77,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "Please put the dressing on the side",
-        label: "4"
+        label: "4",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -91,7 +95,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "",
-        label: "1"
+        label: "1",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -108,7 +113,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "Please bring out extra cheese",
-        label: "2"
+        label: "2",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -125,7 +131,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "",
-        label: "3"
+        label: "3",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -142,7 +149,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "no walnuts",
-        label: "4"
+        label: "4",
+        course: "1"
     },
     {
         //table number, order, {allergy items}, extra_notes, label
@@ -159,7 +167,8 @@ const orderSeed = [
           alcohol: false,
         }],
         extra_notes: "",
-        label: "1"
+        label: "1",
+        course: "1"
     },
     
 ];
