@@ -41,7 +41,7 @@ function Menus() {
     function handleFormSubmit(event) {
       event.preventDefault();
       
-      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.info && menuObj.section ) {
+      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.section ) {
         API.saveMenu({
           item: menuObj.item,
           price: menuObj.price,
