@@ -13,22 +13,25 @@ import MenuPageComp from "./components/MenuPage/MenuPage";
 
 function App() {
   return (
+
     <>
-    
-    {/* <Router>
-      <Route exact path={["/", "/menus"]}><Menus /></Route>
-    </Router> */}
-    
-     {/* <Passport /> */}
-     <NavbarComp />
-     {/* <WelcomePageComp /> */}
+
+      {/* <Router>
+        <Route exact path={["/", "/menus"]}><Menus /></Route>
+      </Router> */}
+
+      {/* <Passport /> */}
+      <NavbarComp />
+      {/* <WelcomePageComp /> */}
       <MenuPageComp />
-     {/* <LoginComp /> */}
-    {/* <SignupComp /> */}
+      {/* <LoginComp /> */}
+      {/* <SignupComp /> */}
+      {/* <AddNewTableComp /> */}
+      {/* <AddNewOrderComp /> */}
 
-     </>
-  )
+    </>
 
+  );
 };
 
 

@@ -8,26 +8,26 @@ import "./Signup.css";
 
 function SignupComp() {
 
-     const [registerUsername, setRegisterUsername] = useState("");
-      const [registerPassword, setRegisterPassword] = useState("");
-      const [registerTitle, setRegisterTitle] = useState("");
+    const [registerUsername, setRegisterUsername] = useState("");
+    const [registerPassword, setRegisterPassword] = useState("");
+    const [registerTitle, setRegisterTitle] = useState("");
     //   const [loginUsername, setloginUsername] = useState("");
     //   const [loginPassword, setloginPassword] = useState("");
     //   const [data, setData] = useState(null);
-    
-      const register = () => {
-      axios({
-        method:"POST",
-        data: {
-          username: registerUsername,
-          password: registerPassword,
-          title: registerTitle
-        },
-        withCredentials: true,
-        url: "http://localhost:3001/register",
-      }).then((res) => console.log(res))
-      };
-    
+
+    const register = () => {
+        axios({
+            method: "POST",
+            data: {
+                username: registerUsername,
+                password: registerPassword,
+                title: registerTitle
+            },
+            withCredentials: true,
+            url: "http://localhost:3001/register",
+        }).then((res) => console.log(res))
+    };
+
     //   const login = () => {
     //   axios({
     //     method:"POST",
@@ -42,20 +42,20 @@ function SignupComp() {
     //   const getUser = () => {
     //   axios({
     //     method:"GET",
-      
+
     //     withCredentials: true,
     //     url: "http://localhost:3001/user",
     //   }).then((res) => {
     //       setData(res.data);
     //       console.log(res.data)
     //   })
-      
-    // };
-        
-        return (
-          <>
 
-          {/* <div>
+    // };
+
+    return (
+        <>
+
+            {/* <div>
            <h1>Register</h1>
            <input placeholder='username' onChange={e => setRegisterUsername(e.target.value)}/>
            <input placeholder='password' onChange={e => setRegisterPassword(e.target.value)}/>
@@ -63,64 +63,64 @@ function SignupComp() {
             <button onClick={register}>Submit</button>
           </div> */}
 
-  <br />
-  <br />
-  <Container className="vertical-center">
-      
-    <Jumbotron className="jumbotronLoginSignUp" >
-      <h1 className="display-4 text-center responsiveH1Font">Placeholder Title</h1>
-      <hr style={{height: '4px'}} />
-      <h4 className="text-center">Plaeholder Description</h4>
-      <h6 className="text-center text-muted">Placeholder Text </h6>
+            <br />
+            <br />
+            <Container className="vertical-center">
 
-      <Form className="login">
+                <Jumbotron className="jumbotronLoginSignUp" >
+                    <h1 className="display-4 text-center responsiveH1Font">Placeholder Title</h1>
+                    <hr style={{ height: '4px' }} />
+                    <h4 className="text-center">Plaeholder Description</h4>
+                    <h6 className="text-center text-muted">Placeholder Text </h6>
 
-        <Form.Group className="formControl">
-          <h6>Enter a Username + Password to Register: </h6>
-          <Form.Control className="formControl" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
-        </Form.Group>
+                    <Form className="login">
 
-        <Form.Group >
-          <Form.Control className="formControl" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
-        </Form.Group>
+                        <Form.Group className="formControl">
+                            <h6>Enter a Username + Password to Register: </h6>
+                            <Form.Control className="formControl" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
+                        </Form.Group>
 
-        <Form.Group>
-        <Form.Control className="formControl" placeholder="Enter Your Name" onChange={e => setRegisterTitle(e.target.value)} />
-        </Form.Group>
+                        <Form.Group >
+                            <Form.Control className="formControl" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+                        </Form.Group>
 
-        <Button className="my-2 my-sm-0 formControl" onClick={register} block>Log In</Button>
+                        <Form.Group>
+                            <Form.Control className="formControl" placeholder="Enter Your Name" onChange={e => setRegisterTitle(e.target.value)} />
+                        </Form.Group>
 
-      </Form>
+                        <Button className="my-2 my-sm-0 formControl" onClick={register} block>Log In</Button>
 
-      <br />
+                        <br />
 
-      <p>New user? Create an <a href="/" className="effect-shine">account.</a></p>
+                        <p className="formControl">Existing user? <a href="/" className="effect-shine">Log in.</a></p>
 
-    </Jumbotron>
+                    </Form>
 
-  </Container>
-  <br />
-  <br />
-  <br />
-    
-    
-          </>
-        );
-      };
-     export default SignupComp;
+                </Jumbotron>
+
+            </Container>
+            <br />
+            <br />
+            <br />
 
 
+        </>
+    );
+};
+export default SignupComp;
 
 
 
-               {/* <div>
+
+
+{/* <div>
            <h1>Login</h1>
            <input placeholder='username' onChange={e => setloginUsername(e.target.value)} />
            <input placeholder='password' onChange={e => setloginPassword(e.target.value)}/>
             <button onClick={login}>Submit</button>
           </div> */}
-    
-          {/* <div>
+
+{/* <div>
            <h1>Get User</h1>
           <button onClick={getUser}>Submit</button>
           { data ? <h1>Welcome {data.username}</h1> : null}
