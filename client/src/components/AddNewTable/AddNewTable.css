@@ -1,0 +1,102 @@
+
+ /* placeholder for potential background image / texture
+
+    body {
+
+        background-image: url();
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: black;
+  
+      }; */
+
+
+
+      /* welcome form adjustments */
+
+      form.add {
+        margin-top: 50px;
+        max-width: 200px !important;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center !important;
+        
+      }
+    
+          /* jumbotron customization with box shadow addition for all browsers */
+    
+    .jumbotronAddTable {
+    
+        justify-content: center !important;
+        max-width: 350px !important;
+        max-height: 350px !important;
+        margin-left:auto;
+        margin-right:auto;
+        padding: 2rem 1rem; 
+        /* margin: 10px 10px 10px 10px auto !important; */
+        -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        box-shadow:  0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+      
+      }
+      
+      
+      /* added class for centering within a container  */
+      
+      .vertical-center, .container {
+      
+        max-width: 350px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        justify-content: center !important;
+      
+      }
+      
+      
+      
+      /* button adjustments + hover effect + form width control */
+      
+      button {
+      
+        
+        color: white !important;
+        border-radius: 5px !important;
+        border: none !important;
+        padding: 5px 8px !important;
+        background: black !important;
+        
+        
+      
+      }
+    
+      .formControl {
+    
+        max-width: 400px !important;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center !important;
+        
+      }
+    
+      .centerText {
+        margin-left:auto !important;
+        margin-right:auto !important;
+        text-align: center !important;
+      }
+
+      button:hover {
+      
+        background: #636363 !important;
+        transition: all 0.65s ease-in-out !important;
+      
+      }
+    
+      /* resizes h1 font at 400px */
+    
+      @media screen and (max-width: 400px) {
+        h2.responsiveH2Font {
+          font-size: 8vw;
+        }
+      }

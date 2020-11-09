@@ -1,21 +1,18 @@
-body {
-    padding-top: 1em;
 
-    }	
 
-    button {
+    /* button {
       
         
         color: white !important;
         border-radius: 5px !important;
         border: none !important;
         padding: 3px 6px 10px 6px !important;
-        height: 30px !important;
+        height: 30px !important; */
         /* width: 30px !important; */
-        background: black !important;
+        /* background: black !important;
         
-      }
-
+      } */
+/* 
 
       button:hover {
       
@@ -28,4 +25,136 @@ body {
       .buttonDivRight {
 
         text-align: right !important;
+      } */
+
+
+      .jumbotronStyle {
+
+        background-color: rgb(216, 216, 216) !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        
+    
+    }
+    
+    /* .responsiveImage {
+    
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        margin-bottom: 10px;
+    
+    } */
+    
+    .jumbotron {
+    
+        padding: 10px !important;
+    }
+    
+    h1, form {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: 15px !important;
+    }
+    
+    
+    /* button, input, optgroup, select, textarea {
+        margin-bottom: 15px !important;
+    } */
+    
+
+    .card-body {
+
+        text-align: center !important;
+
+    }
+
+    .card-footer {
+
+        text-align: right !important;
+        background-color: white !important;
+    }
+
+    .priceLeft {
+
+        text-align: left !important;
+    }
+
+    .formControlSizing {
+
+        max-width: 250px !important;
+    }
+    .modalButtons {
+        background-color: black !important;
+    } 
+    
+     .modalButtons:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: rgb(0, 0, 0)!important;
+        border-color: black !important;
+      
       }
+    
+      .textAlign {
+    
+        text-align: center !important;
+        align-content: center !important;
+      }
+    
+      .white {
+    
+        color: white !important;
+    
+      }
+    
+      /* MEDIA QUERY FOR INPUT AREA */
+    
+      @media screen and (min-width:287px) {
+    
+        .regularInput{
+      
+          width: 275px !important;
+      
+        }
+      }
+      
+      
+      @media screen and (max-width:286px) {
+      
+        .responsiveInput{
+      
+          width: 240px !important;
+      
+        }
+      }
+    
+        /* MEDIA QUERY FOR H3 "MENU" TEXT */
+    
+      @media screen and (max-width:340px) {
+      
+        .responsiveText{
+      
+          font-size: 24px !important;
+      
+        }
+      }
+    
+      @media screen and (max-width:290px) {
+      
+        .responsiveText{
+      
+          font-size: 18px !important;
+      
+        }
+      }
+
+
+
+
+
+
+      
