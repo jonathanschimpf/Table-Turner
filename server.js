@@ -1,25 +1,37 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const mongoose = require ("mongoose");
 const cors = require("cors");
 const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
+// const passportLocal = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
 const app = express();
+// const app = expressPassport();
+const routes = require("./routes");
+
 
 // -------------- End Of Imports ------------------- //
-
-// --- Connect to Mongoose --- //
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 
 
 // --- Middleware --- //
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+
+// --- Connect to Mongoose --- //
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -43,12 +55,12 @@ require('./passportConfig')(passport);
 
 
 
-// ------------- End of Middleware ------------- //
+// --- End of Middleware --- //
 
 
-// -------------- Routes for login ------------ //   
+// --- Routes for login --- //   
 
-// !! Can be Moved to routes foldder when finished !! //
+// !! Can be Moved to routes folder when finished !! //
 
 
 
@@ -91,9 +103,6 @@ app.get ("/user", (req, res) => {
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
 
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -103,6 +112,6 @@ app.get ("/user", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
