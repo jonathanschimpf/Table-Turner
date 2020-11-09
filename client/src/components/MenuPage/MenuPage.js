@@ -58,7 +58,7 @@ function MyVerticallyCenteredModal(props) {
                 <div>
                     <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" id="inlineCheckbox1" defaultValue="option1" variant="dark" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Gluten/Soy</label>
+                        <label className="form-check-label" htmlFor="inlineCheckbox1">Gluten</label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" id="inlineCheckbox2" defaultValue="option2" />
@@ -904,7 +904,7 @@ function MenuPageComp() {
 
             <Container>
 
-                <h3>Desert</h3>
+                <h3>Dessert</h3>
                 <br />
 
             </Container>
@@ -914,7 +914,7 @@ function MenuPageComp() {
 
                     <Card>
 
-                        <Card.Header><strong>Desert Item 1</strong></Card.Header>
+                        <Card.Header><strong>Dessert Item 1</strong></Card.Header>
 
                         <Card.Body>
 
@@ -948,7 +948,7 @@ function MenuPageComp() {
 
                     <Card>
 
-                        <Card.Header><strong>Desert Item 2</strong></Card.Header>
+                        <Card.Header><strong>Dessert Item 2</strong></Card.Header>
 
                         <Card.Body>
 
@@ -982,7 +982,7 @@ function MenuPageComp() {
 
                     <Card>
 
-                        <Card.Header><strong>Desert Item 3</strong></Card.Header>
+                        <Card.Header><strong>Dessert Item 3</strong></Card.Header>
 
                         <Card.Body>
 
