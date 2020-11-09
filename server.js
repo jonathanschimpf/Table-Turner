@@ -10,7 +10,6 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
-const { emitWarning, resourceUsage } = require("process");
 const app = express();
 
 
