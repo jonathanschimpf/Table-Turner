@@ -7,15 +7,15 @@ mongoose.connect(
   );
 
 
-const tableSeed = [
+const orderSeed = [
     {
-        //seat number, order, {allergy items}, extra_notes
-        seat_number: 1,
+        //table number, order, {allergy items}, extra_notes, label
+        table: 1,
         order: "Chicken",
         allergies: [{
           gluten: false,
           nuts: false,
-          eggs: false,
+          eggs: true,
           pork: false,
           dairy: false,
           lily: false,
@@ -23,11 +23,29 @@ const tableSeed = [
           alcohol: false,
         }],
         extra_notes: "Please put the sauce on the side",
+        label: "1"
     },
     {
-        //seat number, order, {allergy items}, extra_notes
-        seat_number: 2,
+        //table number, order, {allergy items}, extra_notes, label
+        table: 1,
         order: "Tacos",
+        allergies: [{
+          gluten: false,
+          nuts: false,
+          eggs: false,
+          pork: false,
+          dairy: true,
+          lily: false,
+          shellfish: false,
+          alcohol: false,
+        }],
+        extra_notes: "",
+        label: "2"
+    },
+    {
+        //table number, order, {allergy items}, extra_notes, label
+        table: 1,
+        order: "Shrimp",
         allergies: [{
           gluten: false,
           nuts: false,
@@ -39,10 +57,11 @@ const tableSeed = [
           alcohol: false,
         }],
         extra_notes: "",
+        label: "3"
     },
     {
-        //seat number, order, {allergy items}, extra_notes
-        seat_number: 3,
+        //table number, order, {allergy items}, extra_notes, label
+        table: 1,
         order: "Salad",
         allergies: [{
           gluten: false,
@@ -54,12 +73,13 @@ const tableSeed = [
           shellfish: false,
           alcohol: false,
         }],
-        extra_notes: "Please put the dressing for the salad on the side",
+        extra_notes: "Please put the dressing on the side",
+        label: "4"
     },
     {
-        //seat number, order, {allergy items}, extra_notes
-        seat_number: 4,
-        order: "Burger",
+        //table number, order, {allergy items}, extra_notes, label
+        table: 2,
+        order: "Steak",
         allergies: [{
           gluten: false,
           nuts: false,
@@ -70,15 +90,85 @@ const tableSeed = [
           shellfish: false,
           alcohol: false,
         }],
-        extra_notes: "Please put extra ketchup and extra cheese on the burger",
+        extra_notes: "",
+        label: "1"
     },
+    {
+        //table number, order, {allergy items}, extra_notes, label
+        table: 2,
+        order: "Pasta",
+        allergies: [{
+          gluten: false,
+          nuts: false,
+          eggs: false,
+          pork: false,
+          dairy: false,
+          lily: true,
+          shellfish: false,
+          alcohol: false,
+        }],
+        extra_notes: "Please bring out extra cheese",
+        label: "2"
+    },
+    {
+        //table number, order, {allergy items}, extra_notes, label
+        table: 2,
+        order: "Fish",
+        allergies: [{
+          gluten: false,
+          nuts: false,
+          eggs: false,
+          pork: false,
+          dairy: false,
+          lily: false,
+          shellfish: false,
+          alcohol: false,
+        }],
+        extra_notes: "",
+        label: "3"
+    },
+    {
+        //table number, order, {allergy items}, extra_notes, label
+        table: 2,
+        order: "Chicken",
+        allergies: [{
+          gluten: false,
+          nuts: true,
+          eggs: false,
+          pork: false,
+          dairy: false,
+          lily: false,
+          shellfish: false,
+          alcohol: false,
+        }],
+        extra_notes: "no walnuts please",
+        label: "4"
+    },
+    {
+        //table number, order, {allergy items}, extra_notes, label
+        table: 3,
+        order: "Salad",
+        allergies: [{
+          gluten: false,
+          nuts: false,
+          eggs: false,
+          pork: false,
+          dairy: false,
+          lily: false,
+          shellfish: false,
+          alcohol: false,
+        }],
+        extra_notes: "",
+        label: "1"
+    },
+    
 ];
 
 
 
-db.Table
+db.Order
   .remove({})
-  .then(() => db.Table.collection.insertMany(tableSeed))
+  .then(() => db.Order.collection.insertMany(orderSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
