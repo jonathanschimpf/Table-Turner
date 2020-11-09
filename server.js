@@ -1,17 +1,18 @@
 const express = require("express");
+// const expressPassport = require("express")
 // const path = require("path");
 const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
+// const passportLocal = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
 const app = express();
-const passportApp = express();
+// const app = expressPassport();
 const routes = require("./routes");
 
 // -------------- End Of Imports ------------------- //
@@ -32,38 +33,38 @@ app.use(routes);
 // --- Connect to Mongoose --- //
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
-passportApp.use(bodyParser.json());
-passportApp.use(bodyParser.urlencoded({extended: true}));
-passportApp.use(cors({
-  origin: "http://localhost:3000", // <-- location of the react passportApp we're connecting to
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors({
+  origin: "http://localhost:3000", // <-- location of the react app we're connecting to
   credentials: true
 }))
 
 
-passportApp.use(session({
+app.use(session({
   secret: "secretcode",
   resave: true,
   saveUnintialized: true
 }));
 
-passportApp.use(cookieParser("secretcode"))
-passportApp.use(passport.initialize());
-passportApp.use(passport.session());
+app.use(cookieParser("secretcode"))
+app.use(passport.initialize());
+app.use(passport.session());
 require('./passportConfig')(passport);
 
 
 
 
-// ------------- End of Middleware ------------- //
+// --- End of Middleware --- //
 
 
-// -------------- Routes for login ------------ //   
+// --- Routes for login --- //   
 
 // !! Can be Moved to routes folder when finished !! //
 
 
 
-passportApp.post ("/login", (req, res, next) => {
+app.post ("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) res.send("No User Exists");
@@ -78,7 +79,7 @@ passportApp.post ("/login", (req, res, next) => {
 })
 
 
-passportApp.post ("/register", (req, res) => {
+app.post ("/register", (req, res) => {
   User.findOne({username: req.body.username}, async (err, doc) => {
    if (err) throw err;
    if (doc) res.send("User Already Exists");
@@ -95,7 +96,7 @@ passportApp.post ("/register", (req, res) => {
  });  
 });
 
-passportApp.get ("/user", (req, res) => {
+app.get ("/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
