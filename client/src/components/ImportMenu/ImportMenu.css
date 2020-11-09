@@ -1,0 +1,87 @@
+
+ /* placeholder for potential background image / texture
+
+    body {
+
+        background-image: url();
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: black;
+  
+      }; */
+
+
+
+      /* login margin adjustment */
+
+      form.menuImport {
+        margin-top: 50px;
+      }
+    
+          /* jumbotron customization with box shadow addition for all browsers */
+    
+    .jumbotronLoginSIgnUp {
+    
+        justify-content: center !important;
+        /* margin: 10px 10px 10px 10px auto !important; */
+        -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        box-shadow:  0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+      
+      }
+      
+      
+      /* added class for centering within a container (currently for login/signup) */
+      
+      .vertical-center {
+      
+        max-width: 650px !important;
+        justify-content: center !important;
+      
+      }
+      
+      
+      
+
+      
+      /* button adjustments + hover effect + form width control */
+      
+      button {
+      
+        
+        color: white !important;
+        border-radius: 5px !important;
+        border: none !important;
+        padding: 5px 8px !important;
+        background: black !important;
+        
+        
+      
+      }
+    
+      .formControl {
+    
+        max-width: 400px !important;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center !important;
+        
+      }
+    
+
+      button:hover {
+      
+        background: #636363 !important;
+        transition: all 0.65s ease-in-out !important;
+      
+      }
+    
+      /* resizes h1 font at 400px */
+    
+      @media screen and (max-width: 400px) {
+        h4.responsiveH2Font {
+          font-size: 12vw;
+        }
+      }
