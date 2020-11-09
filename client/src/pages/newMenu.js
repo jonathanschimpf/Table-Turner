@@ -87,7 +87,7 @@ function Menus() {
                 </Form.Control>
                 <button
                 
-                  disabled={!( menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
+                  disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
                   onClick={handleFormSubmit}
                 >
                   Add new Item
