@@ -18,7 +18,7 @@ function NavbarComp() {
                 <Navbar.Brand href="/">Table <span className="blackFont nav-item">Turner</span></Navbar.Brand>
 
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle aria-controls="responsive-navbar-nav navButtonMargin" />
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="d-lg-flex ml-auto">
@@ -32,7 +32,7 @@ function NavbarComp() {
                         <Nav.Link className="nav-item ml-auto" href="">Take Order 
                         </Nav.Link>
 
-                        <Nav.Link className="nav-item ml-auto" href="">Manager View
+                        <Nav.Link className="nav-item ml-auto" href="">Update Menu
                         </Nav.Link>
 
                     </Nav>
