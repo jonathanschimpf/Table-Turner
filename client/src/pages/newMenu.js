@@ -82,7 +82,7 @@ function Menus() {
                   placeholder="info"
                 />
                 <Form.Control 
-                onClick={handleInputChange}
+                onChange={handleInputChange}
                 name="section"
                 as="select" 
                 multiple>
@@ -93,7 +93,7 @@ function Menus() {
                 </Form.Control>
                 <button
                 
-                  disabled={!(menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item)}
+                  disabled={!(menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
                   onClick={handleFormSubmit}
                 >
                   Add new Item
