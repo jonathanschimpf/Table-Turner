@@ -46,7 +46,6 @@ function Menus() {
           item: menuObj.item,
           price: menuObj.price,
           ingredients: menuObj.ingredients,
-          info: menuObj.info,
           section: menuObj.section
   
         })
@@ -76,11 +75,6 @@ function Menus() {
                   name="ingredients"
                   placeholder="ingredients"
                 />
-                <textarea
-                  onChange={handleInputChange}
-                  name="info"
-                  placeholder="info"
-                />
                 <Form.Control 
                 onChange={handleInputChange}
                 name="section"
@@ -93,7 +87,7 @@ function Menus() {
                 </Form.Control>
                 <button
                 
-                  disabled={!(menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
+                  disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
                   onClick={handleFormSubmit}
                 >
                   Add new Item
