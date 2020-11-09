@@ -41,7 +41,8 @@ function Menus() {
     function handleFormSubmit(event) {
       event.preventDefault();
       
-      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.info && menuObj.section ) {
+      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.section ) {
+        menuObj.section
         API.saveMenu({
           item: menuObj.item,
           price: menuObj.price,
@@ -87,7 +88,7 @@ function Menus() {
                 </Form.Control>
                 <button
                 
-                  disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
+                  disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit}
                 >
                   Add new Item
@@ -120,4 +121,3 @@ function Menus() {
   
   
   export default Menus;
-  
