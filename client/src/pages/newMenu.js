@@ -8,12 +8,12 @@ function Menus() {
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
   
-    // Load all books and store them with setBooks
+    // Load all menu items and store them with setMenuObj
     useEffect(() => {
       loadItems()
     }, [])
   
-    // Loads all books and sets them to books
+    // Loads all menu items and sets the menu items
     function loadItems() {
       API.getMenus()
         .then(res => 
@@ -22,7 +22,7 @@ function Menus() {
         .catch(err => console.log(err));
     };
   
-    // Deletes a book from the database with a given id, then reloads books from the db
+    // Deletes a menu item from the database with a given id, then reloads menu items from the db
     function deleteItem(id) {
       API.deleteMenu(id)
         .then(res => loadItems())
@@ -39,7 +39,8 @@ function Menus() {
     // Then reload books from the database
     function handleFormSubmit(event) {
       event.preventDefault();
-      if (menuObj.info && menuObj.price && menuObj.ingredients && menuObj.item ) {
+      
+      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.info ) {
         API.saveMenu({
           item: menuObj.item,
           price: menuObj.price,

@@ -1,7 +1,7 @@
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 const PORT = process.env.PORT || 3001;
-const mongoose = require ("mongoose");
+const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
 const passportLocal = require("passport-local").Strategy;
@@ -11,36 +11,44 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
 const app = express();
-const routes = require("./routes/api");
+const passportApp = express();
+const routes = require("./routes");
 
 // -------------- End Of Imports ------------------- //
 
-// --- Connect to Mongoose --- //
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-
-// Add routes, both API and view
-app.use(routes);
 
 
 // --- Middleware --- //
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors({
-  origin: "http://localhost:3000", // <-- location of the react app we're connecting to
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+
+// --- Connect to Mongoose --- //
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+
+passportApp.use(bodyParser.json());
+passportApp.use(bodyParser.urlencoded({extended: true}));
+passportApp.use(cors({
+  origin: "http://localhost:3000", // <-- location of the react passportApp we're connecting to
   credentials: true
 }))
 
 
-app.use(session({
+passportApp.use(session({
   secret: "secretcode",
   resave: true,
   saveUnintialized: true
 }));
 
-app.use(cookieParser("secretcode"))
-app.use(passport.initialize());
-app.use(passport.session());
+passportApp.use(cookieParser("secretcode"))
+passportApp.use(passport.initialize());
+passportApp.use(passport.session());
 require('./passportConfig')(passport);
 
 
@@ -51,11 +59,11 @@ require('./passportConfig')(passport);
 
 // -------------- Routes for login ------------ //   
 
-// !! Can be Moved to routes foldder when finished !! //
+// !! Can be Moved to routes folder when finished !! //
 
 
 
-app.post ("/login", (req, res, next) => {
+passportApp.post ("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) res.send("No User Exists");
@@ -70,7 +78,7 @@ app.post ("/login", (req, res, next) => {
 })
 
 
-app.post ("/register", (req, res) => {
+passportApp.post ("/register", (req, res) => {
   User.findOne({username: req.body.username}, async (err, doc) => {
    if (err) throw err;
    if (doc) res.send("User Already Exists");
@@ -87,16 +95,13 @@ app.post ("/register", (req, res) => {
  });  
 });
 
-app.get ("/user", (req, res) => {
+passportApp.get ("/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
 
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -106,6 +111,6 @@ app.get ("/user", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

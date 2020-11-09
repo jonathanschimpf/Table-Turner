@@ -7,7 +7,7 @@ import SignupComp from "./components/Signup/Signup";
 // import LoginComp from "./components/Login/Login";
 // import NavbarComp from "./components/Navbar/Navbar"
 // import WelcomePageComp from "./components/WelcomePage/WelcomePage"
-import MenuPageComp from"./components/MenuPage/MenuPage";
+// import MenuPageComp from "./components/MenuPage/MenuPage";
 
 
 
@@ -15,21 +15,20 @@ import MenuPageComp from"./components/MenuPage/MenuPage";
 
 function App() {
   return (
-    // <Router>
-      // <Passport />
-    // {/* <Route exact path={["/", "/menus"]}>
-    //     <Menus />
-    //   </Route>  */}
-        
-  
+    <>
+    
+    <Router>
+      <Route exact path={["/", "/menus"]}><Menus /></Route>
+    </Router>
+    
     // {/* <Passport /> */}
     // {/* <NavbarComp /> */}
     // {/* <WelcomePageComp /> */}
-    // {/* <MenuPageComp /> */}
+    // {/*  <MenuPageComp /> */}
     // {/* <LoginComp /> */}
-    <SignupComp /> 
+    <SignupComp />
 
-    // </Router >
+     </>
   )
 
 };
