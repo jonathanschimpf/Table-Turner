@@ -1,4 +1,4 @@
 module.exports = {
-    Order: require("./Order")
-
-}
+    Order: require("./Order"),
+    Menu: require("./menu")
+};
