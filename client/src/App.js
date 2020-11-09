@@ -12,7 +12,6 @@ import SignupComp from "./components/Signup/Signup";
 
 
 
-
 function App() {
   return (
     <>

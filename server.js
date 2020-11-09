@@ -1,8 +1,7 @@
 const express = require("express");
-// const expressPassport = require("express")
-// const path = require("path");
-const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose");
+const path = require("path");
+const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const passport = require("passport");
 // const passportLocal = require("passport-local").Strategy;
@@ -14,6 +13,7 @@ const User = require("./models/user");
 const app = express();
 // const app = expressPassport();
 const routes = require("./routes");
+
 
 // -------------- End Of Imports ------------------- //
 
