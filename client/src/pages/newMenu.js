@@ -42,7 +42,6 @@ function Menus() {
       event.preventDefault();
       
       if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.section ) {
-        menuObj.section
         API.saveMenu({
           item: menuObj.item,
           price: menuObj.price,
