@@ -6,13 +6,13 @@ import "./MenuPage.css";
 function MyVerticallyCenteredModal(props) {
 
 
-const [items, setItems] = useState([])
+// const [items, setItems] = useState([])
 const [orderObj, setOrderObj] = useState({})
 
 // Load all order items and store them with setOrderObj
-useEffect(() => {
-  loadItems()
-}, [])
+// useEffect(() => {
+//   loadItems()
+// }, [])
 
 // Loads all menu items and sets the menu items
 // function loadItems() {
@@ -24,17 +24,19 @@ useEffect(() => {
 // };
 
 // Deletes a menu item from the database with a given id, then reloads menu items from the db
-function deleteItem(id) {
-  API.deleteOrders(id)
-    .then(res => loadItems())
-    .catch(err => console.log(err));
-}
+
+// function deleteItem(id) {
+//   API.deleteOrders(id)
+//     .then(res => loadItems())
+//     .catch(err => console.log(err));
+// }
+
 
 // Handles updating component state when the user types into the input field
-function handleInputChange(event) {
-  const { name, value } = event.target;
-  setOrderObj({...orderObj, [name]: value})
-};
+// function handleInputChange(event) {
+//   const { name, value } = event.target;
+//   setOrderObj({...orderObj, [name]: value})
+// };
 
 const [value, setValue] = React.useState(
     localStorage.getItem('TableNumber')
@@ -61,17 +63,13 @@ function handleFormSubmit(event) {
       table: value,
       label: labelValue,
       order: "chicken",
-      allergies: "Dairy:true",
+      allergies: Array,
       course: "1",
       extra_notes: "diddlydoo"
 
-    })
-      .then(res => loadItems())
-      .catch(err => console.log(err));
+    }).catch(err => console.log(err));
   
 };
-
-
 
 
     return (
