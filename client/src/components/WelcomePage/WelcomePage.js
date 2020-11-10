@@ -23,7 +23,7 @@ function WelcomePageComp () {
 
   <Form className="add">
     
-    <Button className="my-2 my-lg-0 formControl"  block>+</Button>
+    <Button className="my-2 my-lg-0 formControl welcomeButtons"  block>+</Button>
     
   </Form>
 
@@ -39,7 +39,7 @@ function WelcomePageComp () {
   
   <Form className="add">
     
-    <Button className="my-2 my-lg-0 formControl"  block>+</Button>
+    <Button className="my-2 my-lg-0 formControl welcomeButtons"  block>+</Button>
     
   </Form>
 

@@ -33,7 +33,7 @@ function App() {
 
         
         
-        <MenuPageComp  />
+        {/* <MenuPageComp  /> */}
         </Switch>
         </Router> 
       

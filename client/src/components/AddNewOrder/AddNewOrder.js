@@ -37,7 +37,8 @@ function AddNewOrderComp() {
                             <Form.Control className="formControl" placeholder="(Optional) Order Label" value={value} type="text" onChange={onChange} />
                         </Form.Group>
 
-                        <a href="/menu"><Button className="my-2 my-lg-0 formControl add" block>+</Button></a>
+                       
+                        <a href="/menu"><Button className="my-2 my-lg-0 formControl add addNewButton" block>+</Button></a>
 
                         <br />
 

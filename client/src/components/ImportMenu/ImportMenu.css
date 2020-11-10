@@ -22,9 +22,10 @@
     
           /* jumbotron customization with box shadow addition for all browsers */
     
-    .jumbotronLoginSIgnUp {
+    .importMenuJumbotron {
     
         justify-content: center !important;
+        background-color: #dfdfdf !important;
         /* margin: 10px 10px 10px 10px auto !important; */
         -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
@@ -47,19 +48,31 @@
 
       
       /* button adjustments + hover effect + form width control */
-      
-      button {
-      
-        
+
+      .importMenuButton {
+       
         color: white !important;
         border-radius: 5px !important;
-        border: none !important;
         padding: 5px 8px !important;
         background: black !important;
+        border-color: black !important;
         
-        
+      }
+
+      .importMenuButton {
+          
+        background-color: black !important;
+    } 
+    
+     .importMenuButton:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: rgb(0, 0, 0)!important;
+        border-color: black !important;
       
       }
+      
     
       .formControl {
     
@@ -70,13 +83,6 @@
         
       }
     
-
-      button:hover {
-      
-        background: #636363 !important;
-        transition: all 0.65s ease-in-out !important;
-      
-      }
     
       /* resizes h1 font at 400px */
     

@@ -93,7 +93,7 @@ function ImportMenuComp() {
             <br />
             <Container className="vertical-center">
 
-                <Jumbotron className="jumbotronLoginSignUp" >
+                <Jumbotron className="importMenuJumbotron" >
                     <h2 className=" text-center responsiveH2Font">Import Menu Item</h2>
                     <hr style={{ height: '4px', maxWidth: 375 }} />
                     {/* <h3 className="text-center">Plaeholder Description</h3> */}
@@ -135,7 +135,7 @@ function ImportMenuComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl" block 
+                        <Button className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit} >+Add Menu Item</Button>
                         <br />
