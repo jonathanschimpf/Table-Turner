@@ -33,9 +33,5 @@ export default {
   saveOrders: function(ordersData) {
     return axios.post("/api/orders", ordersData);
   }
-<<<<<<< HEAD
-}
-=======
 };
 
->>>>>>> main
