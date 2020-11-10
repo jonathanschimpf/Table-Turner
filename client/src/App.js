@@ -11,7 +11,7 @@ import MenuPageComp from "./pages/MenuPage/MenuPage";
 // import ImportMenuComp from "./components/ImportMenu/ImportMenu";
 // import AddNewOrderComp from "./components/AddNewOrder/AddNewOrder";
 // import AddNewTableComp from "./components/AddNewTable/AddNewTable";
-import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
+// import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
 
 
 
@@ -22,18 +22,18 @@ function App() {
 
     <>
 
-      <Router>
+      {/* <Router> */}
       <NavbarComp />
-        <Switch>
+        {/* <Switch> */}
         {/* <Route exact path={["/", "/menus"]}><ImportMenuComp /></Route> */}
-        <Route exact path="/menus"><MenuPageComp  /></Route>
+        {/* <Route exact path="/menus"><MenuPageComp  /></Route> */}
        
 
         
         
         {/* <MenuPageComp  /> */}
-        </Switch>
-        </Router> 
+        {/* </Switch> */}
+        {/* </Router>  */}
       
 
       {/* <Passport /> */}
@@ -45,8 +45,8 @@ function App() {
       {/* <SignupComp /> */}
       {/* <AddNewTableComp /> */}
       {/* <AddNewOrderComp /> */}
-      {/* <MenuPageComp /> */}
-      <ViewAllTablesComp />
+      <MenuPageComp />
+      {/* <ViewAllTablesComp /> */}
 
       
 
