@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
-import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
+import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col, BreadcrumbItem } from "react-bootstrap";
 import "./MenuPage.css";
 
 
@@ -11,6 +11,9 @@ function MyVerticallyCenteredModal(props) {
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
 
+    const plates = items.map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
     const smallPlates = items.filter(item => {
         return item.section === "Small Plates"
     }).map(item => {
@@ -33,11 +36,6 @@ function MyVerticallyCenteredModal(props) {
     })
     
     
-
-
-
-
-
 
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
@@ -325,7 +323,11 @@ function MenuPageComp(props) {
                                 </Col>
 
                                 <Col>
-                                  <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                  <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
+                                      setModalTitle("asdf")
+                                      setModalDesc("")
+                                      setModalShow(true)
+                                      }} >
                                         +Add
                                     </Button>
 

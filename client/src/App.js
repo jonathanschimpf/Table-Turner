@@ -11,7 +11,7 @@ import MenuPageComp from "./pages/MenuPage/MenuPage";
 import ImportMenuComp from "./components/ImportMenu/ImportMenu";
 // import AddNewOrderComp from "./components/AddNewOrder/AddNewOrder";
 // import AddNewTableComp from "./components/AddNewTable/AddNewTable";
-import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
+// import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
 
 
 
