@@ -92,6 +92,17 @@
         transition: all 0.65s ease-in-out !important;
       
       }
+
+
+
+
+    .addTableForm {
+      display: "block"
+    }
+
+
+
+
     
       /* resizes h1 font at 400px */
     
