@@ -1,9 +1,16 @@
+import React, {useEffect} from "react";
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./AddNewOrder.css";
 
 
 function AddNewOrderComp() {
+    const [value, setValue] = React.useState('');
+    
+    React.useEffect(() => {
+    localStorage.setItem("Label", value)
+    }, [value]);
 
+    const onChange = event => setValue(event.target.value);
     return (
 
 
@@ -27,7 +34,7 @@ function AddNewOrderComp() {
 
                             <h6 className="centerText"></h6>
 
-                            <Form.Control className="formControl" placeholder="(Optional) Order Label" />
+                            <Form.Control className="formControl" placeholder="(Optional) Order Label" value={value} type="text" onChange={onChange} />
                         </Form.Group>
 
                         <Button className="my-2 my-lg-0 formControl add" block>+</Button>
