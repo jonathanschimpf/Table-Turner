@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, setState } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
 import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
@@ -11,10 +11,10 @@ function MenuPageComp(props) {
     
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
-    const [order, setOrder] = useState([]);
-    const [course, setCourse] = useState([]);
-    const [allergies, setAllergies] = setState(true);
-    const [notes, setNotes] = useState([]);
+    // const [order, setOrder] = useState([]);
+    // const [course, setCourse] = useState([]);
+    // const [allergies, setAllergies] = setState(true);
+    // const [notes, setNotes] = useState([]);
 
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
