@@ -25,8 +25,7 @@ function App() {
         <Switch>
         <Route exact path={["/", "/menus"]}><ImportMenuComp /></Route>
         <Route exact path="/menus/:id">
-      {/* <MenuPageComp /> */}
-          </Route>
+      <MenuPageComp /></Route>
        
 
         </Switch>
