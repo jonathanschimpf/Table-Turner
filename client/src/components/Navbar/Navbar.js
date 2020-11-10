@@ -15,7 +15,7 @@ function NavbarComp() {
 
             <Navbar className="navbar" fixed="top sticky-top" variant="dark" expand="lg" bg="black">
 
-                <Navbar.Brand href="/">Table <span className="blackFont nav-item">Turner</span></Navbar.Brand>
+                <Navbar.Brand href="/"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
 
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav navButtonMargin" />

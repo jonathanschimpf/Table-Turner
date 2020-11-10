@@ -1,0 +1,174 @@
+
+ /* placeholder for potential background image / texture
+
+    body {
+
+        background-image: url();
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: black;
+  
+      }; */
+
+
+
+      /* welcome form adjustments */
+
+      form.view {
+        margin-top: 50px;
+        max-width: 200px !important;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center !important;
+        
+      }
+    
+          /* jumbotron customization with box shadow addition for all browsers */
+    
+    .jumbotronTableView {
+    
+        justify-content: center !important;
+        max-width: 350px !important;
+        max-height: 350px !important;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: 3rem !important;
+        padding: 2rem 1rem; 
+        /* margin: 10px 10px 10px 10px auto !important; */
+        -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        box-shadow:  0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+      
+      }
+      
+      
+      /* added class for centering within a container  */
+      
+      .vertical-center, .container {
+      
+        max-width: 550px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        justify-content: center !important;
+      
+      }
+      
+      
+      
+      /* button adjustments + hover effect + form width control */
+      
+      .tableViewButtons {
+       
+        color: white !important;
+        border-radius: 5px !important;
+        padding: 5px 8px !important;
+        background: black !important;
+        
+      }
+
+      .tableViewButtons {
+        background-color: black !important;
+    } 
+    
+     .tableViewButtons:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: rgb(0, 0, 0)!important;
+        border-color: black !important;
+      
+      }
+
+      .tableBlackGround {
+
+        background-color: black !important;
+
+      }
+            
+      .deleteTableButtons {
+       
+        color: white !important;
+        border-radius: 5px !important;
+        padding: 5px 8px !important;
+        background: #DC3545 !important;
+        
+      }
+
+      .deleteTableButtons {
+
+        background-color: #DC3545 !important;
+    } 
+    
+     .deleteTableButtons:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: #DC3545!important;
+        border-color: #DC3545 !important;
+      
+      }
+    
+    
+      .formControl {
+    
+        max-width: 400px !important;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center !important;
+        
+      }
+    
+      .centerText {
+        margin-left:auto !important;
+        margin-right:auto !important;
+        text-align: center !important;
+      }
+
+      /* removing a table row via "x" */
+
+      .removeRow {
+        color: #ff1744;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      
+      .removeRow:hover {
+        color: #8d0000;
+        font-size: 20px;
+      }
+      
+
+      .centeredCourseNumber {
+
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+
+      }
+      
+      .deleteFont {
+
+        color: #ff1744 !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+
+
+      }
+
+      /* resizes h2 font at 400px */
+    
+      @media screen and (max-width: 400px) {
+        h2.responsiveH2Font {
+          font-size: 8vw;
+        }
+      }
