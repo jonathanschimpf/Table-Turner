@@ -12,7 +12,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 1,
         order: "Chicken",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: true,
@@ -21,7 +21,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "Please put the sauce on the side",
         label: "1",
         course: "1"
@@ -30,7 +30,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 1,
         order: "Tacos",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -39,7 +39,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "",
         label: "2",
         course: "1"
@@ -48,7 +48,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 1,
         order: "Shrimp",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -57,7 +57,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "",
         label: "3",
         course: "1"
@@ -66,7 +66,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 1,
         order: "Salad",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -75,7 +75,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "Please put the dressing on the side",
         label: "4",
         course: "1"
@@ -84,7 +84,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 2,
         order: "Steak",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -93,7 +93,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "",
         label: "1",
         course: "1"
@@ -102,7 +102,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 2,
         order: "Pasta",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -111,7 +111,7 @@ const orderSeed = [
           lily: true,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "Please bring out extra cheese",
         label: "2",
         course: "1"
@@ -120,7 +120,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 2,
         order: "Fish",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -129,7 +129,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "",
         label: "3",
         course: "1"
@@ -138,7 +138,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 2,
         order: "Chicken",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: true,
           eggs: false,
@@ -147,7 +147,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "no walnuts",
         label: "4",
         course: "1"
@@ -156,7 +156,7 @@ const orderSeed = [
         //table number, order, {allergy items}, extra_notes, label
         table: 3,
         order: "Salad",
-        allergies: [{
+        allergies: {
           gluten: false,
           nuts: false,
           eggs: false,
@@ -165,7 +165,7 @@ const orderSeed = [
           lily: false,
           shellfish: false,
           alcohol: false,
-        }],
+        },
         extra_notes: "",
         label: "1",
         course: "1"

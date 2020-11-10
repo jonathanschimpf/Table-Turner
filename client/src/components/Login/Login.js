@@ -57,14 +57,6 @@ function LoginComp() {
     return (
         <>
 
-            {/* <div>
-           <h1>Login</h1>
-           <input placeholder='username' onChange={e => setloginUsername(e.target.value)} />
-           <input placeholder='password' onChange={e => setloginPassword(e.target.value)}/>
-            <button onClick={login}>Submit</button>
-          </div> */}
-
-
             <br />
             <br />
             <br />
@@ -87,7 +79,7 @@ function LoginComp() {
                             <Form.Control className="formControl" placeholder="Password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl" onClick={login} block>Log In</Button>
+                        <Button className="my-2 my-lg-0 formControl logInButton" onClick={login} block>Log In</Button>
 
                         <br />
 

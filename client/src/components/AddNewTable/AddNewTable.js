@@ -43,7 +43,7 @@ function AddNewTableComp() {
                             <Form.Control className="formControl" placeholder="# How many available seats?" />
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl add" block>+</Button>
+                        <Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block>+</Button>
 
                     </Form>
 
