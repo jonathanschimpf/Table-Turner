@@ -421,7 +421,7 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>{item[1]}</strong></Card.Text>
+                                    <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
@@ -471,7 +471,7 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                <Card.Text className="priceLeft"><strong>{item[1]}</strong></Card.Text>
+                <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
