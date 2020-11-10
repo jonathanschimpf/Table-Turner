@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/" component={WelcomePageComp}></Route>
         <Route exact path="/importmenu" component={ImportMenuComp}></Route>
         <Route exact path="/menu" component={MenuPageComp}></Route>
-        <Route path ="/addTables" component={AddNewTableComp}></Route>
+        <Route path ="/startTable" component={AddNewTableComp}></Route>
         <Route path ="/viewTables" component={ViewAllTablesComp}></Route>
         <Route path ="/takeOrder" component={AddNewOrderComp}></Route>
         <Route path ="/importMenu" component={ImportMenuComp}></Route>

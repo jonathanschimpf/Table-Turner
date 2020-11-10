@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./AddNewTable.css";
+import { Link, useLocation } from "react-router-dom";
 
 
 function AddNewTableComp() {
@@ -12,7 +13,14 @@ function AddNewTableComp() {
 
     const onChange = event => setValue(event.target.value);
 
-    
+    const addTableSubmit = event => {
+        event.preventDefault();
+        console.log(value)
+        // localStorage.setItem("TableNumber", value)
+
+    }
+
+
     return (
 
 
@@ -30,7 +38,7 @@ function AddNewTableComp() {
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
                     {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
 
-                    <Form>
+                    <Form classname="addTableForm">
 
                         <Form.Group className="formControl">
 
@@ -39,11 +47,11 @@ function AddNewTableComp() {
                             <Form.Control className="formControl" placeholder="# What table number is this?" value={value} type="text" onChange={onChange}/>
                         </Form.Group>
 
-                        <Form.Group>
+                        {/* <Form.Group>
                             <Form.Control className="formControl" placeholder="# How many available seats?" />
-                        </Form.Group>
+                        </Form.Group> */}
 
-                        <Button className="my-2 my-lg-0 formControl add" block>+</Button>
+                        <Button className="my-2 my-lg-0 formControl add" block><a href="/takeOrder">+</a></Button>
 
                     </Form>
 

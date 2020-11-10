@@ -24,7 +24,7 @@ function NavbarComp() {
 
                     <Nav className="d-lg-flex ml-auto">
 
-                        <Nav.Link className={location.pathname === "/addTables" ? "nav-link active": "nav-link"} href="/addTables">Start New Table
+                        <Nav.Link className={location.pathname === "/startTable" ? "nav-link active": "nav-link"} href="/startTable">Start New Table
                         </Nav.Link>
 
                         <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"} href="/viewTables">View Tables
