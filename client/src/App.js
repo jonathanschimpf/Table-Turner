@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // import Menus from "./pages/newMenu"
 // import Passport from "./components/Passport/Passport";
@@ -11,6 +11,8 @@ import MenuPageComp from "./pages/MenuPage/MenuPage";
 // import ImportMenuComp from "./components/ImportMenu/ImportMenu";
 // import AddNewOrderComp from "./components/AddNewOrder/AddNewOrder";
 // import AddNewTableComp from "./components/AddNewTable/AddNewTable";
+import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
+
 
 
 
@@ -31,7 +33,7 @@ function App() {
         
         {/* <MenuPageComp  /> */}
         </Switch>
-      </Router> 
+        </Router> 
       
 
       {/* <Passport /> */}
@@ -43,6 +45,10 @@ function App() {
       {/* <SignupComp /> */}
       {/* <AddNewTableComp /> */}
       {/* <AddNewOrderComp /> */}
+      {/* <MenuPageComp /> */}
+      <ViewAllTablesComp />
+
+      
 
     </>
 
