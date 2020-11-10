@@ -11,7 +11,10 @@ function MenuPageComp(props) {
     
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
-
+    const [order, setOrder] = useState([]);
+    const [course, setCourse] = useState([]);
+    const [allergies, setAllergies] = setState(true);
+    const [notes, setNotes] = useState([]);
 
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
