@@ -8,8 +8,42 @@ import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 
 
 function ImportMenuComp() {
-    const [items, setItems] = useState([])
+  
+  const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
+  
+  
+        let smallPlates = items.filter(item => {
+         return item.section === "Small Plates"}).map(item => {
+           return item.item;
+         })
+         let sharedPlates = items.filter(item => {
+          return item.section === "Shared Plates"}).map(item => {
+            return item.item;
+          })
+          let mainCourse = items.filter(item => {
+            return item.section === "Main Course"}).map(item => {
+              return item.item;
+            })
+          let dessert = items.filter(item => {
+              return item.section === "Dessert"}).map(item => {
+                return item.item;
+              })
+          
+  
+  
+
+  
+  
+      //    let basketballPlayers = students.filter(function (student) { 
+      //     return student.sports === "Basketball"; 
+      // }).map(function (student) { 
+      //     return student.name; 
+      // }) 
+  
+  
+  
+    
   
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
@@ -118,22 +152,7 @@ function ImportMenuComp() {
             <br />
             <br />
             <br />
-            {items.length ? (
-                <ul>
-                  {items.map(item => (
-                    <li key={item._id}>
-                      <Link to={"/menus/" + item._id}>
-                        <strong>
-                          {item.item} $ {item.price}
-                        </strong>
-                      </Link>
-                      <button  onClick={() => deleteItem(item._id)} >Delete</button>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <h3>No Results to Display</h3>
-              )}
+           
               </>
 
        
