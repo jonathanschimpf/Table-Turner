@@ -25,18 +25,6 @@
 
 
 
-// const handleInputChange = event => {
-//     const { value } = event.target;
-//     setSearchState(value)
-//     console.log(value)
-// }
-
- //     <Form inline>
-//     <FormControl type="text" placeholder="Search Menu IclassName="mr-sm-2 regularInput responsiveInput textAlname="search" onChange={handleInputChange} />
-//    </Form> 
-
-
-
 // <Typeahead
 // type="text"
 // className="mr-sm-2 regularInput responsiveInput textAlign"
