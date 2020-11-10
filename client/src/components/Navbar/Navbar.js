@@ -1,13 +1,14 @@
 import React from "react";
 import "./Navbar.css";
 import { Navbar, Nav } from "react-bootstrap";
-
+import { Link, useLocation } from "react-router-dom";
 
 
 
 
 
 function NavbarComp() {
+	const location = useLocation();
 
     return (
 
@@ -15,7 +16,7 @@ function NavbarComp() {
 
             <Navbar className="navbar" fixed="top sticky-top" variant="dark" expand="lg" bg="black">
 
-                <Navbar.Brand href="/"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
+                <Navbar.Brand to="/"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
 
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav navButtonMargin" />
@@ -23,17 +24,18 @@ function NavbarComp() {
 
                     <Nav className="d-lg-flex ml-auto">
 
-                        <Nav.Link className="nav-item active ml-auto" href="">Add Tables
+                        <Nav.Link className={location.pathname === "/addTables" ? "nav-link active": "nav-link"} href="/addTables">Start New Table
                         </Nav.Link>
 
-                        <Nav.Link className="nav-item ml-auto" href="">View Tables
+                        <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"} href="/viewTables">View Tables
                         </Nav.Link>
 
-                        <Nav.Link className="nav-item ml-auto" href="">Take Order 
+                        <Nav.Link className={location.pathname === "/menu" ? "nav-link active": "nav-link"} href="/menu">Add To Last Order
                         </Nav.Link>
 
-                        <Nav.Link className="nav-item ml-auto" href="">Update Menu
+                        <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
                         </Nav.Link>
+
 
                     </Nav>
 
