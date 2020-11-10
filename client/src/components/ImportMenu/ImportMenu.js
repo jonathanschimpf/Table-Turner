@@ -29,10 +29,10 @@ function ImportMenuComp() {
               return item.section === "Dessert"}).map(item => {
               return [item.item, item.price, item.ingredients];
               })
-          // console.log(smallPlates)
-          // console.log(sharedPlates)
-          // console.log(mainCourse)
-          // console.log(dessert)
+          console.log(smallPlates)
+          console.log(sharedPlates)
+          console.log(mainCourse)
+          console.log(dessert)
   
   
   
@@ -126,10 +126,12 @@ function ImportMenuComp() {
                             <Form.Control as="select" className="formControl" onChange={handleInputChange}
                             name="section"
                             >
+                                <option></option>
                                 <option>Small Plates</option>
                                 <option>Shared Plates</option>
                                 <option>Main Course</option>
                                 <option>Dessert</option>
+                               
                             </Form.Control>
                         </Form.Group>
 
@@ -146,6 +148,7 @@ function ImportMenuComp() {
             <br />
             <br />
             <br />
+            
            
               </>
 
