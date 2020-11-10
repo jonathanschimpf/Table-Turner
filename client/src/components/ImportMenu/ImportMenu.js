@@ -34,7 +34,11 @@ function ImportMenuComp() {
           console.log(mainCourse)
           console.log(dessert)
   
+  
+  
+  
     
+  
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
       loadItems()
