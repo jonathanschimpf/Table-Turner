@@ -6,46 +6,6 @@ import "./MenuPage.css";
 
 
 
-
-
-
-
-// const [items, setItems] = useState([])
-
-
-// Load all order items and store them with setOrderObj
-// useEffect(() => {
-//   loadItems()
-// }, [])
-
-// Loads all menu items and sets the menu items
-// function loadItems() {
-//   API.getOrders()
-//     .then(res => 
-//       setItems(res.data)
-//     )
-//     .catch(err => console.log(err));
-// };
-
-// Deletes a menu item from the database with a given id, then reloads menu items from the db
-
-// function deleteItem(id) {
-//   API.deleteOrders(id)
-//     .then(res => loadItems())
-//     .catch(err => console.log(err));
-// }
-
-
-// Handles updating component state when the user types into the input field
-// function handleInputChange(event) {
-//   const { name, value } = event.target;
-//   setOrderObj({...orderObj, [name]: value})
-// };
-
-
-//typeahead package for search form:
-// import { Typeahead } from 'react-bootstrap-typeahead'; // ES2015
-
 function MyVerticallyCenteredModal(props) {
 
     const [orderObj, setOrderObj] = useState({})
@@ -215,35 +175,7 @@ function MenuPageComp(props) {
 
     }, [])
 
-    // const [searchState, setSearchState] = useState([])
-
-    // const options = [
-    //     'Burger',
-    //     'Chicken',
-    //     'Pasta',
-    //     'Steak',
-    //     'Salad',
-    //     'Bread',
-    //     'Tacos',
-    //     'Hummus',
-    //     'Soufle',
-    //     'Halibut',
-    //     'Salmon',
-    //     'Noodles',
-    //     'Yogurt',
-    //     'Wine',
-    //     'Ice Cream',
-    //     'Chocolate Cake'
-    // ];
-
-
-    // const handleInputChange = event => {
-    //     const { value } = event.target;
-    //     setSearchState(value)
-    //     console.log(value)
-    // }
-
-
+    
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -258,27 +190,8 @@ function MenuPageComp(props) {
                     <br></br>
                     <h1 className="responsiveText"><strong>Menu</strong></h1>
                     <br></br>
-{/* 
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search Menu Item" className="mr-sm-2 regularInput responsiveInput textAlign" name="search" onChange={handleInputChange} />
-                    </Form> */}
 
-
-
-                    {/* <Typeahead
-                        type="text"
-                        className="mr-sm-2 regularInput responsiveInput textAlign"
-                        name="search"
-                        id="basic-typeahead-single"
-                        labelKey="search"
-                        options={options}
-                        onChange={setSearchState}
-                        placeholder="Search Menu Item"
-                        selected={searchState}
-                    /> */}
-
-
-
+                    
                     <br></br>
                     <br></br>
 
