@@ -1,9 +1,18 @@
+import React, { useEffect } from "react";
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./AddNewTable.css";
 
 
 function AddNewTableComp() {
+    const [value, setValue] = React.useState('');
+    
+    React.useEffect(() => {
+    localStorage.setItem("TableNumber", value)
+    }, [value]);
 
+    const onChange = event => setValue(event.target.value);
+
+    
     return (
 
 
@@ -27,7 +36,7 @@ function AddNewTableComp() {
 
                             <h6 className="centerText">Define your table + Number of Seats</h6>
 
-                            <Form.Control className="formControl" placeholder="# What table number is this?" />
+                            <Form.Control className="formControl" placeholder="# What table number is this?" value={value} type="text" onChange={onChange}/>
                         </Form.Group>
 
                         <Form.Group>
