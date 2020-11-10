@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // import Menus from "./pages/newMenu"
 // import Passport from "./components/Passport/Passport";
-// import SignupComp from "./components/Signup/Signup";
-// import LoginComp from "./components/Login/Login";
+import SignupComp from "./components/Signup/Signup";
+import LoginComp from "./components/Login/Login";
 import NavbarComp from "./components/Navbar/Navbar"
 import WelcomePageComp from "./components/WelcomePage/WelcomePage"
 import MenuPageComp from "./pages/MenuPage/MenuPage";
@@ -23,7 +23,9 @@ function App() {
       <Router>
       <NavbarComp />
         <Switch>
-        <Route exact path="/" component={WelcomePageComp}></Route>
+        <Route exact path="/" component={SignupComp}></Route>
+        <Route exact path="/user" component={LoginComp}></Route>
+        <Route exact path="/welcome" component={WelcomePageComp}></Route>
         <Route exact path="/importmenu" component={ImportMenuComp}></Route>
         <Route exact path="/menu" component={MenuPageComp}></Route>
         <Route path ="/startTable" component={AddNewTableComp}></Route>
@@ -44,7 +46,7 @@ function App() {
       
       {/* <LoginComp /> */}
       {/* <ImportMenuComp/> */}
-      {/* <SignupComp /> */}
+      
       {/* <AddNewTableComp /> */}
       {/* <AddNewOrderComp /> */}
       {/* <MenuPageComp /> */}
