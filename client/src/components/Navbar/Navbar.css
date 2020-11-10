@@ -3,7 +3,7 @@
     padding-top: 4px !important;
     padding-bottom: 4.8px !important; 
     background: black !important;
-    background-color: #888888 !important;
+    background-color: #000000 !important;
 
 }
 
@@ -14,9 +14,10 @@
 
 }
 
-.blackFont {
+.redFont {
 
-    color:rgb(0, 0, 0)!important;
+    color: #DC3545!important;
+    margin-left: 1px !important;
 
 }
 
@@ -26,7 +27,7 @@
 
 .nav-item {
 
-    color: rgb(167, 167, 167);
+    color: rgb(190, 190, 190);
     margin-left: auto !important;
 
 }
