@@ -12,6 +12,31 @@ function ImportMenuComp() {
   const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
   
+  
+        let smallPlates = items.filter(item => {
+         return item.section === "Small Plates"}).map(item => {
+           return [item.item, item.price, item.ingredients];
+         })
+         let sharedPlates = items.filter(item => {
+          return item.section === "Shared Plates"}).map(item => {
+            return [item.item, item.price, item.ingredients];
+          })
+          let mainCourse = items.filter(item => {
+            return item.section === "Main Course"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+            })
+          let dessert = items.filter(item => {
+              return item.section === "Dessert"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+              })
+          console.log(smallPlates)
+          console.log(sharedPlates)
+          console.log(mainCourse)
+          console.log(dessert)
+  
+  
+  
+  
     
   
     // Load all menu items and store them with setMenuObj
@@ -106,6 +131,7 @@ function ImportMenuComp() {
                                 <option>Shared Plates</option>
                                 <option>Main Course</option>
                                 <option>Dessert</option>
+                               
                             </Form.Control>
                         </Form.Group>
 
