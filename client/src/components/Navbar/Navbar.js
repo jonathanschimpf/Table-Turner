@@ -24,13 +24,13 @@ function NavbarComp() {
 
                     <Nav className="d-lg-flex ml-auto">
 
-                        <Nav.Link className={location.pathname === "/addTables" ? "nav-link active": "nav-link"} href="/addTables">Add Tables
+                        <Nav.Link className={location.pathname === "/addTables" ? "nav-link active": "nav-link"} href="/addTables">Start New Table
                         </Nav.Link>
 
                         <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"} href="/viewTables">View Tables
                         </Nav.Link>
 
-                        <Nav.Link className={location.pathname === "/takeOrder" ? "nav-link active": "nav-link"} href="/takeOrder">Take Order 
+                        <Nav.Link className={location.pathname === "/menu" ? "nav-link active": "nav-link"} href="/menu">Add To Last Order
                         </Nav.Link>
 
                         <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
