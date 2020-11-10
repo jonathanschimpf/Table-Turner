@@ -22,8 +22,8 @@ function App() {
     <>
       <Router>
       <NavbarComp />
-        {/* <Switch> */}
-        {/* <Route exact path={["/", "/menus"]}><ImportMenuComp /></Route> */}
+        <Switch>
+        <Route exact path={["/", "/menus"]}><ImportMenuComp /></Route>
         <Route exact path="/menus" component={MenuPageComp}></Route>
         <Route path ="/addTables" component={AddNewTableComp}></Route>
         <Route path ="/viewTables" component={ViewAllTablesComp}></Route>
@@ -33,8 +33,8 @@ function App() {
         
         
         {/* <MenuPageComp  /> */}
-        {/* </Switch> */}
-        {/* </Router>  */}
+        </Switch>
+        </Router> 
       
 
       {/* <Passport /> */}
