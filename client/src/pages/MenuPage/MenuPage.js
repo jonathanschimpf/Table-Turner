@@ -176,7 +176,11 @@ function MenuPageComp(props) {
                                 </Col>
 
                                 <Col>
-                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
+                                      setModalTitle(item[0])
+                                      setModalDesc(item[2])
+                                      setModalShow(true)
+                                      }} >
                                         +Add
                                     </Button>
 
@@ -225,7 +229,11 @@ function MenuPageComp(props) {
                                 </Col>
 
                                 <Col>
-                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
+                                      setModalTitle(item[0])
+                                      setModalDesc(item[2])
+                                      setModalShow(true)
+                                      }} >
                                         +Add
                                     </Button>
 
@@ -275,7 +283,11 @@ function MenuPageComp(props) {
                                 </Col>
 
                                 <Col>
-                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
+                                      setModalTitle(item[0])
+                                      setModalDesc(item[2])
+                                      setModalShow(true)
+                                      }} >
                                         +Add
                                      </Button>
 
