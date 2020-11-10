@@ -40,7 +40,7 @@ const menuSeed = [
     },
     {
         item: "Lobster & Shrimp Spring Rolls",
-        price: "$16.00",
+        price: "16.00",
         ingredients: "Spicy Sweet Coconut Dipping Sauce, Lobster, Shrimp, Carrots, Mushroom, Cucumber",
         section: "Shared Plates"
     },
