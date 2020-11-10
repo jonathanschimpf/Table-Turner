@@ -7,7 +7,51 @@ import "./MenuPage.css";
 
 
 function MyVerticallyCenteredModal(props) {
-
+    
+    const [items, setItems] = useState([])
+    const [menuObj, setMenuObj] = useState({})
+  
+  
+        const smallPlates = items.filter(item => {
+         return item.section === "Small Plates"}).map(item => {
+           return [item.item, item.price, item.ingredients];
+         })
+         const sharedPlates = items.filter(item => {
+          return item.section === "Shared Plates"}).map(item => {
+            return [item.item, item.price, item.ingredients];
+          })
+          const mainCourse = items.filter(item => {
+            return item.section === "Main Course"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+            })
+          const dessert = items.filter(item => {
+              return item.section === "Dessert"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+              })
+          console.log(smallPlates)
+          console.log(sharedPlates)
+          console.log(mainCourse)
+          console.log(dessert)
+  
+  
+  
+  
+    
+  
+    // Load all menu items and store them with setMenuObj
+    useEffect(() => {
+      loadItems()
+    }, [])
+  
+    // Loads all menu items and sets the menu items
+    function loadItems() {
+      API.getMenus()
+        .then(res => 
+          setItems(res.data)
+        )
+        .catch(err => console.log(err));
+    };
+    
     const [orderObj, setOrderObj] = useState({})
 
     const [value, setValue] = React.useState(
@@ -70,11 +114,10 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h3>{ menuItem.item}</h3>
+             <h3>{"Button clicked === id"}</h3>
                 <br></br>
                 <p>
-                    {menuItem.ingredients}
-                 </p>
+                 {"Button clicked === id"}</p>
 
                 <hr></hr>
 
@@ -165,6 +208,50 @@ function MyVerticallyCenteredModal(props) {
 
 function MenuPageComp(props) {
 
+    const [items, setItems] = useState([])
+    const [menuObj, setMenuObj] = useState({})
+  
+  
+        const smallPlates = items.filter(item => {
+         return item.section === "Small Plates"}).map(item => {
+           return [item.item, item.price, item.ingredients];
+         })
+         const sharedPlates = items.filter(item => {
+          return item.section === "Shared Plates"}).map(item => {
+            return [item.item, item.price, item.ingredients];
+          })
+          const mainCourse = items.filter(item => {
+            return item.section === "Main Course"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+            })
+          const dessert = items.filter(item => {
+              return item.section === "Dessert"}).map(item => {
+              return [item.item, item.price, item.ingredients];
+              })
+          console.log(smallPlates)
+          console.log(sharedPlates)
+          console.log(mainCourse)
+          console.log(dessert)
+  
+  
+  
+  
+    
+  
+    // Load all menu items and store them with setMenuObj
+    useEffect(() => {
+      loadItems()
+    }, [])
+  
+    // Loads all menu items and sets the menu items
+    function loadItems() {
+      API.getMenus()
+        .then(res => 
+          setItems(res.data)
+        )
+        .catch(err => console.log(err));
+    };
+
     const [menuItem, setMenuItem] = useState({});
     const { id, item, price } = useParams()
     useEffect(() => {
@@ -209,10 +296,10 @@ function MenuPageComp(props) {
                 <CardColumns>
 
                     <Card>
-                        <Card.Header><strong>{menuItem.item}</strong></Card.Header>
+                        <Card.Header><strong>{smallPlates.map(smallPlate => }</strong></Card.Header>
                         <Card.Body>
 
-                            <Card.Text>{menuItem.ingredients}</Card.Text>
+                            <Card.Text>{}</Card.Text>
 
                         </Card.Body>
 
@@ -220,7 +307,7 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>{menuItem.price}</strong></Card.Text>
+                                    <Card.Text className="priceLeft"><strong>${}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
