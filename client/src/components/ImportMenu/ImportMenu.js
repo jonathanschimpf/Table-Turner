@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
 import "./ImportMenu.css";
 
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
@@ -6,7 +8,53 @@ import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 
 
 function ImportMenuComp() {
-
+    const [items, setItems] = useState([])
+    const [menuObj, setMenuObj] = useState({})
+  
+    // Load all menu items and store them with setMenuObj
+    useEffect(() => {
+      loadItems()
+    }, [])
+  
+    // Loads all menu items and sets the menu items
+    function loadItems() {
+      API.getMenus()
+        .then(res => 
+          setItems(res.data)
+        )
+        .catch(err => console.log(err));
+    };
+  
+    // Deletes a menu item from the database with a given id, then reloads menu items from the db
+    function deleteItem(id) {
+      API.deleteMenu(id)
+        .then(res => loadItems())
+        .catch(err => console.log(err));
+    }
+  
+    // Handles updating component state when the user types into the input field
+    function handleInputChange(event) {
+      const { name, value } = event.target;
+      setMenuObj({...menuObj, [name]: value})
+    };
+  
+    // When the form is submitted, use the API.saveBook method to save the book data
+    // Then reload books from the database
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.section ) {
+        API.saveMenu({
+          item: menuObj.item,
+          price: menuObj.price,
+          ingredients: menuObj.ingredients,
+          section: menuObj.section
+  
+        })
+          .then(res => loadItems())
+          .catch(err => console.log(err));
+      }
+    };
 
 
     return (
@@ -27,22 +75,29 @@ function ImportMenuComp() {
 
                         <Form.Group className="formControl">
                             <h6>Enter Dish Name (Required): </h6>
-                            <Form.Control className="formControl" placeholder="Dish Name" />
+                            <Form.Control className="formControl" placeholder="Dish Name"
+                            onChange={handleInputChange}
+                            name="item" />
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             <h6>Enter Dish Price (Required): </h6>
-                            <Form.Control className="formControl" placeholder="$ Cost" />
+                            <Form.Control className="formControl" placeholder="$ Cost" 
+                             onChange={handleInputChange}
+                             name="price"/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
                             <h6>List Dish Info + Ingredients (Required): </h6>
-                            <Form.Control as="textarea" rows={3} />
+                            <Form.Control as="textarea" rows={3} onChange={handleInputChange}
+                  name="ingredients"/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             <h6>Select Dish Category: </h6>
-                            <Form.Control as="select" className="formControl">
+                            <Form.Control as="select" className="formControl" onChange={handleInputChange}
+                            name="section"
+                            >
                                 <option>Small Plates</option>
                                 <option>Shared Plates</option>
                                 <option>Main Course</option>
@@ -50,7 +105,9 @@ function ImportMenuComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl" block>+Add Menu Item</Button>
+                        <Button className="my-2 my-sm-0 formControl" block 
+                  disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
+                  onClick={handleFormSubmit} >+Add Menu Item</Button>
                         <br />
 
                     </Form>
@@ -61,9 +118,25 @@ function ImportMenuComp() {
             <br />
             <br />
             <br />
+            {items.length ? (
+                <ul>
+                  {items.map(item => (
+                    <li key={item._id}>
+                      <Link to={"/menus/" + item._id}>
+                        <strong>
+                          {item.item} $ {item.price}
+                        </strong>
+                      </Link>
+                      <button  onClick={() => deleteItem(item._id)} >Delete</button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+              </>
 
-
-        </>
+       
     );
 };
 

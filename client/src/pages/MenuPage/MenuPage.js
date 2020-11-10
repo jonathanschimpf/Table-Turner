@@ -7,11 +7,11 @@ import "./MenuPage.css";
 
 
 
-function MyVerticallyCenteredModal(props) {
+
 
 
 // const [items, setItems] = useState([])
-const [orderObj, setOrderObj] = useState({})
+
 
 // Load all order items and store them with setOrderObj
 // useEffect(() => {
@@ -42,44 +42,47 @@ const [orderObj, setOrderObj] = useState({})
 //   setOrderObj({...orderObj, [name]: value})
 // };
 
-const [value, setValue] = React.useState(
-    localStorage.getItem('TableNumber')
-  );
-  
-  React.useEffect(() => {
-      localStorage.setItem('TableNumber', value)},[value]);
-      
-const [labelValue, setLabelValue] = React.useState(
-        localStorage.getItem('Label')
+
+//typeahead package for search form:
+// import { Typeahead } from 'react-bootstrap-typeahead'; // ES2015
+
+function MyVerticallyCenteredModal(props) {
+
+    const [orderObj, setOrderObj] = useState({})
+
+    const [value, setValue] = React.useState(
+        localStorage.getItem('TableNumber')
       );
       
       React.useEffect(() => {
-          localStorage.setItem('Label', labelValue)},[labelValue]);
+          localStorage.setItem('TableNumber', value)},[value]);
+          
+    const [labelValue, setLabelValue] = React.useState(
+            localStorage.getItem('Label')
+          );
+          
+          React.useEffect(() => {
+              localStorage.setItem('Label', labelValue)},[labelValue]);
+    
+    
+    // When the form is submitted, use the API.saveBook method to save the book data
+    // Then reload books from the database
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      console.log(value)
+      console.log(labelValue)
+      API.saveOrders({
+          table: value,
+          label: labelValue,
+          order: "chicken",
+          allergies: Array,
+          course: "1",
+          extra_notes: "diddlydoo"
+    
+        }).catch(err => console.log(err));
+      
+    };
 
-
-// When the form is submitted, use the API.saveBook method to save the book data
-// Then reload books from the database
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log(value)
-  console.log(labelValue)
-  API.saveOrders({
-      table: value,
-      label: labelValue,
-      order: "chicken",
-      allergies: Array,
-      course: "1",
-      extra_notes: "diddlydoo"
-
-    }).catch(err => console.log(err));
-  
-};
-
-
-//typeahead package for search form:
-import { Typeahead } from 'react-bootstrap-typeahead'; // ES2015
-
-function MyVerticallyCenteredModal(props) {
 
     const [menuItem, setMenuItem] = useState({});
     const { id, item, price } = useParams()
@@ -212,33 +215,33 @@ function MenuPageComp(props) {
 
     }, [])
 
-    const [searchState, setSearchState] = useState([])
+    // const [searchState, setSearchState] = useState([])
 
-    const options = [
-        'Burger',
-        'Chicken',
-        'Pasta',
-        'Steak',
-        'Salad',
-        'Bread',
-        'Tacos',
-        'Hummus',
-        'Soufle',
-        'Halibut',
-        'Salmon',
-        'Noodles',
-        'Yogurt',
-        'Wine',
-        'Ice Cream',
-        'Chocolate Cake'
-    ];
+    // const options = [
+    //     'Burger',
+    //     'Chicken',
+    //     'Pasta',
+    //     'Steak',
+    //     'Salad',
+    //     'Bread',
+    //     'Tacos',
+    //     'Hummus',
+    //     'Soufle',
+    //     'Halibut',
+    //     'Salmon',
+    //     'Noodles',
+    //     'Yogurt',
+    //     'Wine',
+    //     'Ice Cream',
+    //     'Chocolate Cake'
+    // ];
 
 
-    const handleInputChange = event => {
-        const { value } = event.target;
-        setSearchState(value)
-        console.log(value)
-    }
+    // const handleInputChange = event => {
+    //     const { value } = event.target;
+    //     setSearchState(value)
+    //     console.log(value)
+    // }
 
 
 
@@ -262,7 +265,7 @@ function MenuPageComp(props) {
 
 
 
-                    <Typeahead
+                    {/* <Typeahead
                         type="text"
                         className="mr-sm-2 regularInput responsiveInput textAlign"
                         name="search"
@@ -272,7 +275,7 @@ function MenuPageComp(props) {
                         onChange={setSearchState}
                         placeholder="Search Menu Item"
                         selected={searchState}
-                    />
+                    /> */}
 
 
 
@@ -1124,6 +1127,7 @@ function MenuPageComp(props) {
         </>
 
     );
+
 
 };
 
