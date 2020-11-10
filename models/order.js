@@ -5,7 +5,7 @@ const orderSchema = new Schema({
 
     table: Number,
     order: String,
-    allergies: [{
+    allergies:  {
         gluten: {
             type: Boolean,
             default: false
@@ -38,7 +38,7 @@ const orderSchema = new Schema({
             type: Boolean,
             default: false
         }
-    }],
+    },
     extra_notes: String,
     label: String,
     course: Number
