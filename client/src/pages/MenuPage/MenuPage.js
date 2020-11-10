@@ -324,8 +324,7 @@ function MenuPageComp(props) {
 
                                 <Col>
                                   <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                      setModalTitle("asdf")
-                                      setModalDesc("")
+                                      
                                       setModalShow(true)
                                       }} >
                                         +Add
