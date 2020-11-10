@@ -296,7 +296,7 @@ function MenuPageComp(props) {
                 <CardColumns>
 
                     <Card>
-                        <Card.Header><strong>{smallPlates.map(smallPlate => }</strong></Card.Header>
+                        {/* <Card.Header><strong>{smallPlates.map(smallPlate => }</strong></Card.Header> */}
                         <Card.Body>
 
                             <Card.Text>{}</Card.Text>
