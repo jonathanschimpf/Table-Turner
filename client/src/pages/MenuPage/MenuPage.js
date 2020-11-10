@@ -1,7 +1,7 @@
-import React, { useState, useEffect, setState } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
-import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col, Table } from "react-bootstrap";
+import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
 import "./MenuPage.css";
 
 
@@ -9,14 +9,9 @@ function MenuPageComp(props) {
     
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
-    
-    // const [order, setOrder] = useState([]);
-    // const [course, setCourse] = useState([]);
-    // const [allergies, setAllergies] = setState(true);
-    // const [notes, setNotes] = useState([]);
 
     const [items, setItems] = useState([])
-    const [menuObj, setMenuObj] = useState({})
+  
     
     const smallPlates = items.filter(item => {
         return item.section === "Small Plates"
@@ -327,7 +322,7 @@ function MenuPageComp(props) {
         React.useEffect(() => {
             localStorage.setItem('Label', labelValue)
         }, [labelValue]);
-        
+
         const [items, setItems] = useState([])
         const [modalObj, setModalObj] = useState({
             table: tableValue,
@@ -338,33 +333,6 @@ function MenuPageComp(props) {
             label: labelValue
         })
        
-        // label: labelValue,
-        const plates = items.map(item => {
-            return [item.item, item.price, item.ingredients, item._id];
-        })
-        const smallPlates = items.filter(item => {
-            return item.section === "Small Plates"
-        }).map(item => {
-            return [item.item, item.price, item.ingredients, item._id];
-        })
-    
-        const sharedPlates = items.filter(item => {
-            return item.section === "Shared Plates"
-        }).map(item => {
-            return [item.item, item.price, item.ingredients, item._id];
-        })
-        const mainCourse = items.filter(item => {
-            return item.section === "Main Course"
-        }).map(item => {
-            return [item.item, item.price, item.ingredients, item._id];
-        })
-     
-        const dessert = items.map(item => {
-            return [item.item, item.price, item.ingredients, item._id];
-        })
-        
-        
-    
         // Load all menu items and store them with setMenuObj
         useEffect(() => {
             loadItems()
@@ -377,11 +345,7 @@ function MenuPageComp(props) {
                     setItems(res.data)
                 )
                 .catch(err => console.log(err));
-        };
-    
-        const [orderObj, setOrderObj] = useState({});
-    
-        
+        }; 
         
         function handleInputChange(event) {
             const { name, value } = event.target;
@@ -418,18 +382,7 @@ function MenuPageComp(props) {
             console.log(labelValue)
             console.log(modalObj)
             console.log("this is MODAL")
-            API.saveOrders(modalObj
-            
-
-
-            // table: value,
-            // label: labelValue,
-            // order: "chicken",
-            // allergies: Array,
-            // course: "1",
-            // extra_notes: "diddlydoo"
-
-        ).then(res => console.log(res.data))
+            API.saveOrders(modalObj).then(res => console.log(res.data))
         .catch(err => console.log(err));
 
     };
