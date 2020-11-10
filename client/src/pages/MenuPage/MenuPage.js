@@ -7,84 +7,87 @@ import "./MenuPage.css";
 
 
 function MyVerticallyCenteredModal(props) {
-    
+
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
-  
-  
-        const smallPlates = items.filter(item => {
-         return item.section === "Small Plates"}).map(item => {
-           return [item.item, item.price, item.ingredients];
-         })
-         const sharedPlates = items.filter(item => {
-          return item.section === "Shared Plates"}).map(item => {
-            return [item.item, item.price, item.ingredients];
-          })
-          const mainCourse = items.filter(item => {
-            return item.section === "Main Course"}).map(item => {
-              return [item.item, item.price, item.ingredients];
-            })
-          const dessert = items.filter(item => {
-              return item.section === "Dessert"}).map(item => {
-              return [item.item, item.price, item.ingredients];
-              })
-          console.log(smallPlates)
-          console.log(sharedPlates)
-          console.log(mainCourse)
-          console.log(dessert)
-  
-  
-  
-  
+
+    const smallPlates = items.filter(item => {
+        return item.section === "Small Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+
+    const sharedPlates = items.filter(item => {
+        return item.section === "Shared Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+    const mainCourse = items.filter(item => {
+        return item.section === "Main Course"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+ 
+    const dessert = items.map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
     
-  
+    
+
+
+
+
+
+
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
-      loadItems()
+        loadItems()
     }, [])
-  
+
     // Loads all menu items and sets the menu items
     function loadItems() {
-      API.getMenus()
-        .then(res => 
-          setItems(res.data)
-        )
-        .catch(err => console.log(err));
+        API.getMenus()
+            .then(res =>
+                setItems(res.data)
+            )
+            .catch(err => console.log(err));
     };
-    
+
     const [orderObj, setOrderObj] = useState({})
 
     const [value, setValue] = React.useState(
         localStorage.getItem('TableNumber')
-      );
-      
-      React.useEffect(() => {
-          localStorage.setItem('TableNumber', value)},[value]);
-          
+    );
+
+    React.useEffect(() => {
+        localStorage.setItem('TableNumber', value)
+    }, [value]);
+
     const [labelValue, setLabelValue] = React.useState(
-            localStorage.getItem('Label')
-          );
-          
-          React.useEffect(() => {
-              localStorage.setItem('Label', labelValue)},[labelValue]);
-    
-    
+        localStorage.getItem('Label')
+    );
+
+    React.useEffect(() => {
+        localStorage.setItem('Label', labelValue)
+    }, [labelValue]);
+
+
     // When the form is submitted, use the API.saveBook method to save the book data
     // Then reload books from the database
     function handleFormSubmit(event) {
-      event.preventDefault();
-      console.log(value)
-      console.log(labelValue)
-      API.saveOrders({
-          table: value,
-          label: labelValue,
-          order: "chicken",
-          allergies: Array,
-          course: "1",
-          extra_notes: "diddlydoo"
-    
+        event.preventDefault();
+        console.log(value)
+        console.log(labelValue)
+        API.saveOrders({
+            table: value,
+            label: labelValue,
+            order: "chicken",
+            allergies: Array,
+            course: "1",
+            extra_notes: "diddlydoo"
+
         }).catch(err => console.log(err));
-      
+
     };
 
 
@@ -114,10 +117,10 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-             <h3>{"Button clicked === id"}</h3>
+            <h3>{}</h3>
                 <br></br>
                 <p>
-                 {"Button clicked === id"}</p>
+                    {"Button clicked === id"}</p>
 
                 <hr></hr>
 
@@ -210,46 +213,52 @@ function MenuPageComp(props) {
 
     const [items, setItems] = useState([])
     const [menuObj, setMenuObj] = useState({})
-  
-  
-        const smallPlates = items.filter(item => {
-         return item.section === "Small Plates"}).map(item => {
-           return [item.item, item.price, item.ingredients];
-         })
-         const sharedPlates = items.filter(item => {
-          return item.section === "Shared Plates"}).map(item => {
-            return [item.item, item.price, item.ingredients];
-          })
-          const mainCourse = items.filter(item => {
-            return item.section === "Main Course"}).map(item => {
-              return [item.item, item.price, item.ingredients];
-            })
-          const dessert = items.filter(item => {
-              return item.section === "Dessert"}).map(item => {
-              return [item.item, item.price, item.ingredients];
-              })
-          console.log(smallPlates)
-          console.log(sharedPlates)
-          console.log(mainCourse)
-          console.log(dessert)
-  
-  
-  
-  
     
-  
+    const smallPlates = items.filter(item => {
+        return item.section === "Small Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+
+    const sharedPlates = items.filter(item => {
+        return item.section === "Shared Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+    const mainCourse = items.filter(item => {
+        return item.section === "Main Course"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+ 
+    const dessert = items.filter(item => {
+        return item.section === "Dessert"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+    
+
+
+
+
+    const handleInputChange = event => {
+        const { value } = event.target;
+        setSearchState(value)
+        console.log(value)
+    }
+
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
-      loadItems()
+        loadItems()
     }, [])
-  
+
     // Loads all menu items and sets the menu items
     function loadItems() {
-      API.getMenus()
-        .then(res => 
-          setItems(res.data)
-        )
-        .catch(err => console.log(err));
+        API.getMenus()
+            .then(res =>
+                setItems(res.data)
+            )
+            .catch(err => console.log(err));
     };
 
     const [menuItem, setMenuItem] = useState({});
@@ -262,7 +271,7 @@ function MenuPageComp(props) {
 
     }, [])
 
-    
+
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -278,7 +287,12 @@ function MenuPageComp(props) {
                     <h1 className="responsiveText"><strong>Menu</strong></h1>
                     <br></br>
 
-                    
+
+
+                    <Form inline>
+                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2" regularInput responsiveInput textAlname="search" onChange={handleInputChange} />
+                    </Form>
+
                     <br></br>
                     <br></br>
 
@@ -294,12 +308,12 @@ function MenuPageComp(props) {
 
 
                 <CardColumns>
-
+                  {smallPlates.map(item =>
                     <Card>
-                        <Card.Header><strong>{smallPlates.map(smallPlate => }</strong></Card.Header>
+                        <Card.Header><strong>{item[0]}</strong></Card.Header>
                         <Card.Body>
 
-                            <Card.Text>{}</Card.Text>
+                  <Card.Text>{item[2]}</Card.Text>
 
                         </Card.Body>
 
@@ -307,11 +321,11 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>${}</strong></Card.Text>
+                                    <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                  <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -325,166 +339,7 @@ function MenuPageComp(props) {
                         </Card.Footer>
 
                     </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Small Plate Item 2</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Small Plate Item 3</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    {/* <Card>
-                        <Card.Header><strong>Small Plate Item 4</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Small Plate Item 5</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Small Plate Item 6</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
+                 )}
 
                 </CardColumns>
             </Container>
@@ -504,12 +359,12 @@ function MenuPageComp(props) {
             <Container>
                 <CardColumns>
 
-
+                {sharedPlates.map(item =>   
                     <Card>
-                        <Card.Header><strong>Shared Plate Item 1</strong></Card.Header>
+                        <Card.Header><strong>{item[0]}</strong></Card.Header>
                         <Card.Body>
 
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
+                            <Card.Text>{item[2]}</Card.Text>
 
                         </Card.Body>
 
@@ -517,11 +372,11 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
+                <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -536,166 +391,8 @@ function MenuPageComp(props) {
 
                     </Card>
 
-
-                    <Card>
-                        <Card.Header><strong>Shared Plate Item 2</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Shared Plate Item 3</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Shared Plate Item 4</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Shared Plate Item 5</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Shared Plate Item 6</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
+                )}
+                    
                 </CardColumns>
             </Container>
 
@@ -711,12 +408,12 @@ function MenuPageComp(props) {
 
             <Container>
                 <CardColumns>
-
+                {mainCourse.map(item =>  
                     <Card>
-                        <Card.Header><strong>Main Course Item 1</strong></Card.Header>
+                        <Card.Header><strong>{item[0]}</strong></Card.Header>
                         <Card.Body>
 
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
+                            <Card.Text>{item[2]}</Card.Text>
 
                         </Card.Body>
 
@@ -724,11 +421,11 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
+                                    <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -742,260 +439,7 @@ function MenuPageComp(props) {
                         </Card.Footer>
 
                     </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 2</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 3</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 4</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 5</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 6</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 7</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 8</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-                    <Card>
-                        <Card.Header><strong>Main Course Item 9</strong></Card.Header>
-                        <Card.Body>
-
-                            <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                    </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
+                )}
 
                 </CardColumns>
             </Container>
@@ -1012,14 +456,14 @@ function MenuPageComp(props) {
 
             <Container>
                 <CardColumns>
-
+                {dessert.map(item =>  
                     <Card>
 
-                        <Card.Header><strong>Dessert Item 1</strong></Card.Header>
+                <Card.Header><strong>{item[0]}</strong></Card.Header>
 
                         <Card.Body>
 
-                            <Card.Text>Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient</Card.Text>
+                <Card.Text>{item[2]}</Card.Text>
 
                         </Card.Body>
 
@@ -1027,11 +471,11 @@ function MenuPageComp(props) {
 
                             <Row>
                                 <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
+                <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
                                 </Col>
 
                                 <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                    <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                      </Button>
 
@@ -1046,74 +490,7 @@ function MenuPageComp(props) {
 
                     </Card>
 
-
-                    <Card>
-
-                        <Card.Header><strong>Dessert Item 2</strong></Card.Header>
-
-                        <Card.Body>
-
-                            <Card.Text>Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card>
-
-
-                    <Card>
-
-                        <Card.Header><strong>Dessert Item 3</strong></Card.Header>
-
-                        <Card.Body>
-
-                            <Card.Text>Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient, Sugary Ingredient</Card.Text>
-
-                        </Card.Body>
-
-                        <Card.Footer>
-
-                            <Row>
-                                <Col>
-                                    <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                </Col>
-
-                                <Col>
-                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                        +Add
-                                </Button>
-
-                                    <MyVerticallyCenteredModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)} />
-
-                                </Col>
-                            </Row>
-
-                        </Card.Footer>
-
-                    </Card> */}
-
+                )}
 
                 </CardColumns>
             </Container>

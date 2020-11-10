@@ -29,10 +29,10 @@ function ImportMenuComp() {
               return item.section === "Dessert"}).map(item => {
               return [item.item, item.price, item.ingredients];
               })
-          console.log(smallPlates)
-          console.log(sharedPlates)
-          console.log(mainCourse)
-          console.log(dessert)
+          // console.log(smallPlates)
+          // console.log(sharedPlates)
+          // console.log(mainCourse)
+          // console.log(dessert)
   
   
   
