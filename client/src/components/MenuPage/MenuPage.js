@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
 import "./MenuPage.css";
-
+//typeahead package for search form:
+import { Typeahead } from 'react-bootstrap-typeahead'; // ES2015
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -113,6 +114,35 @@ function MyVerticallyCenteredModal(props) {
 
 function MenuPageComp() {
 
+    const [searchState, setSearchState] = useState([])
+
+    const options = [
+        'Burger',
+        'Chicken',
+        'Pasta',
+        'Steak',
+        'Salad',
+        'Bread',
+        'Tacos',
+        'Hummus',
+        'Soufle',
+        'Halibut',
+        'Salmon',
+        'Noodles',
+        'Yogurt',
+        'Wine',
+        'Ice Cream',
+        'Chocolate Cake'
+    ];
+
+
+    const handleInputChange = event => {
+        const { value } = event.target;
+        setSearchState(value)
+        console.log(value)
+    }
+
+
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -127,12 +157,26 @@ function MenuPageComp() {
                     <br></br>
                     <h1 className="responsiveText"><strong>Menu</strong></h1>
                     <br></br>
-
+{/* 
                     <Form inline>
+                        <FormControl type="text" placeholder="Search Menu Item" className="mr-sm-2 regularInput responsiveInput textAlign" name="search" onChange={handleInputChange} />
+                    </Form> */}
 
-                        <FormControl type="text" placeholder="Search Menu Item" className="mr-sm-2 regularInput responsiveInput textAlign" />
 
-                    </Form>
+
+                    <Typeahead
+                        type="text"
+                        className="mr-sm-2 regularInput responsiveInput textAlign"
+                        name="search"
+                        id="basic-typeahead-single"
+                        labelKey="search"
+                        options={options}
+                        onChange={setSearchState}
+                        placeholder="Search Menu Item"
+                        selected={searchState}
+                    />
+
+
 
                     <br></br>
                     <br></br>
@@ -163,10 +207,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -195,10 +239,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -227,10 +271,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -259,10 +303,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -275,7 +319,7 @@ function MenuPageComp() {
 
                         </Card.Footer>
 
-                     </Card>
+                    </Card>
 
 
                     <Card>
@@ -284,17 +328,17 @@ function MenuPageComp() {
 
                             <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
 
-                         </Card.Body>
+                        </Card.Body>
 
                         <Card.Footer>
 
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -323,10 +367,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$8.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -373,10 +417,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -398,17 +442,17 @@ function MenuPageComp() {
 
                             <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
 
-                         </Card.Body>
+                        </Card.Body>
 
                         <Card.Footer>
 
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -437,10 +481,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -466,22 +510,22 @@ function MenuPageComp() {
 
                         <Card.Footer>
 
-                        <Row>
-                            <Col>
-                                <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
+                            <Row>
+                                <Col>
+                                    <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
                                 </Col>
 
                                 <Col>
                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
-                                    +Add
+                                        +Add
                                 </Button>
 
-                                <MyVerticallyCenteredModal
-                                    show={modalShow}
-                                    onHide={() => setModalShow(false)} />
+                                    <MyVerticallyCenteredModal
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)} />
 
-                            </Col>
-                        </Row>
+                                </Col>
+                            </Row>
 
                         </Card.Footer>
 
@@ -501,10 +545,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                    </Col>
+                                </Col>
 
-                                    <Col>
-                                        <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -515,7 +559,7 @@ function MenuPageComp() {
                                 </Col>
                             </Row>
 
-                         </Card.Footer>
+                        </Card.Footer>
 
                     </Card>
 
@@ -526,17 +570,17 @@ function MenuPageComp() {
 
                             <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
 
-                         </Card.Body>
+                        </Card.Body>
 
                         <Card.Footer>
 
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$12.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -580,10 +624,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -612,10 +656,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -644,10 +688,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -676,10 +720,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -708,10 +752,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -732,17 +776,17 @@ function MenuPageComp() {
 
                             <Card.Text>Ingredient, Ingredient, Ingredient, Ingredient, Ingredient, Ingredient</Card.Text>
 
-                         </Card.Body>
+                        </Card.Body>
 
                         <Card.Footer>
 
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -756,8 +800,8 @@ function MenuPageComp() {
                         </Card.Footer>
 
                     </Card>
-                    
-                    
+
+
                     <Card>
                         <Card.Header><strong>Main Course Item 7</strong></Card.Header>
                         <Card.Body>
@@ -771,10 +815,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -788,7 +832,7 @@ function MenuPageComp() {
                         </Card.Footer>
 
                     </Card>
-                    
+
 
                     <Card>
                         <Card.Header><strong>Main Course Item 8</strong></Card.Header>
@@ -803,10 +847,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
@@ -834,10 +878,10 @@ function MenuPageComp() {
                             <Row>
                                 <Col>
                                     <Card.Text className="priceLeft"><strong>$20.00</strong></Card.Text>
-                                 </Col>
+                                </Col>
 
-                                 <Col>
-                                     <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
+                                <Col>
+                                    <Button className="modalButtons" size="sm" variant="dark" onClick={() => setModalShow(true)}>
                                         +Add
                                     </Button>
 
