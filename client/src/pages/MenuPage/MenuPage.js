@@ -8,10 +8,27 @@ import "./MenuPage.css";
 
 function MyVerticallyCenteredModal(props) {
 
-    const [items, setItems] = useState([]);
-    const [menuObj, setMenuObj] = useState({});
+    const [items, setItems] = useState([])
+    const [menuObj, setMenuObj] = useState({})
+
+    const smallPlates = items.filter(item => {
+        return item.section === "Small Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+
+    const sharedPlates = items.filter(item => {
+        return item.section === "Shared Plates"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
+    const mainCourse = items.filter(item => {
+        return item.section === "Main Course"
+    }).map(item => {
+        return [item.item, item.price, item.ingredients, item._id];
+    })
  
-    const allItems = items.map(item => {
+    const dessert = items.map(item => {
         return [item.item, item.price, item.ingredients, item._id];
     })
     
