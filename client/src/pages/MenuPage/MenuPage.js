@@ -76,7 +76,7 @@ function MenuPageComp(props) {
         
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
                 <Jumbotron className="jumbotronStyle">
 
                     <br></br>
@@ -86,7 +86,7 @@ function MenuPageComp(props) {
 
 
                     <Form inline>
-                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2" regularInput responsiveInput textAlname="search" onChange={handleInputChange} />
+                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText" regularInput responsiveInput textAlname="search" onChange={handleInputChange} />
                     </Form>
 
                     <br></br>
@@ -96,7 +96,7 @@ function MenuPageComp(props) {
             </Container>
 
 
-            <Container >
+            <Container className="maxContainerWidth">
 
                 <br />
                 <h3>Small Plates</h3>
@@ -147,16 +147,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Shared Plates</h3>
                 <br />
 
-
-            </Container>
-
-
-            <Container>
                 <CardColumns>
 
                 {sharedPlates.map(item =>   
@@ -203,14 +198,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Main Courses</h3>
                 <br />
 
-            </Container>
-
-            <Container>
                 <CardColumns>
                 {mainCourse.map(item =>  
                     <Card>
@@ -255,14 +247,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Dessert</h3>
                 <br />
 
-            </Container>
-
-            <Container>
                 <CardColumns>
                 {dessert.map(item =>  
                     <Card>

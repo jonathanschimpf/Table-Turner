@@ -30,18 +30,13 @@ function App() {
         <Route path ="/viewTables" component={ViewAllTablesComp}></Route>
         <Route path ="/takeOrder" component={AddNewOrderComp}></Route>
         <Route path ="/importMenu" component={ImportMenuComp}></Route>
-
-        
-        
-        {/* <MenuPageComp  /> */}
         </Switch>
         </Router> 
-      
-
+        
+        
+      {/* <MenuPageComp  /> */}
       {/* <Passport /> */}
-      
       {/* <WelcomePageComp /> */}
-      
       {/* <LoginComp /> */}
       {/* <ImportMenuComp/> */}
       {/* <SignupComp /> */}
@@ -49,8 +44,7 @@ function App() {
       {/* <AddNewOrderComp /> */}
       {/* <MenuPageComp /> */}
       {/* <ViewAllTablesComp /> */}
-
-      
+ 
 
     </>
 
