@@ -85,7 +85,7 @@ function MenuPageComp(props) {
 
 
                     <Form inline>
-                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText" regularInput responsiveInput textAlname="search" onChange={handleInputChange} />
+                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
 
                     <br></br>
@@ -408,7 +408,7 @@ function MenuPageComp(props) {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        +Add Item
+                        +Order Details
               </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

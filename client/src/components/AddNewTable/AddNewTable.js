@@ -30,6 +30,9 @@ function AddNewTableComp() {
                 <br />
                 <br />
                 <br />
+                <br />
+                <br />
+                <br />
 
 
                 <Jumbotron className="jumbotronAddTable">

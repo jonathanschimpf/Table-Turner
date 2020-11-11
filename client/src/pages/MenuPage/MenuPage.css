@@ -21,6 +21,7 @@
 
         background-color: rgb(216, 216, 216) !important;
         justify-content: center !important;
+        border-radius: 15px;
         align-items: center !important;
         text-align: center !important;
         padding: 10px !important;
@@ -42,21 +43,19 @@
 
     }
     
-    /* button, input, optgroup, select, textarea {
-        margin-bottom: 15px !important;
-    } */
     
     .card {
 
       margin-bottom: 30px !important;  
-
+      border-color: black !important;
+      
     }
     .card-body {
 
         text-align: center !important;
         min-height: 125px !important;
         max-height: 125px !important;
-        overflow-y: scroll !important;
+        overflow-y: auto !important;
 
     }
 
@@ -64,6 +63,13 @@
 
         text-align: right !important;
         background-color: white !important;
+        border-color: black !important;
+    }
+
+    .card-header {
+
+      background: black !important;
+      color: white !important;
     }
 
     .priceLeft {

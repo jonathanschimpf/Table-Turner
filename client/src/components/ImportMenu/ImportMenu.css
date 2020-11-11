@@ -16,9 +16,9 @@
 
       /* login margin adjustment */
 
-      form.menuImport {
+      /* form.menuImport {
         margin-top: 50px;
-      }
+      } */
     
           /* jumbotron customization with box shadow addition for all browsers */
     
@@ -26,7 +26,8 @@
     
         justify-content: center !important;
         background-color: #dfdfdf !important;
-        /* margin: 10px 10px 10px 10px auto !important; */
+        padding: 34px 14px !important;
+        border-radius: 40px;
         -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         box-shadow:  0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
@@ -83,7 +84,7 @@
         
       }
     
-    
+
       /* resizes h1 font at 400px */
     
       @media screen and (max-width: 400px) {

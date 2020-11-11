@@ -90,31 +90,31 @@ function ImportMenuComp() {
                     <hr style={{ height: '4px', maxWidth: 375 }} />
                     {/* <h3 className="text-center">Plaeholder Description</h3> */}
                     <h6 className="text-center text-muted">Fill out the fields below to create a new menu item.</h6>
-
+                    <br/>
                     <Form className="menuImport">
 
                         <Form.Group className="formControl">
                             <h6>Enter Dish Name (Required): </h6>
-                            <Form.Control className="formControl" placeholder="Dish Name"
+                            <Form.Control className="formControl" placeholder="Dish Name.."
                             onChange={handleInputChange}
                             name="item" />
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             <h6>Enter Dish Price (Required): </h6>
-                            <Form.Control className="formControl" placeholder="$ Cost" 
+                            <Form.Control className="formControl" placeholder="Dish Price.." 
                              onChange={handleInputChange}
                              name="price"/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
                             <h6>List Dish Info + Ingredients (Required): </h6>
-                            <Form.Control as="textarea" rows={3} onChange={handleInputChange}
+                            <Form.Control as="textarea" className="dishInfoHeight" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
                   name="ingredients"/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
-                            <h6>Select Dish Category: </h6>
+                            <h6>Select Dish Category (Required): </h6>
                             <Form.Control as="select" className="formControl" onChange={handleInputChange}
                             name="section"
                             >
@@ -130,8 +130,7 @@ function ImportMenuComp() {
                         <Button className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit} >+Add Menu Item</Button>
-                        <br />
-
+                        
                     </Form>
 
                 </Jumbotron>
@@ -139,7 +138,7 @@ function ImportMenuComp() {
             </Container>
             <br />
             <br />
-            <br />
+            
           
 
               </>
