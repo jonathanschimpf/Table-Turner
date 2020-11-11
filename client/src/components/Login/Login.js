@@ -4,8 +4,9 @@ import axios from "axios";
 
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./Login.css";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-function LoginComp() {
+function LoginComp(props) {
 
     // const [registerUsername, setRegisterUsername] = useState("");
     //   const [registerPassword, setRegisterPassword] = useState("");
@@ -36,7 +37,12 @@ function LoginComp() {
             },
             withCredentials: true,
             url: "http://localhost:3001/login",
-        }).then((res) => console.log(res))
+        }).then((res) => {
+            console.log("LOOK HERE")
+            console.log(res)
+            window.location.replace("/welcome")
+        
+        })
     };
 
 
