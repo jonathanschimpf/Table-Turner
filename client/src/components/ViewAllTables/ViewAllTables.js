@@ -22,21 +22,29 @@ function ViewAllTablesComp() {
     // --- below will be used later --- //
     // item.label, item.item, item.extra_notes, item.allergies, item.course
 
+      // for(var i = 0; i < items.length; i++){
+    
+    // var tables = items.filter(item => {
+    //     return item.table === i
+    // }).map(item => {
+    //     return [item.table];
+    // });
+    // console.log(tables)
+    
+    
+    // } 
 
-    const [items, setItems] = useState([""]);
+    const [items, setItems] = useState([]);
     
+    var allTables = items.reduce((tables, item) => {
+        if(tables.includes(item.table)){
+            allTables.push(item.table)
+        }
+        return allTables
+    }, [])
+    console.log(allTables)
 
-    for(var i = 0; i < items.length; i++){
-    
-    var tables = items.filter(item => {
-        return item.table === i
-    }).map(item => {
-        return [item.table];
-    });
-    console.log(tables[0])
-    
-    
-    } 
+  
 
     // Not being used yet // 
     const [modalTable, setModalTable] = useState([]);
@@ -61,10 +69,10 @@ function ViewAllTablesComp() {
                 <br />
                 <br />
                 
-                {tables.map(item =>   
+                {/* {allTables.map(item =>    */}
                 
                 <Jumbotron className="jumbotronTableView">
-                    <h2 className="text-center responsiveH2Font">Table {item[0]}</h2>
+                    <h2 className="text-center responsiveH2Font">Table</h2>
                     <hr style={{ height: '4px' }} />
 
                     <Form>
@@ -103,7 +111,7 @@ function ViewAllTablesComp() {
                     </Form>
 
                 </Jumbotron>
-            )}
+            {/* )} */}
             </Container>
 
             <br />
