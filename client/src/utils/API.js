@@ -5,7 +5,7 @@ export default {
   getMenus: function() {
     return axios.get("/api/menus");
   },
-  // // Gets the item with the given id
+  // Gets the item with the given id
   // getMenu: function(id) {
   //   return axios.get("/api/menus/" + id );
   // },
