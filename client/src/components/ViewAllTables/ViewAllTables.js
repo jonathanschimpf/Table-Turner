@@ -174,7 +174,7 @@ function ViewAllTablesComp() {
                         return table.map(order  => { if (order.table === modalTable) 
                         return  <tr>
                                 <td>{order.order}</td>
-                                <td>{}</td>
+                                <td>{order.allergies}</td>
                                 <td>{order.notes}</td>
                                 <td>{order.label}</td>
                         <td className="centeredCourseNumber">{order.course}</td>
