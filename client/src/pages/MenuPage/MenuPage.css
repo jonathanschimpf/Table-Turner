@@ -25,6 +25,9 @@
         align-items: center !important;
         text-align: center !important;
         padding: 10px !important;
+        -webkit-box-shadow: 0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        -moz-box-shadow: 0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        box-shadow:  0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         
     
     }
@@ -56,7 +59,7 @@
         min-height: 125px !important;
         max-height: 125px !important;
         overflow-y: auto !important;
-
+        
     }
 
     .card-footer {
