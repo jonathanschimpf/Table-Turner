@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const menusController = require("../../controllers/menuController");
 
+
 router.route("/")
   .get(menusController.findAll)
   .post(menusController.create);

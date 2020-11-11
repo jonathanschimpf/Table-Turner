@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import API from "./utils/API"
 
 // import Menus from "./pages/newMenu"
 // import Passport from "./components/Passport/Passport";
@@ -17,6 +18,16 @@ import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
 
 
 function App() {
+
+  const [user, setUser] = useState({})
+
+  useEffect(()=>{
+    API.getUser()
+    .then(res =>{console.log(res.data); setUser(res.data)})
+    .catch(err => {console.log(err)})
+  },[])
+
+  
   return (
 
     <>

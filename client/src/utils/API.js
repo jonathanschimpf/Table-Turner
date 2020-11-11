@@ -32,6 +32,9 @@ export default {
   // Saves a item to the database
   saveOrders: function(ordersData) {
     return axios.post("/api/orders", ordersData);
+  },
+  getUser: function(){
+    return axios.get("/user")
   }
 };
 
