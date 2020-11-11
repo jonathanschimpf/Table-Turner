@@ -88,27 +88,26 @@ function ImportMenuComp() {
                 <Jumbotron className="importMenuJumbotron" >
                     <h2 className=" text-center responsiveH2Font">Import Menu Item</h2>
                     <hr style={{ height: '4px', maxWidth: 375 }} />
-                    {/* <h3 className="text-center">Plaeholder Description</h3> */}
                     <h6 className="text-center text-muted">Fill out the fields below to create a new menu item.</h6>
                     <br/>
                     <Form className="menuImport">
 
                         <Form.Group className="formControl">
-                            <h6>Enter Dish Name (Required): </h6>
+                            <h6>Enter Dish Name + Price + Ingredients (Required): </h6>
                             <Form.Control className="formControl" placeholder="Dish Name.."
                             onChange={handleInputChange}
                             name="item" />
                         </Form.Group>
 
                         <Form.Group className="formControl">
-                            <h6>Enter Dish Price (Required): </h6>
+                            {/* <h6>Enter Dish Price (Required): </h6> */}
                             <Form.Control className="formControl" placeholder="Dish Price.." 
                              onChange={handleInputChange}
                              name="price"/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
-                            <h6>List Dish Info + Ingredients (Required): </h6>
+                            {/* <h6>List Dish Info + Ingredients (Required): </h6> */}
                             <Form.Control as="textarea" className="dishInfoHeight" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
                   name="ingredients"/>
                         </Form.Group>
