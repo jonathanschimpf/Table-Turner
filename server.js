@@ -100,6 +100,11 @@ app.get ("/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
+app.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
 
 
