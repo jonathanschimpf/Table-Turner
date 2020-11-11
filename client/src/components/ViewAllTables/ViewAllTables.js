@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table } from "react-bootstrap";
+import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck } from "react-bootstrap";
 import "./ViewAllTables.css";
 import API from "../../utils/API";
 
@@ -23,20 +23,20 @@ function ViewAllTablesComp() {
     // item.label, item.item, item.extra_notes, item.allergies, item.course
 
 
-    const [items, setItems] = useState([""]);
+    // const [items, setItems] = useState([""]);
     
 
-    for(var i = 0; i < items.length; i++){
+    // for(var i = 0; i < items.length; i++){
     
-    var tables = items.filter(item => {
-        return item.table === i
-    }).map(item => {
-        return [item.table];
-    });
-    console.log(tables[0])
+    // var tables = items.filter(item => {
+    //     return item.table === i
+    // }).map(item => {
+    //     return [item.table];
+    // });
+    // console.log(tables[0])
     
     
-    } 
+    // } 
 
     // Not being used yet // 
     const [modalTable, setModalTable] = useState([]);
@@ -56,15 +56,17 @@ function ViewAllTablesComp() {
 
 
         <>
-            <Container className="vertical-center">
+            <Container>
 
                 <br />
                 <br />
+
+                <div className="flexWrap">
+                    
+                {/* {tables.map(item =>    */}
                 
-                {tables.map(item =>   
-                
-                <Jumbotron className="jumbotronTableView">
-                    <h2 className="text-center responsiveH2Font">Table {item[0]}</h2>
+                    <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 1</h2>
                     <hr style={{ height: '4px' }} />
 
                     <Form>
@@ -81,12 +83,12 @@ function ViewAllTablesComp() {
                             <Col xs={3}>
                                 <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
                                 size="sm" block onClick={() => {
-                                    setModalTable(item[0])
-                                    setModalLabel(item[1])
-                                    setModalItem(item[2])
-                                    setModalNotes(item[3])
-                                    setModalAllergies(item[4])
-                                    setModalCourse(item[5])
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
                                     
                                 
                                     setSmallerModalShow(true)
@@ -103,7 +105,215 @@ function ViewAllTablesComp() {
                     </Form>
 
                 </Jumbotron>
-            )}
+
+                <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 2</h2>
+                    <hr style={{ height: '4px' }} />
+
+                    <Form>
+
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => setModalShow(true)} block>View Details</Button>
+
+                                <MyVerticallyCenteredModal
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)} />
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block onClick={() => {
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
+                                    
+                                
+                                    setSmallerModalShow(true)
+                                }} >
+                                
+                                <strong>x</strong></Button>
+
+                                <MySmallerVerticallyCenteredModal
+                                    show={smallermodalShow}
+                                    onHide={() => setSmallerModalShow(false)} />
+                            </Col>
+                        </Row>
+
+                    </Form>
+
+                </Jumbotron>
+
+                <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 3</h2>
+                    <hr style={{ height: '4px' }} />
+
+                    <Form>
+
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => setModalShow(true)} block>View Details</Button>
+
+                                <MyVerticallyCenteredModal
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)} />
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block onClick={() => {
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
+                                    
+                                
+                                    setSmallerModalShow(true)
+                                }} >
+                                
+                                <strong>x</strong></Button>
+
+                                <MySmallerVerticallyCenteredModal
+                                    show={smallermodalShow}
+                                    onHide={() => setSmallerModalShow(false)} />
+                            </Col>
+                        </Row>
+
+                    </Form>
+
+                </Jumbotron>
+
+                <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 4</h2>
+                    <hr style={{ height: '4px' }} />
+
+                    <Form>
+
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => setModalShow(true)} block>View Details</Button>
+
+                                <MyVerticallyCenteredModal
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)} />
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block onClick={() => {
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
+                                    
+                                
+                                    setSmallerModalShow(true)
+                                }} >
+                                
+                                <strong>x</strong></Button>
+
+                                <MySmallerVerticallyCenteredModal
+                                    show={smallermodalShow}
+                                    onHide={() => setSmallerModalShow(false)} />
+                            </Col>
+                        </Row>
+
+                    </Form>
+
+                </Jumbotron>
+
+                <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 5</h2>
+                    <hr style={{ height: '4px' }} />
+
+                    <Form>
+
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => setModalShow(true)} block>View Details</Button>
+
+                                <MyVerticallyCenteredModal
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)} />
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block onClick={() => {
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
+                                    
+                                
+                                    setSmallerModalShow(true)
+                                }} >
+                                
+                                <strong>x</strong></Button>
+
+                                <MySmallerVerticallyCenteredModal
+                                    show={smallermodalShow}
+                                    onHide={() => setSmallerModalShow(false)} />
+                            </Col>
+                        </Row>
+
+                    </Form>
+
+                </Jumbotron>
+
+                <Jumbotron className="jumbotronTableView">
+                    <h2 className="text-center responsiveH2Font">Table 6</h2>
+                    <hr style={{ height: '4px' }} />
+
+                    <Form>
+
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => setModalShow(true)} block>View Details</Button>
+
+                                <MyVerticallyCenteredModal
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)} />
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block onClick={() => {
+                                    // setModalTable(item[0])
+                                    // setModalLabel(item[1])
+                                    // setModalItem(item[2])
+                                    // setModalNotes(item[3])
+                                    // setModalAllergies(item[4])
+                                    // setModalCourse(item[5])
+                                    
+                                
+                                    setSmallerModalShow(true)
+                                }} >
+                                
+                                <strong>x</strong></Button>
+
+                                <MySmallerVerticallyCenteredModal
+                                    show={smallermodalShow}
+                                    onHide={() => setSmallerModalShow(false)} />
+                            </Col>
+                        </Row>
+
+                    </Form>
+
+                </Jumbotron>
+
+                </div>                          
+                
+            {/* )} */}
             </Container>
 
             <br />

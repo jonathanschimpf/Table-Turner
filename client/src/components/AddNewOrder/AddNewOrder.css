@@ -27,12 +27,13 @@
     
           /* jumbotron customization with box shadow addition for all browsers */
     
-    .jumbotronAddTable {
+    .jumbotronAddOrder{
     
         justify-content: center !important;
         max-width: 350px !important;
         max-height: 350px !important;
         background-color: #dfdfdf !important;
+        border-radius: 30px;
         margin-left:auto;
         margin-right:auto;
         padding: 2rem 1rem; 

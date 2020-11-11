@@ -32,6 +32,7 @@
         justify-content: center !important;
         max-width: 350px !important;
         max-height: 350px !important;
+        border-radius: 30px;
         background-color: #dfdfdf !important;
         margin-left:auto;
         margin-right:auto;
@@ -70,7 +71,7 @@
       }
 
       .welcomeButtons {
-          
+
         background-color: black !important;
     } 
     
