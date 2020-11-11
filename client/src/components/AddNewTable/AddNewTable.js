@@ -47,7 +47,7 @@ function AddNewTableComp() {
 
                             <h6 className="centerText">Define your table + Number of Seats</h6>
 
-                            <Form.Control className="formControl" placeholder="# What table number is this?" value={value} type="text" onChange={onChange}/>
+                            <Form.Control className="formControl centerTextAddTable" placeholder="# What table number is this?" value={value} type="text" onChange={onChange}/>
                         </Form.Group>
 
                         {/* <Form.Group>

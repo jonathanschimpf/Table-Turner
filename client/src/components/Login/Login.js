@@ -65,19 +65,17 @@ function LoginComp(props) {
 
             <br />
             <br />
-            <br />
-            <br />
             <Container className="vertical-center">
 
                 <Jumbotron className="jumbotronLoginSignUp" >
-                    <h1 className="display-4 text-center responsiveH1Font">Placeholder Title</h1>
+                    <h2 className="text-center responsiveH1Font">Get Back To Work</h2>
                     <hr style={{ height: '4px' }} />
-                    <h4 className="text-center">Plaeholder Description</h4>
-                    <h6 className="text-center text-muted">Placeholder Text </h6>
+                    <h4 className="text-center"></h4>
+                    <h6 className="text-center text-muted">Welcome back. Sign in to get back to turning tables.</h6>
                     <Form className="login">
-
+                        
                         <Form.Group className="formControl">
-                            <h6>Return User? Log Into Your Account:</h6>
+                            <h6>Return User? Sign Into Your Account:</h6>
                             <Form.Control className="formControl" placeholder="Username" onChange={e => setloginUsername(e.target.value)} />
                         </Form.Group>
 
@@ -85,14 +83,14 @@ function LoginComp(props) {
                             <Form.Control className="formControl" placeholder="Password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl logInButton" onClick={login} block>Log In</Button>
+                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block>Sign In</Button>
 
                         <br />
 
-                        <p className="formControl">New user? Create an <a href="/" className="effect-shine">account.</a></p>
+                        <p className="formControl">New user? Create an <a href="/" className="aLoginSignUpLink effect-shine">account.</a></p>
 
                     </Form>
-
+                    <br/>
                 </Jumbotron>
 
             </Container>

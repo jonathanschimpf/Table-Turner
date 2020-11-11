@@ -36,6 +36,9 @@ function NavbarComp() {
                         <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
                         </Nav.Link>
 
+                        <Nav.Link className={location.pathname === "/" ? "nav-link active": "nav-link"} href="/">Log Out
+                        </Nav.Link>
+
 
                     </Nav>
 

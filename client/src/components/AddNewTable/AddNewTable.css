@@ -45,6 +45,11 @@
       
       }
       
+      .centerTextAddTable {
+
+        text-align: center !important;
+  
+      } 
       
       /* added class for centering within a container  */
       
