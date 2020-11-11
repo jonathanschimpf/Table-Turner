@@ -5,10 +5,10 @@ export default {
   getMenus: function() {
     return axios.get("/api/menus");
   },
-  // Gets the item with the given id
-  getMenu: function(id) {
-    return axios.get("/api/menus/" + id );
-  },
+  // // Gets the item with the given id
+  // getMenu: function(id) {
+  //   return axios.get("/api/menus/" + id );
+  // },
   
   // Deletes the item with the given id
   deleteMenu: function(id) {
@@ -35,6 +35,11 @@ export default {
   },
   getUser: function(){
     return axios.get("/user")
+  },
+  // Route for logging user out
+  logoutUser: function(id){
+    return axios.get("./logout/" + id)
   }
+  
 };
 

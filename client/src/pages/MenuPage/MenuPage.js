@@ -77,15 +77,15 @@ function MenuPageComp(props) {
             .catch(err => console.log(err));
     };
 
-    const [menuItem, setMenuItem] = useState({});
-    const { id, item, price } = useParams()
-    useEffect(() => {
-        API.getMenu(id, item, price)
+    // const [menuItem, setMenuItem] = useState({});
+    // const { id, item, price } = useParams()
+    // useEffect(() => {
+    //     API.getMenu(id, item, price)
 
-            .then(res => setMenuItem(res.data))
-            .catch(err => console.log(err));
+    //         .then(res => setMenuItem(res.data))
+    //         .catch(err => console.log(err));
 
-    }, [])
+    // }, [])
 
 
 
@@ -465,15 +465,15 @@ function MenuPageComp(props) {
         };
 
 
-        const [menuItem, setMenuItem] = useState({});
-        const { id, item, price } = useParams()
-        useEffect(() => {
-            API.getMenu(id, item, price)
+        // const [menuItem, setMenuItem] = useState({});
+        // const { id, item, price } = useParams()
+        // useEffect(() => {
+        //     API.getMenu(id, item, price)
 
-                .then(res => setMenuItem(res.data))
-            .catch(err => console.log(err));
+        //         .then(res => setMenuItem(res.data))
+        //     .catch(err => console.log(err));
 
-        }, [])
+        // }, [])
 
 
         return (
