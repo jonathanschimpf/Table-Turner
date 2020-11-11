@@ -52,6 +52,17 @@ function SignupComp() {
 
     // };
 
+
+    function showPassword() {
+        var showPass = document.getElementById("myPass");
+        if (showPass.type === "password") {
+            showPass.type = "text";
+        } else {
+            showPass.type = "password";
+        }
+
+    }
+
     return (
         <>
 
@@ -70,11 +81,20 @@ function SignupComp() {
                         <Form.Group className="formControl">
                             <h6>Enter a Username + Password to Register: </h6>
                             <Form.Control className="formControl" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
+
+                            <input type="checkbox" onClick={showPassword} />
+
                         </Form.Group>
 
                         <Form.Group >
-                            <Form.Control className="formControl" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+
+                            <Form.Control id="myPass" type="password" className="formControl" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+
                         </Form.Group>
+
+
+
+
 
                         <Form.Group>
                             <Form.Control className="formControl" placeholder="Enter Your Name" onChange={e => setRegisterTitle(e.target.value)} />
@@ -84,7 +104,7 @@ function SignupComp() {
 
                         <br />
 
-                        <p className="formControl">Existing user? <a href="/" className="effect-shine">Log in.</a></p>
+                        <p className="formControl">Existing user? <a href="/user" className="effect-shine">Log in.</a></p>
 
                     </Form>
 
