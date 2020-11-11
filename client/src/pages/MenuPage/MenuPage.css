@@ -1,44 +1,6 @@
 
 
-    /* button {
-      
-        
-        color: white !important;
-        border-radius: 5px !important;
-        border: none !important;
-        padding: 3px 6px 10px 6px !important;
-        height: 30px !important; */
-        /* width: 30px !important; */
-        /* background: black !important;
-        
-      } */
-/* 
-
-      button:hover {
-      
-        background: #636363 !important;
-        transition: all 0.65s ease-in-out !important;
-      
-      }
-
-
-      .buttonDivRight {
-
-        text-align: right !important;
-      } */
-
-
-      .jumbotronStyle {
-
-        background-color: rgb(216, 216, 216) !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        
-    
-    }
-    
-    /* .responsiveImage {
+      /* .responsiveImage {
     
         width: 100%;
         max-width: 800px;
@@ -47,10 +9,29 @@
     
     } */
     
-    .jumbotron {
-    
+
+
+      .maxContainerWidth {
+
+        max-width: 1025px !important;
+
+      }
+
+      .jumbotronStyle {
+
+        background-color: rgb(216, 216, 216) !important;
+        justify-content: center !important;
+        border-radius: 15px;
+        align-items: center !important;
+        text-align: center !important;
         padding: 10px !important;
+        -webkit-box-shadow: 0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        -moz-box-shadow: 0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        box-shadow:  0 5px 6px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
+        
+    
     }
+    
     
     h1, form {
         text-align: center !important;
@@ -59,22 +40,39 @@
         margin-bottom: 15px !important;
     }
     
-    
-    /* button, input, optgroup, select, textarea {
-        margin-bottom: 15px !important;
-    } */
-    
+    .centerText {
 
+      text-align: center !important;
+
+    }
+    
+    
+    .card {
+
+      margin-bottom: 30px !important;  
+      border-color: black !important;
+      
+    }
     .card-body {
 
         text-align: center !important;
-
+        min-height: 125px !important;
+        max-height: 125px !important;
+        overflow-y: auto !important;
+        
     }
 
     .card-footer {
 
         text-align: right !important;
         background-color: white !important;
+        border-color: black !important;
+    }
+
+    .card-header {
+
+      background: black !important;
+      color: white !important;
     }
 
     .priceLeft {
@@ -151,6 +149,43 @@
       
         }
       }
+
+
+      /* MEDIA QUERIES FOR THE CARD COLUMN BREAKPOINTS */
+
+      @media (min-width: 36em) {
+        .card-columns {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+    }
+    
+
+    @media (min-width: 40em) {
+      .card-columns {
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+      }
+  }
+
+
+    @media (min-width: 48em) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+    }
+    
+    @media (min-width: 54em) {
+      .card-columns {
+          -webkit-column-count: 2;
+          -moz-column-count: 2;
+          column-count: 2;
+      }
+  }
 
 
 

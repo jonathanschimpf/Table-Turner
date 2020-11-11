@@ -29,15 +29,7 @@ function ImportMenuComp() {
               return item.section === "Dessert"}).map(item => {
               return [item.item, item.price, item.ingredients];
               })
-          console.log(smallPlates)
-          console.log(sharedPlates)
-          console.log(mainCourse)
-          console.log(dessert)
-  
-  
-  
-  
-    
+          
   
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
@@ -93,36 +85,35 @@ function ImportMenuComp() {
             <br />
             <Container className="vertical-center">
 
-                <Jumbotron className="jumbotronLoginSignUp" >
+                <Jumbotron className="importMenuJumbotron" >
                     <h2 className=" text-center responsiveH2Font">Import Menu Item</h2>
                     <hr style={{ height: '4px', maxWidth: 375 }} />
-                    {/* <h3 className="text-center">Plaeholder Description</h3> */}
                     <h6 className="text-center text-muted">Fill out the fields below to create a new menu item.</h6>
-
+                    <br/>
                     <Form className="menuImport">
 
                         <Form.Group className="formControl">
-                            <h6>Enter Dish Name (Required): </h6>
-                            <Form.Control className="formControl" placeholder="Dish Name"
+                            <h6>Enter Dish Name + Price + Ingredients (Required): </h6>
+                            <Form.Control className="formControl" placeholder="Dish Name.."
                             onChange={handleInputChange}
                             name="item" />
                         </Form.Group>
 
                         <Form.Group className="formControl">
-                            <h6>Enter Dish Price (Required): </h6>
-                            <Form.Control className="formControl" placeholder="$ Cost" 
+                            {/* <h6>Enter Dish Price (Required): </h6> */}
+                            <Form.Control className="formControl" placeholder="Dish Price.." 
                              onChange={handleInputChange}
                              name="price"/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
-                            <h6>List Dish Info + Ingredients (Required): </h6>
-                            <Form.Control as="textarea" rows={3} onChange={handleInputChange}
+                            {/* <h6>List Dish Info + Ingredients (Required): </h6> */}
+                            <Form.Control as="textarea" className="dishInfoHeight" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
                   name="ingredients"/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
-                            <h6>Select Dish Category: </h6>
+                            <h6>Select Dish Category (Required): </h6>
                             <Form.Control as="select" className="formControl" onChange={handleInputChange}
                             name="section"
                             >
@@ -135,11 +126,10 @@ function ImportMenuComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl" block 
+                        <Button className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit} >+Add Menu Item</Button>
-                        <br />
-
+                        
                     </Form>
 
                 </Jumbotron>
@@ -147,7 +137,7 @@ function ImportMenuComp() {
             </Container>
             <br />
             <br />
-            <br />
+            
           
 
               </>

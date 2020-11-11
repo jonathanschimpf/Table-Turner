@@ -20,9 +20,12 @@ function AddNewOrderComp() {
                 <br />
                 <br />
                 <br />
+                <br />
+                <br />
+                <br />
 
 
-                <Jumbotron className="jumbotronAddTable">
+                <Jumbotron className="jumbotronAddOrder">
                     <h2 className="text-center responsiveH2Font">Add An Order</h2>
                     <hr style={{ height: '4px' }} />
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
@@ -32,12 +35,13 @@ function AddNewOrderComp() {
 
                         <Form.Group className="formControl">
 
-                            <h6 className="centerText"></h6>
+                            <h6 className="centerText">Memorably Define This Order</h6>
 
                             <Form.Control className="formControl" placeholder="(Optional) Order Label" value={value} type="text" onChange={onChange} />
                         </Form.Group>
 
-                        <a href="/menu"><Button className="my-2 my-lg-0 formControl add" block>+</Button></a>
+                       
+                        <a href="/menu"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewButton" block>+</Button></a>
 
                         <br />
 

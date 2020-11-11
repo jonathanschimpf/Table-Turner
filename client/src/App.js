@@ -51,8 +51,7 @@ function App() {
       {/* <AddNewOrderComp /> */}
       {/* <MenuPageComp /> */}
       {/* <ViewAllTablesComp /> */}
-
-
+ 
 
     </>
 

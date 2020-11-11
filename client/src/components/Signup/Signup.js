@@ -66,14 +66,6 @@ function SignupComp() {
     return (
         <>
 
-            {/* <div>
-           <h1>Register</h1>
-           <input placeholder='username' onChange={e => setRegisterUsername(e.target.value)}/>
-           <input placeholder='password' onChange={e => setRegisterPassword(e.target.value)}/>
-           <input placeholder='title' onChange={e => setRegisterTitle(e.target.value)}/>
-            <button onClick={register}>Submit</button>
-          </div> */}
-
             <br />
             <br />
             <Container className="vertical-center">
@@ -108,9 +100,7 @@ function SignupComp() {
                             <Form.Control className="formControl" placeholder="Enter Your Name" onChange={e => setRegisterTitle(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl" onClick={register} href="/startTable" block >
-                            Log In 
-                        </Button> 
+                        <Button className="my-2 my-sm-0 formControl signUpButton" onClick={register} block>Log In</Button>
 
                         <br />
 
