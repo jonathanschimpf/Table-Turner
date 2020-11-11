@@ -65,10 +65,12 @@
         border-radius: 5px !important;
         padding: 5px 8px !important;
         background: black !important;
+        border-color: black !important;
         
       }
 
       .welcomeButtons {
+          
         background-color: black !important;
     } 
     

@@ -12,7 +12,6 @@ function MenuPageComp(props) {
 
     const [items, setItems] = useState([])
 
-
     const smallPlates = items.filter(item => {
         return item.section === "Small Plates"
     }).map(item => {
@@ -29,9 +28,6 @@ function MenuPageComp(props) {
     }).map(item => {
         return [item.item, item.price, item.ingredients, item._id];
     })
-
-
-    // console.log("mainCourse is ", mainCourse)
 
     const dessert = items.filter(item => {
         return item.section === "Dessert"
@@ -51,24 +47,13 @@ function MenuPageComp(props) {
     //SEARCHING FOR MENU ITEMS AND FILTERING
 
 
-    //getting all items (i.e. getting the names of the food items on the menu)
-    // const allItems = items.map(item => {
-    //     return [item.item]
-    // })
-
-    // // making the array of arrays into one clean array
-    // const merged = [].concat.apply([], allItems);
-
-    // console.log("items are: ",items)
-
     //setting the state for our search term
     const [search, setSearchTerm] = useState("")
-    // // const filteredFood = merged.filter(item => item.includes(search))
-    // // console.log(filteredFood)
+    
 
-
-    const filteredArrayOfFood = items.filter(i => i.item.includes(search))
-    console.log("filtered array is: ", filteredArrayOfFood)
+    const lowerCaseSearch = search.toLowerCase()
+    const filteredArrayOfFood = items.filter(i => i.item.toLowerCase().includes(lowerCaseSearch))
+    // console.log("filtered array is: ", filteredArrayOfFood)
     // #####################################################################################################
 
 
@@ -112,7 +97,7 @@ function MenuPageComp(props) {
 
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
                 <Jumbotron className="jumbotronStyle">
 
                     <br></br>
@@ -122,7 +107,7 @@ function MenuPageComp(props) {
 
 
                     <Form inline>
-                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2" regularInput responsiveInput name="search" onChange={handleInputChange} />
+                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
 
                     <br></br>
@@ -133,7 +118,7 @@ function MenuPageComp(props) {
 
 
             {/* Looping over the filtered Search Terms ################################################################## */}
-            <Container >
+            <Container className={search.length === 0 ? "d-none maxContainerWidth" : "d-block maxContainerWidth"}>
 
                 <CardColumns>
 
@@ -165,9 +150,9 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        {/* <MyVerticallyCenteredModal
+                                        <MyVerticallyCenteredModal
                                             show={modalShow}
-                                            onHide={() => setModalShow(false)} /> */}
+                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -181,10 +166,9 @@ function MenuPageComp(props) {
             </Container >
 
 
-            {/* Looping over the filtered Search Terms ################################################################## */}
 
 
-            <Container >
+            <Container className="maxContainerWidth">
 
                 <br />
                 <h3>Small Plates</h3>
@@ -217,9 +201,9 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        {/* <MyVerticallyCenteredModal
+                                        <MyVerticallyCenteredModal
                                             show={modalShow}
-                                            onHide={() => setModalShow(false)} /> */}
+                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -235,16 +219,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Shared Plates</h3>
                 <br />
 
-
-            </Container>
-
-
-            <Container>
                 <CardColumns>
 
                     {sharedPlates.map(item =>
@@ -272,9 +251,9 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        {/* <MyVerticallyCenteredModal
+                                        <MyVerticallyCenteredModal
                                             show={modalShow}
-                                            onHide={() => setModalShow(false)} /> */}
+                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -291,14 +270,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Main Courses</h3>
                 <br />
 
-            </Container>
-
-            <Container>
                 <CardColumns>
                     {mainCourse.map(item =>
                         <Card>
@@ -325,9 +301,9 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        {/* <MyVerticallyCenteredModal
+                                        <MyVerticallyCenteredModal
                                             show={modalShow}
-                                            onHide={() => setModalShow(false)} /> */}
+                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -343,14 +319,11 @@ function MenuPageComp(props) {
             <br />
             <br />
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <h3>Dessert</h3>
                 <br />
 
-            </Container>
-
-            <Container>
                 <CardColumns>
                     {dessert.map(item =>
                         <Card>
@@ -378,10 +351,10 @@ function MenuPageComp(props) {
                                         }} >
                                             +Add
                                      </Button>
-                                        {/* 
+                                        
                                         <MyVerticallyCenteredModal
                                             show={modalShow}
-                                            onHide={() => setModalShow(false)} /> */}
+                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -405,212 +378,216 @@ function MenuPageComp(props) {
 
     );
 
-    // function MyVerticallyCenteredModal(props) {
-
-    //     const [tableValue, setTableValue] = React.useState(
-    //         localStorage.getItem('TableNumber')
-    //     );
-
-    //     React.useEffect(() => {
-    //         localStorage.setItem('TableNumber', tableValue)
-    //     }, [tableValue]);
-
-    //     const [labelValue, setLabelValue] = React.useState(
-    //         localStorage.getItem('Label')
-    //     );
-
-    //     React.useEffect(() => {
-    //         localStorage.setItem('Label', labelValue)
-    //     }, [labelValue]);
-
-    //     const [items, setItems] = useState([])
-    //     const [modalObj, setModalObj] = useState({
-    //         table: tableValue,
-    //         order: modalTitle,
-    //         course: 0,
-    //         allergies: { gluten: false, nuts: false, eggs: false, pork: false, dairy: false, lily: false, shellfish: false, alcohol: false },
-    //         extra_notes: "",
-    //         label: labelValue
-    //     })
-
-    //     // Load all menu items and store them with setMenuObj
-    //     useEffect(() => {
-    //         loadItems()
-    //     }, [])
-
-    //     // Loads all menu items and sets the menu items
-    //     function loadItems() {
-    //         API.getMenus()
-    //             .then(res =>
-    //                 setItems(res.data)
-    //             )
-    //             .catch(err => console.log(err));
-    //     };
-
-    //     function handleInputChange(event) {
-    //         const { name, value } = event.target;
-    //         setModalObj({ ...modalObj, [name]: value })
-    //     };
-
-    //     function handleRadioBtn(event) {
-    //         const { name, value } = event.target;
-
-    //         console.log(name)
-    //         console.log(value)
-    //         setModalObj({ ...modalObj, course: parseInt(value) })
-    //     }
-
-    //     function handleCheckbox(event) {
-    //         let checked = false;
-    //         const { name, value } = event.target;
-    //         console.log(name)
-    //         console.log(value)
-    //         console.log(modalObj.allergies[name])
-
-    //         if (modalObj.allergies[name] === false) {
-    //             checked = true
-    //         }
-
-    //         setModalObj({ ...modalObj, allergies: { ...modalObj.allergies, [name]: checked } })
-    //     }
 
 
 
-    //     function handleFormSubmit(event) {
-    //         event.preventDefault();
-    //         console.log(tableValue)
-    //         console.log(labelValue)
-    //         console.log(modalObj)
-    //         console.log("this is MODAL")
-    //         API.saveOrders(modalObj).then(res => console.log(res.data))
-    //             .catch(err => console.log(err));
 
-    //     };
+    function MyVerticallyCenteredModal(props) {
 
+        const [tableValue, setTableValue] = React.useState(
+            localStorage.getItem('TableNumber')
+        );
 
-    //     const [menuItem, setMenuItem] = useState({});
-    //     const { id, item, price } = useParams()
-    //     useEffect(() => {
-    //         API.getMenu(id, item, price)
+        React.useEffect(() => {
+            localStorage.setItem('TableNumber', tableValue)
+        }, [tableValue]);
 
-    //             .then(res => setMenuItem(res.data))
-    //         // .catch(err => console.log(err));
+        const [labelValue, setLabelValue] = React.useState(
+            localStorage.getItem('Label')
+        );
 
-    //     }, [])
+        React.useEffect(() => {
+            localStorage.setItem('Label', labelValue)
+        }, [labelValue]);
 
+        const [items, setItems] = useState([])
+        const [modalObj, setModalObj] = useState({
+            table: tableValue,
+            order: modalTitle,
+            course: 0,
+            allergies: { gluten: false, nuts: false, eggs: false, pork: false, dairy: false, lily: false, shellfish: false, alcohol: false },
+            extra_notes: "",
+            label: labelValue
+        })
 
-    //     return (
-    //         <Modal
-    //             {...props}
-    //             size="lg"
-    //             aria-labelledby="contained-modal-title-vcenter"
-    //             centered
-    //         >
-    //             <Modal.Header closeButton>
-    //                 <Modal.Title id="contained-modal-title-vcenter">
-    //                     +Add Item
-    //           </Modal.Title>
-    //             </Modal.Header>
-    //             <Modal.Body>
-    //                 <h3>{modalTitle}</h3>
-    //                 <br></br>
-    //                 <p>{modalDesc}</p>
+        // Load all menu items and store them with setMenuObj
+        useEffect(() => {
+            loadItems()
+        }, [])
 
-    //                 <hr></hr>
+        // Loads all menu items and sets the menu items
+        function loadItems() {
+            API.getMenus()
+                .then(res =>
+                    setItems(res.data)
+                )
+                .catch(err => console.log(err));
+        };
 
-    //                 <p className="card-text"><small className="text-muted"><strong>Course Number (If Applicable):</strong></small></p>
+        function handleInputChange(event) {
+            const { name, value } = event.target;
+            setModalObj({ ...modalObj, [name]: value })
+        };
 
-    //                 <div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={1} />
-    //                         <label className="form-check-label" htmlFor="inlineRadio1">1</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={2} />
-    //                         <label className="form-check-label" htmlFor="inlineRadio2">2</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={3} />
-    //                         <label className="form-check-label" htmlFor="inlineRadio1">3</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={4} />
-    //                         <label className="form-check-label" htmlFor="inlineRadio2">4</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={5} />
-    //                         <label className="form-check-label" htmlFor="inlineRadio1">5</label>
-    //                     </div>
-    //                 </div>
+        function handleRadioBtn(event) {
+            const { name, value } = event.target;
 
-    //                 <br />
+            console.log(name)
+            console.log(value)
+            setModalObj({ ...modalObj, course: parseInt(value) })
+        }
 
-    //                 <p className="card-text"><small className="text-muted"><strong>Allergy Category (If Applicable):</strong></small></p>
-    //                 <div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox1" onChange={handleCheckbox} variant="dark" name="gluten" defaultChecked={modalObj.allergies.gluten} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox1">Gluten</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox2" onChange={handleCheckbox} name="dairy" defaultChecked={modalObj.allergies.dairy} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox2">Dairy </label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox3" onChange={handleCheckbox} name="shellfish" defaultChecked={modalObj.allergies.shellfish} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox3">Shellfish</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox4" onChange={handleCheckbox} name="nuts" defaultChecked={modalObj.allergies.nuts} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox1">Nuts</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox5" onChange={handleCheckbox} name="egg" defaultChecked={modalObj.allergies.eggs} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox2">Egg</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox6" onChange={handleCheckbox} name="lily" defaultChecked={modalObj.allergies.lily} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox3">Lily</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox7" onChange={handleCheckbox} name="alcohol" defaultChecked={modalObj.allergies.alcohol} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox1">Alcohol</label>
-    //                     </div>
-    //                     <div className="form-check form-check-inline">
-    //                         <input className="form-check-input" type="checkbox" id="inlineCheckbox8" onChange={handleCheckbox} name="pork" defaultChecked={modalObj.allergies.pork} />
-    //                         <label className="form-check-label" htmlFor="inlineCheckbox2">Pork</label>
-    //                     </div>
-    //                 </div>
+        function handleCheckbox(event) {
+            let checked = false;
+            const { name, value } = event.target;
+            console.log(name)
+            console.log(value)
+            console.log(modalObj.allergies[name])
 
-    //                 <br />
+            if (modalObj.allergies[name] === false) {
+                checked = true
+            }
 
-    //                 <p className="card-text"><small className="text-muted"><strong>Specific Allergy / Special Request:</strong></small></p>
-    //                 <div className="input-group mb-3">
-    //                     <div className="input-group-prepend">
-
-    //                     </div>
-    //                     <input
-    //                         onChange={handleInputChange}
-    //                         name="extra_notes"
-    //                         placeholder="allergies/requests"
-    //                         type="text"
-    //                         className="formControlSizing"
-    //                         placeholder="Allergy/Requests"
-    //                     // aria-label="Text input with checkbox"
-    //                     />
-    //                 </div>
+            setModalObj({ ...modalObj, allergies: { ...modalObj.allergies, [name]: checked } })
+        }
 
 
-    //             </Modal.Body>
-    //             <Modal.Footer>
-    //                 <Button variant="dark"
-    //                     className="modalButtons"
-    //                     onClick={props.onHide, handleFormSubmit}>
-    //                     +Add Item </Button>
-    //             </Modal.Footer>
-    //         </Modal>
-    //     );
 
-    // }
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            console.log(tableValue)
+            console.log(labelValue)
+            console.log(modalObj)
+            console.log("this is MODAL")
+            API.saveOrders(modalObj).then(res => console.log(res.data))
+                .catch(err => console.log(err));
+
+        };
+
+
+        const [menuItem, setMenuItem] = useState({});
+        const { id, item, price } = useParams()
+        useEffect(() => {
+            API.getMenu(id, item, price)
+
+                .then(res => setMenuItem(res.data))
+            .catch(err => console.log(err));
+
+        }, [])
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        +Add Item
+              </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h3>{modalTitle}</h3>
+                    <br></br>
+                    <p>{modalDesc}</p>
+
+                    <hr></hr>
+
+                    <p className="card-text"><small className="text-muted"><strong>Course Number (If Applicable):</strong></small></p>
+
+                    <div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={1} />
+                            <label className="form-check-label" htmlFor="inlineRadio1">1</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={2} />
+                            <label className="form-check-label" htmlFor="inlineRadio2">2</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={3} />
+                            <label className="form-check-label" htmlFor="inlineRadio1">3</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={4} />
+                            <label className="form-check-label" htmlFor="inlineRadio2">4</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={5} />
+                            <label className="form-check-label" htmlFor="inlineRadio1">5</label>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <p className="card-text"><small className="text-muted"><strong>Allergy Category (If Applicable):</strong></small></p>
+                    <div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox1" onChange={handleCheckbox} variant="dark" name="gluten" defaultChecked={modalObj.allergies.gluten} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox1">Gluten</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox2" onChange={handleCheckbox} name="dairy" defaultChecked={modalObj.allergies.dairy} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Dairy </label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox3" onChange={handleCheckbox} name="shellfish" defaultChecked={modalObj.allergies.shellfish} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox3">Shellfish</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox4" onChange={handleCheckbox} name="nuts" defaultChecked={modalObj.allergies.nuts} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox1">Nuts</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox5" onChange={handleCheckbox} name="egg" defaultChecked={modalObj.allergies.eggs} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Egg</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox6" onChange={handleCheckbox} name="lily" defaultChecked={modalObj.allergies.lily} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox3">Lily</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox7" onChange={handleCheckbox} name="alcohol" defaultChecked={modalObj.allergies.alcohol} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox1">Alcohol</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="inlineCheckbox8" onChange={handleCheckbox} name="pork" defaultChecked={modalObj.allergies.pork} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Pork</label>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <p className="card-text"><small className="text-muted"><strong>Specific Allergy / Special Request:</strong></small></p>
+                    <div className="input-group mb-3">
+                        <div className="input-group-prepend">
+
+                        </div>
+                        <input
+                            onChange={handleInputChange}
+                            name="extra_notes"
+                            placeholder="allergies/requests"
+                            type="text"
+                            className="formControlSizing"
+                            placeholder="Allergy/Requests"
+                        // aria-label="Text input with checkbox"
+                        />
+                    </div>
+
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="dark"
+                        className="modalButtons"
+                        onClick={props.onHide, handleFormSubmit}>
+                        +Add Item </Button>
+                </Modal.Footer>
+            </Modal>
+        );
+
+    }
 
 
 

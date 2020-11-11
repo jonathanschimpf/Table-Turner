@@ -22,7 +22,7 @@ export default {
     return axios.get("/api/orders");
   },
   // Gets the item with the given id
-  getOrders: function(id) {
+  getOrder: function(id) {
     return axios.get("/api/orders/" + id);
   },
   // Deletes the item with the given id
