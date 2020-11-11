@@ -24,7 +24,7 @@ function NavbarComp() {
 
                     <Nav className="d-lg-flex ml-auto">
 
-                        <Nav.Link className={location.pathname === "/" ? "nav-link active": "nav-link"} href="/">Get Started
+                        <Nav.Link className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} href="/welcome">Get Started
                         </Nav.Link>
 
                         <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"} href="/viewTables">View Tables
@@ -34,6 +34,9 @@ function NavbarComp() {
                         </Nav.Link>
 
                         <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
+                        </Nav.Link>
+
+                        <Nav.Link className={location.pathname === "/" ? "nav-link active": "nav-link"} href="/">Log Out
                         </Nav.Link>
 
 
