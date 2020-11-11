@@ -6,9 +6,9 @@ export default {
     return axios.get("/api/menus");
   },
   // Gets the item with the given id
-  getMenu: function(id) {
-    return axios.get("/api/menus/" + id );
-  },
+  // getMenu: function(id) {
+  //   return axios.get("/api/menus/" + id );
+  // },
   
   // Deletes the item with the given id
   deleteMenu: function(id) {

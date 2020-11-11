@@ -79,13 +79,13 @@ function MenuPageComp(props) {
 
     const [menuItem, setMenuItem] = useState({});
     const { id, item, price } = useParams()
-    useEffect(() => {
-        API.getMenu(id, item, price)
+    // useEffect(() => {
+    //     API.getMenu(id, item, price)
 
-            .then(res => setMenuItem(res.data))
-            .catch(err => console.log(err));
+    //         .then(res => setMenuItem(res.data))
+    //         .catch(err => console.log(err));
 
-    }, [])
+    // }, [])
 
 
 
@@ -150,9 +150,6 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        <MyVerticallyCenteredModal
-                                            show={modalShow}
-                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -161,6 +158,10 @@ function MenuPageComp(props) {
 
                         </Card>
                     )}
+
+                        <MyVerticallyCenteredModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)} />
 
                 </CardColumns>
             </Container >
@@ -201,9 +202,7 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        <MyVerticallyCenteredModal
-                                            show={modalShow}
-                                            onHide={() => setModalShow(false)} />
+                                        
 
                                     </Col>
                                 </Row>
@@ -212,6 +211,10 @@ function MenuPageComp(props) {
 
                         </Card>
                     )}
+
+                        <MyVerticallyCenteredModal
+                            show={modalShow}
+                            onHide={() => setModalShow(false)} />
 
                 </CardColumns>
             </Container>
@@ -251,9 +254,7 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        <MyVerticallyCenteredModal
-                                            show={modalShow}
-                                            onHide={() => setModalShow(false)} />
+                                        
 
                                     </Col>
                                 </Row>
@@ -263,6 +264,10 @@ function MenuPageComp(props) {
                         </Card>
 
                     )}
+
+                        <MyVerticallyCenteredModal
+                          show={modalShow}
+                            onHide={() => setModalShow(false)} />
 
                 </CardColumns>
             </Container>
@@ -301,10 +306,6 @@ function MenuPageComp(props) {
                                             +Add
                                     </Button>
 
-                                        <MyVerticallyCenteredModal
-                                            show={modalShow}
-                                            onHide={() => setModalShow(false)} />
-
                                     </Col>
                                 </Row>
 
@@ -312,6 +313,10 @@ function MenuPageComp(props) {
 
                         </Card>
                     )}
+
+                        <MyVerticallyCenteredModal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)} />
 
                 </CardColumns>
             </Container>
@@ -352,9 +357,6 @@ function MenuPageComp(props) {
                                             +Add
                                      </Button>
                                         
-                                        <MyVerticallyCenteredModal
-                                            show={modalShow}
-                                            onHide={() => setModalShow(false)} />
 
                                     </Col>
                                 </Row>
@@ -364,6 +366,10 @@ function MenuPageComp(props) {
                         </Card>
 
                     )}
+
+                        <MyVerticallyCenteredModal
+                          show={modalShow}
+                         onHide={() => setModalShow(false)} />   
 
                 </CardColumns>
             </Container>
@@ -467,13 +473,13 @@ function MenuPageComp(props) {
 
         const [menuItem, setMenuItem] = useState({});
         const { id, item, price } = useParams()
-        useEffect(() => {
-            API.getMenu(id, item, price)
+        // useEffect(() => {
+        //     API.getMenu(id, item, price)
 
-                .then(res => setMenuItem(res.data))
-            .catch(err => console.log(err));
+        //         .then(res => setMenuItem(res.data))
+        //     .catch(err => console.log(err));
 
-        }, [])
+        // }, [])
 
 
         return (
