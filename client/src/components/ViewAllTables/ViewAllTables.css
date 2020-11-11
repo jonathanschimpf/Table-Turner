@@ -16,32 +16,51 @@
 
       /* welcome form adjustments */
 
-      form.view {
+      /* form.view {
         margin-top: 50px;
         max-width: 200px !important;
         margin-left:auto;
         margin-right:auto;
         justify-content: center !important;
         
-      }
+      } */
     
           /* jumbotron customization with box shadow addition for all browsers */
     
     .jumbotronTableView {
     
         justify-content: center !important;
-        max-width: 350px !important;
+        max-width: 285px !important;
         max-height: 350px !important;
         background-color: #dfdfdf !important;
-        margin-left:auto;
-        margin-right:auto;
+        /* margin-left:auto;
+        margin-right:auto; */
         margin-bottom: 3rem !important;
         padding: 2rem 1rem; 
-        /* margin: 10px 10px 10px 10px auto !important; */
+        background: #fff;
+        border-radius: 30px;
+        /* border-radius:2px; */
+        border:black;
+        border-color: black;
+        margin: 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 360px;
         -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         box-shadow:  0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
       
+      }
+
+      .flexWrap {
+        padding-top: 50px;
+        background: #ffffff;
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        /* padding: 20px; */
+        justify-content: space-around;
+        align-content: flex-start;
       }
       
       
@@ -165,6 +184,7 @@
 
 
       }
+
 
       /* resizes h2 font at 400px */
     

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table } from "react-bootstrap";
+import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck } from "react-bootstrap";
 import "./ViewAllTables.css";
 import API from "../../utils/API";
 
@@ -72,10 +72,14 @@ function ViewAllTablesComp() {
 
 
         <>
-            <Container className="vertical-center">
+            <Container>
 
                 <br />
                 <br />
+
+                <div className="flexWrap">
+                    
+               
                 
                 {reducedTables.map(tableNumb =>   
                 
@@ -123,6 +127,8 @@ function ViewAllTablesComp() {
             show={smallermodalShow}
             onHide={() => setSmallerModalShow(false)} />
             
+            </div>
+
             </Container>
 
             <br />

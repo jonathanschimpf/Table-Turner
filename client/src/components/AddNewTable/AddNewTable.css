@@ -33,9 +33,11 @@
         background-color: #dfdfdf !important;
         max-width: 350px !important;
         max-height: 350px !important;
+        border-radius: 30px !important;
         margin-left:auto;
         margin-right:auto;
         padding: 2rem 1rem; 
+        padding-bottom: 56px !important;
         /* margin: 10px 10px 10px 10px auto !important; */
         -webkit-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);
         -moz-box-shadow: 0 8px 9px rgb(201, 201, 201), 0 8px 9px rgb(201, 201, 201);

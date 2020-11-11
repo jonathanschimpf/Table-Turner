@@ -30,6 +30,9 @@ function AddNewTableComp() {
                 <br />
                 <br />
                 <br />
+                <br />
+                <br />
+                <br />
 
 
                 <Jumbotron className="jumbotronAddTable">
@@ -38,7 +41,7 @@ function AddNewTableComp() {
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
                     {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
 
-                    <Form classname="addTableForm">
+                    <Form className="addTableForm">
 
                         <Form.Group className="formControl">
 
