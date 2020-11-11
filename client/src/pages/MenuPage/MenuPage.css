@@ -56,7 +56,7 @@
         text-align: center !important;
         min-height: 125px !important;
         max-height: 125px !important;
-        overflow-y: scroll !important;
+        overflow-y: auto !important;
 
     }
 
