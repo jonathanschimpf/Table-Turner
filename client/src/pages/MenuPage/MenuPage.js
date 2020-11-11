@@ -11,8 +11,7 @@ function MenuPageComp(props) {
     const [modalDesc, setModalDesc] = useState([]);
 
     const [items, setItems] = useState([])
-  
-    
+
     const smallPlates = items.filter(item => {
         return item.section === "Small Plates"
     }).map(item => {

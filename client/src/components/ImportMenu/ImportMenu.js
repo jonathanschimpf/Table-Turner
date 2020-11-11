@@ -29,15 +29,7 @@ function ImportMenuComp() {
               return item.section === "Dessert"}).map(item => {
               return [item.item, item.price, item.ingredients];
               })
-          console.log(smallPlates)
-          console.log(sharedPlates)
-          console.log(mainCourse)
-          console.log(dessert)
-  
-  
-  
-  
-    
+          
   
     // Load all menu items and store them with setMenuObj
     useEffect(() => {
