@@ -21,38 +21,38 @@ function App() {
 
     <>
       <Router>
-      <NavbarComp />
+        <NavbarComp />
         <Switch>
-        <Route exact path="/" component={SignupComp}></Route>
-        <Route exact path="/user" component={LoginComp}></Route>
-        <Route exact path="/welcome" component={WelcomePageComp}></Route>
-        <Route exact path="/importmenu" component={ImportMenuComp}></Route>
-        <Route exact path="/menu" component={MenuPageComp}></Route>
-        <Route path ="/startTable" component={AddNewTableComp}></Route>
-        <Route path ="/viewTables" component={ViewAllTablesComp}></Route>
-        <Route path ="/takeOrder" component={AddNewOrderComp}></Route>
-        <Route path ="/importMenu" component={ImportMenuComp}></Route>
+          <Route exact path="/" component={SignupComp}></Route>
+          <Route exact path="/user" component={LoginComp}></Route>
+          <Route exact path="/welcome" component={WelcomePageComp}></Route>
+          <Route exact path="/importmenu" component={ImportMenuComp}></Route>
+          <Route exact path="/menu" component={MenuPageComp}></Route>
+          <Route exact path="/startTable" component={AddNewTableComp}></Route>
+          <Route exact path="/viewTables" component={ViewAllTablesComp}></Route>
+          <Route exact path="/takeOrder" component={AddNewOrderComp}></Route>
+          <Route exact path="/importMenu" component={ImportMenuComp}></Route>
 
-        
-        
-        <MenuPageComp  />
+
+
+          <MenuPageComp />
         </Switch>
-        </Router> 
-      
+      </Router>
+
 
       {/* <Passport /> */}
-      
+
       {/* <WelcomePageComp /> */}
-      
+
       {/* <LoginComp /> */}
       {/* <ImportMenuComp/> */}
-      
+
       {/* <AddNewTableComp /> */}
       {/* <AddNewOrderComp /> */}
       {/* <MenuPageComp /> */}
       {/* <ViewAllTablesComp /> */}
 
-      
+
 
     </>
 

@@ -108,7 +108,9 @@ function SignupComp() {
                             <Form.Control className="formControl" placeholder="Enter Your Name" onChange={e => setRegisterTitle(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl" onClick={register} href="/startTable" block>Log In </Button>
+                        <Button className="my-2 my-sm-0 formControl" onClick={register} href="/startTable" block >
+                            Log In 
+                        </Button> 
 
                         <br />
 

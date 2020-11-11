@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const menusController = require("../../controllers/menuController");
 
-// Matches with "/api/menus"
 router.route("/")
   .get(menusController.findAll)
   .post(menusController.create);
