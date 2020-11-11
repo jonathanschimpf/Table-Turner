@@ -50,7 +50,7 @@
     .card {
 
       margin-bottom: 30px !important;  
-      border-color: black !important;
+      border-color: #D8D8D8 !important;
       
     }
     .card-body {
@@ -66,13 +66,13 @@
 
         text-align: right !important;
         background-color: white !important;
-        border-color: black !important;
+        border-color: #D8D8D8!important;
     }
 
     .card-header {
 
-      background: black !important;
-      color: white !important;
+      background: #D8D8D8 !important;
+      color: black !important;
     }
 
     .priceLeft {
