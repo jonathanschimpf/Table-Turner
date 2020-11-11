@@ -39,7 +39,7 @@ function WelcomePageComp () {
   
   <Form className="add">
     
-  <a href="/viewTables"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>+View</Button></a>
+  <a href="/viewTables"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>View</Button></a>
     
   </Form>
 
