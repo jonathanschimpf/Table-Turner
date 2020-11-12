@@ -82,10 +82,21 @@ function ViewAllTablesComp() {
 
         .then(res => loadItems())
         .catch(err => console.log(err));
-
-
-        // .then()
     }
+
+    //creating a function for the onclick of the button that deletes an entire table
+    const deleteWholeTable = (id) => {
+        console.log("**deleting table**")
+        console.log("table id is: ", id)
+
+        // API.deleteTable(id)
+        // .then(console.log("table has been deleted"))
+
+        // .then(res => loadItems())
+        // .catch(err => console.log(err));
+    }
+
+
 
     return (
 
@@ -122,7 +133,7 @@ function ViewAllTablesComp() {
                             <Col xs={3}>
                                 <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
                                 size="sm" block 
-                                onClick={() => {setSmallerModalShow(true);}} 
+                                onClick={() => {setSmallerModalShow(true); deleteWholeTable(tableNumb)}} 
                                 
                                 >
                                 

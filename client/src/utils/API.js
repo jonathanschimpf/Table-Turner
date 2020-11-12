@@ -33,13 +33,23 @@ export default {
   saveOrders: function(ordersData) {
     return axios.post("/api/orders", ordersData);
   },
+
+
+  //Route for deleting an entire table of orders
+  deleteTable: function(id){
+    return axios.delete("/api/table/" + id)
+  },
+
+
   getUser: function(){
     return axios.get("/user")
   },
   // Route for logging user out
   logoutUser: function(id){
     return axios.get("/logout/" + id)
-  }
+  },
+ 
+  
   
 };
 
