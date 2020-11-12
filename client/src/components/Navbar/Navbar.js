@@ -2,13 +2,23 @@ import React from "react";
 import "./Navbar.css";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import API from "../../utils/API"
 
 
 
 
+function NavbarComp({ user, getUser }) {
+    const location = useLocation();
+    
+    const logout = async() => {
 
-function NavbarComp() {
-	const location = useLocation();
+        await API.logoutUser();
+
+        console.log("logging out!")
+
+        await getUser();
+        location.pathname="/login"
+    }
 
     return (
 
@@ -24,31 +34,29 @@ function NavbarComp() {
 
                     <Nav className="d-lg-flex ml-auto">
 
-                        <Nav.Link className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} href="/welcome">Get Started
+                        <Nav.Link className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} 
+                        href={user ? "/welcome" : "/login"}>Get Started
                         </Nav.Link>
 
-                        <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"} href="/viewTables">View Tables
+                        <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"}
+                        href={user ? "/viewTables" : "/login"}>View Tables
                         </Nav.Link>
 
-                        <Nav.Link className={location.pathname === "/menu" ? "nav-link active": "nav-link"} href="/menu">View Menu
+                        <Nav.Link className={location.pathname === "/menu" ? "nav-link active": "nav-link"} 
+                        href={user ? "/menu" : "/login"}>View Menu
                         </Nav.Link>
 
-                        <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
+                        <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} 
+                        href={user ? "/importMenu" : "/login"}>Update Menu
                         </Nav.Link>
 
-                        <li className="nav-item ml-auto">
-                            <Link
-                                href="/logout"
-                                to="/"
-                                activeClass="active"
-                                className="nav-link"
-                                >
-                                Log Out
-                            </Link>
-                        </li>
-
-
-                    </Nav>
+                        {user ?
+                        <Nav.Link className="nav-link"
+                        onClick={logout}>Logout
+                        </Nav.Link>
+                        : ""
+                        }
+                        </Nav>
 
                 </Navbar.Collapse>
             </Navbar>
