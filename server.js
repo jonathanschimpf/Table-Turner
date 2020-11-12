@@ -53,11 +53,18 @@ app.use(passport.session());
 require('./passportConfig')(passport);
 
 
+
+
 // --- End of Middleware --- //
+
 
 // --- Routes for login --- //   
 
 // !! Can be Moved to routes folder when finished !! //
+
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 
 app.post ("/api/login", (req, res, next) => {
@@ -92,7 +99,7 @@ app.post ("/api/register", (req, res) => {
  });  
 });
 
-app.get ("/api/user", (req, res) => {
+app.get ("/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
@@ -103,13 +110,15 @@ app.get("/api/logout", function(req, res) {
 
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
 
+
+
 // Send every request to the React app
 // Define any API routes before this runs
 
 
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
