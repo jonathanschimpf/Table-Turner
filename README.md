@@ -1,6 +1,19 @@
 # Table Turner
 [CLICK HERE FOR LIVE HEROKU APPLICATION](https://tableturner.herokuapp.com/login)
 
+![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
+![License](https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow)
+![License](https://img.shields.io/static/v1?label=Database&message=MongoDB&color=red)
+![License](https://img.shields.io/static/v1?label=Environment&message=Node.js&color=blueviolet) 
+
+![License](https://img.shields.io/static/v1?label=Framework&message=React-Bootstrap&color=green)
+![License](https://img.shields.io/static/v1?label=Framework&message=Express.js&color=yellowgreen)    ![License](https://img.shields.io/static/v1?label=Language&message=HTML5&color=orange) ![License](https://img.shields.io/static/v1?label=Language&message=CSS3&color=blue) 
+  
+
+  ---
+  
+  <p>&nbsp;<p>
+
 ## Table of Contents
 * [Screenshots](#screenshots)
 
@@ -12,8 +25,6 @@
 
 * [Usage](#usage)
 
-* [Demo](#demo)
-
 * [Built With](#built-with)
 
 * [Contributors](#contributors)
@@ -22,26 +33,33 @@
 
 * [Questions](#questions)
 
+<p>&nbsp;<p>
+
 ## Screenshots 
-![screenshot1](./assets/images/screencapture-stream-saver-herokuapp-2020-10-18-23_32_55.png)
-![screenshot2](./assets/images/screencapture-stream-saver-herokuapp-signup-2020-10-18-23_33_28.png)
-![screenshot3](./assets/images/screencapture-stream-saver-herokuapp-members-2020-10-18-23_35_12.png)
-![screenshot4](./assets/images/screencapture-stream-saver-herokuapp-watchlist-2020-10-18-23_44_00.png)
+![screenshot1](./client/assets/getstarted.png))
+![screenshot2](./client/assets/tables.png)
+![screenshot3](./client/assets/tableview.png)
+![screenshot4](./client/assets/addmenu.png)
+![screenshot4](./client/assets/menu.png)
+
+<p>&nbsp;<p>
 
 ## User Story
 ```
 As a Manager, I want to be able to add new menu items to a point of service system and view the menu. I want to create new tables and attach guests to each table for all back of house employee's to see what the guest has ordered. I also want to delete tables as guests finish there dining experience. As the seasons change  I want to be able to update the menu.
 
 ```
+<p>&nbsp;<p>
 
 ## Application Description
 
-An application that lets the user 
+An application that lets the user create a menu for guests to view. The user a restaruant manager or employee can add and delete menu items. They can also create new tables of guests and save an order for the back of house to view. The application utilizes react.js using hooks and state to send information through the application. User information is saved in a mongoDB.
 
 ## Installation 
 ```
 npm i 
 ```
+<p>&nbsp;<p>
 
 ## Usage 
 ```
@@ -52,39 +70,109 @@ OR
 Use the live application via the Heroku link provided above
 
 ```
-## Demo
-![demo](https://media.giphy.com/media/E1a5f7GKLYcBNErVT9/giphy.gif)
+
+<p>&nbsp;<p>
+
 ## Built With
-* Heroku
-* MongoDB
-* Passport 
-* React
-* Express
-* Node
-* Axios
-* Toastify
-* React-Router
-* React-Bootsrap
+
+<p>&nbsp;<p>
+
+`Node.js` =>‏‏‎ ‎ ‏‏‎ ‎[An asynchronous event-driven runtime built on Chrome's V8 JavaScript engine.](https://nodejs.org/en/)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+`Express.js` =>‏‏‎ ‎ ‏‏‎ ‎[A fast, unopinionated, minimalist web framework for Node.js.](https://expressjs.com/)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+
+`MongoDB` =>‏‏‎ ‎ ‏‏‎ ‎[The most popular databse for modern apps.](https://www.mongodb.com/)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+`Mongoose npm` =>‏‏‎ ‎ ‏‏‎ ‎[A MongoDB object modeling tool designed to work in an asynchronous environment. ](https://www.npmjs.com/package/mongoose)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+
+`React-Bootstrap` =>‏‏‎ ‎ ‏‏‎ ‎[The world's most popular front-end framework. Rebuilt for React.](https://react-bootstrap.github.io/)
+
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+`Boostrap / CDN` =>‏‏‎ ‎ ‏‏‎ ‎[The world's most popular framework for building responsive, mobile-first sites.](https://getbootstrap.com/)
+
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+`bcrypt.js` =>‏‏‎ ‎ ‏‏‎ ‎[A secure password hashing function.](https://www.npmjs.com/package/bcryptjs)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+
+`PassportJS` =>‏‏‎ ‎ ‏‏‎ ‎[Simple, unobtrusive authentication for Node.js](https://www.passportjs.org/)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+
+`Heroku` =>‏‏‎ ‎ ‏‏‎ ‎[A platform that enables developers to build, run, & operate applications entirely in the cloud.](https://www.heroku.com)
+
+
+<p>&nbsp;‏‏‎‏‏‎ ‎<strong>+</strong></p>
+
+`Axios` =>‏‏‎ ‎ ‏‏‎ ‎[Promise based HTTP client for the browser and node.js](https://www.npmjs.com/package/axios)
+
+
+<p>&nbsp;<p>
+
+`React Toastify` =>‏‏‎ ‎ ‏‏‎ ‎[React-Toastify allows you to add notifications to your app with ease.](https://www.npmjs.com/package/react-toastify)
+
+
+<p>&nbsp;<p>
 
 
 ## Contributors 
 
-Jonathan 
-* Github: [ianf777](https://github.com/ianf777) 
-* Email: <ianwfuzzy@gmail.com> 
+James Lamb 
+* [GitHub](https://github.com/Lambaa94) 
+* Email => <jameslamb13@gmail.com>
 
- Max Goldstein
-* Github: [maxgoldstein93](https://github.com/maxgoldstein93) 
-* Email: <magoldstein93@gmail.com>
+<p>&nbsp;‏‏‎‏‏‎</p>
+
+Robert Greenawalt
+* [GitHub](https://github.com/rsg71) 
+* Email =>  <robert.greenawalt29@gmail.com>
+
+<p>&nbsp;‏‏‎‏‏‎</p>
+
+Jonathan Schimpf
+* [GitHub](https://github.com/jonathanschimpf)
+* Email => <jonathan@jonathanschimpf.com>
+
+<p>&nbsp;‏‏‎‏‏‎</p>
+
+Max Goldstein
+* [GitHub](https://github.com/maxgoldstein93) 
+* Email => <magoldstein93@gmail.com>
 
 
- Kristy Keller
-* Github: [KristyKeller](https://github.com/KristyKeller)
-* Email: <keller.kristy@outlook.com>
 
-James Lamb
-* Github: [Lambaa94](https://github.com/Lambaa94) 
-* Email: <jameslamb13@gmail.com>
+<p>&nbsp;<p>
 
 ## License
 
@@ -101,4 +189,10 @@ Copyright 2020 ©Ian Fusi, Max Goldstein, Kristy Keller, James Lamb
 ## Questions
 
 If you have any questions regarding this repo, please contact any of the above mentioned contributors via Github or email.
+
+
+
+
+
+
 
