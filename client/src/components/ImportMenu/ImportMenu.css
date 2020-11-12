@@ -19,6 +19,99 @@
       /* form.menuImport {
         margin-top: 50px;
       } */
+
+      .viewDeleteMenuButtons {
+       
+        color: white !important;
+        border-radius: 5px !important;
+        padding: 5px 8px !important;
+        background: #DC3545 !important;
+        
+      }
+
+      .viewDeleteMenuButtons {
+
+        background-color: #DC3545 !important;
+    } 
+    
+     .viewDeleteMenuButtons:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: #DC3545!important;
+        border-color: #DC3545 !important;
+      
+      }
+
+      .tableViewButtons {
+       
+        color: white !important;
+        border-radius: 5px !important;
+        padding: 5px 8px !important;
+        background: black !important;
+        
+      }
+
+      .tableViewButtons {
+        background-color: black !important;
+    } 
+
+      .menuEditButtons {
+        background-color: black !important;
+    } 
+    
+     .menuEditButtons:hover {
+    
+        background: #ffffff !important;
+        transition: all 0.35s ease-in-out !important;
+        color: rgb(0, 0, 0)!important;
+        border-color: black !important;
+      
+      }
+
+      /* removing a table row via "x" */
+
+      .removeRow {
+        color: #ff1744;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      
+      .removeRow:hover {
+        color: #8d0000;
+        font-size: 20px;
+      }
+
+      .centeredCourseNumber {
+
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+
+      }
+
+      .deleteFont {
+
+        color: #ff1744 !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+
+
+      }
+
+      .tableBlackGround {
+
+        background-color: black !important;
+
+      }
     
           /* jumbotron customization with box shadow addition for all browsers */
     

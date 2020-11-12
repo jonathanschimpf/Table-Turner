@@ -3,9 +3,68 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./ImportMenu.css";
 
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap";
+
+ // this function is for the table order details modal
+ function MyVerticallyCenteredModal(props) {
 
 
+       
+
+
+
+  return (
+      <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+      >
+          <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                 All Menu Items
+        </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+              <p className="card-text"><small className="text-muted"><strong>Order Details</strong></small></p>
+              <Table responsive className="tableBlackGround" size="sm" striped bordered hover variant="dark">
+                  <thead>
+                      
+                      <tr>
+                          <th>Menu Item</th>
+                          <th>Ingredients</th>
+                          <th>Price</th>
+                          <th className="deleteFont">Delete</th>
+                      </tr>
+                      
+                  </thead>
+                  <tbody>
+                  
+                        <tr>
+
+                          <td>Food Item</td>
+                          <td>Ingredients List</td>
+                          <td>Price</td>
+                          <td className="removeRow" onClick={()=> deleteOrder(order.id)}><strong>x</strong></td>
+
+                       </tr>
+                  
+                
+                      
+                  </tbody>
+              </Table>
+
+              <p className="card-text"><small className="text-muted"><strong></strong></small></p>
+
+
+
+          </Modal.Body>
+          <Modal.Footer>
+             <br/>
+          </Modal.Footer>
+      </Modal>
+  );
+}
 
 function ImportMenuComp() {
   
@@ -76,9 +135,11 @@ function ImportMenuComp() {
       }
     };
 
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
 
+      
         <>
 
             <br />
@@ -129,10 +190,22 @@ function ImportMenuComp() {
                         <Button className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit} >+Add Menu Item</Button>
+
+                  <br/>
+
+                        <Button variant="outline-dark" className="my-2 my-lg-0 formControl view viewDeleteMenuButtons" size="sm" variant="outline-danger" onClick={() => {
+    
+                                 setModalShow(true)
+                                 
+                                 }} block>View / Delete Menu Items</Button>
                         
                     </Form>
 
                 </Jumbotron>
+
+                <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)} />
 
             </Container>
             <br />
