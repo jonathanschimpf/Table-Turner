@@ -4,7 +4,7 @@ import "./ViewAllTables.css";
 import API from "../../utils/API";
 
 
-function ViewAllTablesComp() {
+function ViewAllTablesComp(props) {
     
     useEffect(() => {
         loadItems()
@@ -84,15 +84,18 @@ function ViewAllTablesComp() {
         .catch(err => console.log(err));
     }
 
+
+    
     //creating a function for the onclick of the button that deletes an entire table
     const deleteWholeTable = (tableNumb) => {
         console.log("**deleting table**")
         console.log("table number is: ", tableNumb)
 
         API.deleteTable(tableNumb)
-        .then(console.log("table has been deleted"))
-
-        .then(props.onHide)
+        .then(res=> {
+            console.log(res.data); 
+        })
+        .then(()=> setSmallerModalShow(false))
 
         .then(res => loadItems())
         .catch(err => console.log(err));
