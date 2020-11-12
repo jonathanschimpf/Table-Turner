@@ -42,11 +42,11 @@ export default {
 
 
   getUser: function(){
-    return axios.get("/user")
+    return axios.get("/api/user")
   },
   // Route for logging user out
   logoutUser: function(id){
-    return axios.get("/logout")
+    return axios.get("/api/logout")
   },
  
   

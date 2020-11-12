@@ -60,7 +60,7 @@ require('./passportConfig')(passport);
 // !! Can be Moved to routes folder when finished !! //
 
 
-app.post ("/login", (req, res, next) => {
+app.post ("/api/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) res.send("No User Exists");
@@ -75,7 +75,7 @@ app.post ("/login", (req, res, next) => {
 })
 
 
-app.post ("/register", (req, res) => {
+app.post ("/api/register", (req, res) => {
   User.findOne({username: req.body.username}, async (err, doc) => {
    if (err) throw err;
    if (doc) res.send("User Already Exists");
@@ -92,11 +92,11 @@ app.post ("/register", (req, res) => {
  });  
 });
 
-app.get ("/user", (req, res) => {
+app.get ("/api/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
-app.get("/logout", function(req, res) {
+app.get("/api/logout", function(req, res) {
   req.logout();
   res.redirect("/");
 });
