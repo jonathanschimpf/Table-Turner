@@ -20,7 +20,7 @@ const [registerUsername, setRegisterUsername] = useState("");
       title: registerTitle
     },
     withCredentials: true,
-    url: "http://localhost:3001/register",
+    url: "/api/register",
   }).then((res) => console.log(res))
   };
 
@@ -32,7 +32,7 @@ const [registerUsername, setRegisterUsername] = useState("");
       password: loginPassword,
     },
     withCredentials: true,
-    url: "http://localhost:3001/login",
+    url: "/api/login",
   }).then((res) => console.log(res))
 };
   const getUser = () => {
@@ -40,7 +40,7 @@ const [registerUsername, setRegisterUsername] = useState("");
     method:"GET",
   
     withCredentials: true,
-    url: "http://localhost:3001/user",
+    url: "/user",
   }).then((res) => {
       setData(res.data);
       console.log(res.data)

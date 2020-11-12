@@ -24,7 +24,7 @@ function SignupComp() {
                 title: registerTitle
             },
             withCredentials: true,
-            url: "http://localhost:3001/register",
+            url: "/api/register",
         }).then(function(res){
             axios({
                 method: "POST",
@@ -33,7 +33,7 @@ function SignupComp() {
                     password: registerPassword,
                 },
                 withCredentials: true,
-                url: "http://localhost:3001/login",
+                url: "/api/login",
             }).then((res) => {
                 console.log("LOOK HERE")
                 console.log(res)

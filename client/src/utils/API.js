@@ -47,7 +47,7 @@ export default {
   },
   // Route for logging user out
   logoutUser: function(id){
-    return axios.get("/logout")
+    return axios.get("/api/logout")
   },
  
   

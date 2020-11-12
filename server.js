@@ -53,14 +53,17 @@ app.use(passport.session());
 require('./passportConfig')(passport);
 
 
+
+
 // --- End of Middleware --- //
+
 
 // --- Routes for login --- //   
 
 // !! Can be Moved to routes folder when finished !! //
 
 
-app.post ("/login", (req, res, next) => {
+app.post ("/api/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) res.send("No User Exists");
@@ -75,7 +78,7 @@ app.post ("/login", (req, res, next) => {
 })
 
 
-app.post ("/register", (req, res) => {
+app.post ("/api/register", (req, res) => {
   User.findOne({username: req.body.username}, async (err, doc) => {
    if (err) throw err;
    if (doc) res.send("User Already Exists");
@@ -96,20 +99,22 @@ app.get ("/user", (req, res) => {
   res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
 })
 
-app.get("/logout", function(req, res) {
+app.get("/api/logout", function(req, res) {
   req.logout();
   res.redirect("/");
 });
 
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
 
+
+
 // Send every request to the React app
 // Define any API routes before this runs
 
 
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
