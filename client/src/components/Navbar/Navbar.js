@@ -16,7 +16,7 @@ function NavbarComp() {
 
             <Navbar className="navbar" fixed="top sticky-top" variant="dark" expand="lg" bg="black">
 
-                <Navbar.Brand to="/"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
+                <Navbar.Brand to="/welcome"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
 
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav navButtonMargin" />
@@ -36,8 +36,16 @@ function NavbarComp() {
                         <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} href="/importMenu">Update Menu
                         </Nav.Link>
 
-                        <Nav.Link className={location.pathname === "/" ? "nav-link active": "nav-link"} href="/">Log Out
-                        </Nav.Link>
+                        <li className="nav-item ml-auto">
+                            <Link
+                                href="/logout"
+                                to="/"
+                                activeClass="active"
+                                className="nav-link"
+                                >
+                                Log Out
+                            </Link>
+                        </li>
 
 
                     </Nav>

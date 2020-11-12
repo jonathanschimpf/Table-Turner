@@ -87,7 +87,7 @@ function LoginComp(props) {
 
                         <br />
 
-                        <p className="formControl">New user? Create an <a href="/" className="aLoginSignUpLink effect-shine">account.</a></p>
+                        <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>
 
                     </Form>
                     <br/>
@@ -106,27 +106,3 @@ function LoginComp(props) {
 
 export default LoginComp;
 
-
-
-
-
-
-
-
-{/* <div>
-           <h1>Register</h1>
-           <input placeholder='username' onChange={e => setRegisterUsername(e.target.value)}/>
-           <input placeholder='password' onChange={e => setRegisterPassword(e.target.value)}/>
-           <input placeholder='title' onChange={e => setRegisterTitle(e.target.value)}/>
-            <button onClick={register}>Submit</button>
-          </div> */}
-
-
-
-{/*     
-          <div>
-           <h1>Get User</h1>
-          <button onClick={getUser}>Submit</button>
-          { data ? <h1>Welcome {data.username}</h1> : null}
-          
-          </div> */}

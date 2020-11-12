@@ -46,11 +46,13 @@ function App() {
             <Route exact path="/viewTables" component={ViewAllTablesComp}></Route>
             <Route exact path="/takeOrder" component={AddNewOrderComp}></Route>
             <Route exact path="/importMenu" component={ImportMenuComp}></Route>
+            <Route exact path="/logout"></Route>
             </> :
              <>
-            <Route exact path="/signup"><SignupComp/></Route>
+            <Route exact path="/register"><SignupComp/></Route>
             <Route path="/" ><LoginComp/></Route>
-             </>}
+            </>
+             }
         </Switch>
       </Router>
       {/* <Passport /> */}

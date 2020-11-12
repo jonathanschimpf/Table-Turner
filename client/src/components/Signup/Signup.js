@@ -25,8 +25,39 @@ function SignupComp() {
             },
             withCredentials: true,
             url: "http://localhost:3001/register",
-        }).then((res) => console.log(res))
-    };
+        }).then(function(res){
+            axios({
+                method: "POST",
+                data: {
+                    username: registerUsername,
+                    password: registerPassword,
+                },
+                withCredentials: true,
+                url: "http://localhost:3001/login",
+            }).then((res) => {
+                console.log("LOOK HERE")
+                console.log(res)
+                window.location.replace("/welcome")
+            
+            })
+    })}
+
+    // const login = () => {
+    //     axios({
+    //         method: "POST",
+    //         data: {
+    //             username: registerUsername,
+    //             password: registerPassword,
+    //         },
+    //         withCredentials: true,
+    //         url: "http://localhost:3001/login",
+    //     }).then((res) => {
+    //         console.log("LOOK HERE")
+    //         console.log(res)
+    //         window.location.replace("/welcome")
+        
+    //     })
+    // };
 
     //   const login = () => {
     //   axios({
@@ -104,7 +135,7 @@ function SignupComp() {
 
                         <br />
 
-                        <p className="formControl">Existing user? <a href="/user" className="aLoginSignUpLink effect-shine">Log in.</a></p>
+                        <p className="formControl">Existing user? <a href="/" className="aLoginSignUpLink effect-shine">Log in.</a></p>
 
                     </Form>
 
@@ -121,20 +152,3 @@ function SignupComp() {
 };
 export default SignupComp;
 
-
-
-
-
-{/* <div>
-           <h1>Login</h1>
-           <input placeholder='username' onChange={e => setloginUsername(e.target.value)} />
-           <input placeholder='password' onChange={e => setloginPassword(e.target.value)}/>
-            <button onClick={login}>Submit</button>
-          </div> */}
-
-{/* <div>
-           <h1>Get User</h1>
-          <button onClick={getUser}>Submit</button>
-          { data ? <h1>Welcome {data.username}</h1> : null}
-          
-          </div> */}
