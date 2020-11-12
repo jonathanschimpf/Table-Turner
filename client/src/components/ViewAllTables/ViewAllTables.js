@@ -26,11 +26,14 @@ function ViewAllTablesComp() {
     //FILTER MAP METHOD
     const filteredOrders = function (tableNumb) {
        
+
     
             var tables = items.filter(item => {
                 return item.table === tableNumb
             }).map(item => {
-                return {table: item.table, label: item.label, order: item.order, notes: item.extra_notes, allergies: item.allergies, course: item.course};
+
+                //I HAD TO INCLUDE THE ID: ITEM._ID HERE BECAUSE IT WAS NOT AVAILABLE BEFORE
+                return {table: item.table, label: item.label, order: item.order, notes: item.extra_notes, allergies: item.allergies, course: item.course, id: item._id};
             });
             console.log(tables, "filtered")
             return(tables)
@@ -68,6 +71,22 @@ function ViewAllTablesComp() {
 
     const [smallermodalShow, setSmallerModalShow] = React.useState(false);
 
+
+
+
+     //creating a function for the onlick of the delete button
+    const deleteOrder = (id) => {
+        console.log("delete button clicked");
+        console.log(id, "id");
+        API.deleteOrders(id).then(console.log("order has been deleted"))
+
+        .then(res => loadItems())
+        .catch(err => console.log(err));
+
+
+        // .then()
+    }
+
     return (
 
 
@@ -102,10 +121,10 @@ function ViewAllTablesComp() {
 
                             <Col xs={3}>
                                 <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
-                                size="sm" block onClick={() => {
-                                    
-                                    setSmallerModalShow(true)
-                                }} >
+                                size="sm" block 
+                                onClick={() => {setSmallerModalShow(true);}} 
+                                
+                                >
                                 
                                 <strong>x</strong></Button>
 
@@ -142,8 +161,14 @@ function ViewAllTablesComp() {
     );
 
 
+   
+
+
     // this function is for the table order details modal
     function MyVerticallyCenteredModal(props) {
+
+
+       
 
 
 
@@ -167,8 +192,8 @@ function ViewAllTablesComp() {
                             <tr>
                                 <th>Item</th>
                                 <th>Allergy Category</th>
-                                <th>Requests & Allergy Specifics</th>
-                                <th>Seat</th>
+                                <th>Requests &amp; Allergy Specifics</th>
+                                <th>Order Label</th>
                                 <th>Course#</th>
                                 <th className="deleteFont">Delete</th>
                             </tr>
@@ -183,8 +208,9 @@ function ViewAllTablesComp() {
                                 <td>{order.allergies}</td>
                                 <td>{order.notes}</td>
                                 <td>{order.label}</td>
-                        <td className="centeredCourseNumber">{order.course}</td>
-                                <td className="removeRow"><strong>x</strong></td>
+                                <td className="centeredCourseNumber">{order.course}</td>
+                                <td className="removeRow" onClick={()=> deleteOrder(order.id)}><strong>x</strong></td>
+
                              </tr>
                         })}
                              )} 
