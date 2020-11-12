@@ -45,7 +45,6 @@ function App() {
             <Route exact path="/startTable" component={AddNewTableComp}></Route>
             <Route exact path="/viewTables" component={ViewAllTablesComp}></Route>
             <Route exact path="/takeOrder" component={AddNewOrderComp}></Route>
-            <Route exact path="/importMenu" component={ImportMenuComp}></Route>
             </> :
              <>
             <Route exact path="/signup"><SignupComp/></Route>
