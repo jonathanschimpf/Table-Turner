@@ -40,7 +40,7 @@ const [registerUsername, setRegisterUsername] = useState("");
     method:"GET",
   
     withCredentials: true,
-    url: "/api/user",
+    url: "/user",
   }).then((res) => {
       setData(res.data);
       console.log(res.data)
