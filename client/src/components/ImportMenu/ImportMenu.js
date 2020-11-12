@@ -5,6 +5,10 @@ import "./ImportMenu.css";
 
 import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap";
 
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
  // this function is for the table order details modal
  function MyVerticallyCenteredModal(props) {
 
@@ -51,11 +55,14 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
               .catch(err => console.log(err));
       
       
-              // .then()
+              
           }
 
 
   return (
+
+    <>
+
       <Modal
           {...props}
           size="lg"
@@ -158,6 +165,7 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
              <br/>
           </Modal.Footer>
       </Modal>
+      </>
   );
 }
 
@@ -215,7 +223,8 @@ function ImportMenuComp() {
     // When the form is submitted, use the API.saveBook method to save the book data
     // Then reload books from the database
     function handleFormSubmit(event) {
-      event.preventDefault();
+      event.preventDefault(); 
+
       
       if (menuObj.item && menuObj.price && menuObj.ingredients && menuObj.section ) {
         API.saveMenu({
@@ -223,19 +232,43 @@ function ImportMenuComp() {
           price: menuObj.price,
           ingredients: menuObj.ingredients,
           section: menuObj.section
-  
         })
-          .then(res => loadItems())
+        .then(() => setMenuObj({
+          item: "",
+          price: "",
+          ingredients: "",
+          section: ""
+        }))
+          .then(()=> notify())
+          .then(()=> loadItems())
           .catch(err => console.log(err));
+          
       }
     };
 
     const [modalShow, setModalShow] = React.useState(false);
 
+
+    
+        // toast
+        const notify = () => toast.dark(`${menuObj.item} Added!`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Slide
+        });
+
     return (
 
       
         <>
+            {/* Container for toast notification*/}
+            <ToastContainer className="toastContainer"/>
+
 
             <br />
             <br />
@@ -252,26 +285,30 @@ function ImportMenuComp() {
                             <h6>Enter Dish Name + Price + Ingredients (Required): </h6>
                             <Form.Control className="formControl" placeholder="Dish Name.."
                             onChange={handleInputChange}
-                            name="item" />
+                            name="item" 
+                            value={menuObj.item}/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             {/* <h6>Enter Dish Price (Required): </h6> */}
                             <Form.Control className="formControl" placeholder="Dish Price.." 
                              onChange={handleInputChange}
-                             name="price"/>
+                             name="price"
+                             value={menuObj.price}/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
                             {/* <h6>List Dish Info + Ingredients (Required): </h6> */}
                             <Form.Control as="textarea" className="dishInfoHeight" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
-                  name="ingredients"/>
+                  name="ingredients"
+                  value={menuObj.ingredients}/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             <h6>Select Dish Category (Required): </h6>
                             <Form.Control as="select" className="formControl" onChange={handleInputChange}
                             name="section"
+                            value={menuObj.section}
                             >
                                 <option></option>
                                 <option>Small Plates</option>
@@ -284,7 +321,7 @@ function ImportMenuComp() {
 
                         <Button variant="outline-dark" className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
-                  onClick={handleFormSubmit} >+Add Menu Item</Button>
+                  onClick={()=> handleFormSubmit(event)} >+Add Menu Item</Button>
 
                   <br/>
 
