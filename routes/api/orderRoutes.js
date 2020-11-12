@@ -10,6 +10,9 @@ router.route("/")
 router.route("/:id")
   .get(orderController.findById)
   .put(orderController.update)
-  .delete(orderController.remove);
+  .delete(orderController.remove)
+
+
+
 
 module.exports = router;
