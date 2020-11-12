@@ -168,7 +168,7 @@ function ViewAllTablesComp() {
                                 <th>Item</th>
                                 <th>Allergy Category</th>
                                 <th>Requests & Allergy Specifics</th>
-                                <th>Order Label</th>
+                                <th>Seat</th>
                                 <th>Course#</th>
                                 <th className="deleteFont">Delete</th>
                             </tr>
