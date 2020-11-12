@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
 import "./MenuPage.css";
 
+//toastify
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function MenuPageComp(props) {
 
@@ -89,9 +94,25 @@ function MenuPageComp(props) {
 
     const [modalShow, setModalShow] = React.useState(false);
 
+    
+
+    // toast
+    const notify = () => toast.dark(`${modalTitle} Added!`, {
+        position: "top-right",
+        autoClose: 10000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Flip
+        });
+
+
     return (
 
         <>
+        <ToastContainer className="toastContainer"/>
 
             <br />
 
@@ -101,6 +122,10 @@ function MenuPageComp(props) {
                     <br></br>
                     <h1 className="responsiveText"><strong>Menu</strong></h1>
                     <br></br>
+
+
+
+      
 
 
 
@@ -594,7 +619,7 @@ function MenuPageComp(props) {
                 <Modal.Footer>
                     <Button variant="dark"
                         className="modalButtons"
-                        onClick={handleFormSubmit}>
+                        onClick={()=> {handleFormSubmit(event); notify()}}>
                         +Add Item </Button>
                 </Modal.Footer>
             </Modal>

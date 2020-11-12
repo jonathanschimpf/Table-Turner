@@ -108,6 +108,22 @@
         color: white !important;
     
       }
+
+
+      /* Toast Styling */
+/* 
+      .toastContainer {
+        position="top-right";
+        autoClose={1000};
+        hideProgressBar;
+        newestOnTop={false};
+        closeOnClick;
+        rtl={false};
+        pauseOnFocusLoss;
+        draggable;
+        pauseOnHover;
+      } */
+
     
       /* MEDIA QUERY FOR INPUT AREA */
     
