@@ -129,6 +129,28 @@
       
         }
       }
+
+      /* MEDIA QUERY FOR BUTTON BELOW FORM */
+
+      @media screen and (min-width:287px) {
+    
+        .regularButton{
+      
+          width: 275px !important;
+      
+        }
+      }
+      
+      
+      @media screen and (max-width:286px) {
+      
+        .responsiveButton{
+      
+          width: 240px !important;
+      
+        }
+      }
+    
     
         /* MEDIA QUERY FOR H3 "MENU" TEXT */
     

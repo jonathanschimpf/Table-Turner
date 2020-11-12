@@ -26,7 +26,7 @@ function AddNewOrderComp() {
 
 
                 <Jumbotron className="jumbotronAddOrder">
-                    <h2 className="text-center responsiveH2Font">Add An Order</h2>
+                    <h2 className="text-center responsiveH2Font">Add Order To Seat</h2>
                     <hr style={{ height: '4px' }} />
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
                     {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
@@ -37,7 +37,7 @@ function AddNewOrderComp() {
 
                             <h6 className="centerText">Memorably Define This Order</h6>
 
-                            <Form.Control className="formControl centerTextAddLabel" placeholder="(Optional) Order Label" value={value} type="text" onChange={onChange} />
+                            <Form.Control className="formControl centerTextAddLabel" placeholder="(Optional) Seat Name/Number" value={value} type="text" onChange={onChange} />
                         </Form.Group>
 
                        
