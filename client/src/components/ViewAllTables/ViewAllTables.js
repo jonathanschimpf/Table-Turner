@@ -85,16 +85,22 @@ function ViewAllTablesComp() {
     }
 
     //creating a function for the onclick of the button that deletes an entire table
-    const deleteWholeTable = (id) => {
+    const deleteWholeTable = (tableNumb) => {
         console.log("**deleting table**")
-        console.log("table id is: ", id)
+        console.log("table number is: ", tableNumb)
 
-        // API.deleteTable(id)
-        // .then(console.log("table has been deleted"))
+        API.deleteTable(tableNumb)
+        .then(console.log("table has been deleted"))
 
-        // .then(res => loadItems())
-        // .catch(err => console.log(err));
+        .then(props.onHide)
+
+        .then(res => loadItems())
+        .catch(err => console.log(err));
     }
+
+
+
+// ================================================================
 
 
 
@@ -133,7 +139,7 @@ function ViewAllTablesComp() {
                             <Col xs={3}>
                                 <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
                                 size="sm" block 
-                                onClick={() => {setSmallerModalShow(true); deleteWholeTable(tableNumb)}} 
+                                onClick={() => {setSmallerModalShow(true);  setModalTable(tableNumb)}} 
                                 
                                 >
                                 
@@ -151,11 +157,13 @@ function ViewAllTablesComp() {
 
             <MyVerticallyCenteredModal
             show={modalShow}
-            onHide={() => setModalShow(false)} />
+            onHide={() => setModalShow(false)} 
+            />
 
             <MySmallerVerticallyCenteredModal
             show={smallermodalShow}
-            onHide={() => setSmallerModalShow(false)} />
+            onHide={() => setSmallerModalShow(false)}
+           />
             
             </div>
 
@@ -261,7 +269,7 @@ function ViewAllTablesComp() {
               <p className="card-text"><small className="text-muted"><strong>Deleting this entire table will remove it from your available tables. You will need to re-create it for future guests. Alternatively, you can clear orders individually within the "View Details" section of this table.</strong></small></p>
             </Modal.Body>
             <Modal.Footer>
-              <Button className="deleteTableButtons" size="sm" variant="outline-danger" onClick={props.onHide}>Delete Table</Button>
+              <Button className="deleteTableButtons" size="sm" variant="outline-danger" onClick={()=> deleteWholeTable(modalTable)}>Delete Table</Button>
             </Modal.Footer>
           </Modal>
         );
