@@ -35,9 +35,9 @@ function AddNewOrderComp() {
 
                         <Form.Group className="formControl">
 
-                            <h6 className="centerText">Memorably Define This Order</h6>
+                            <h6 className="centerText">Enter Seat Description:</h6>
 
-                            <Form.Control className="formControl centerTextAddLabel" placeholder="(Optional) Seat Name/Number" value={value} type="text" onChange={onChange} />
+                            <Form.Control className="formControl centerTextAddLabel" placeholder="Seat Name/Number" value={value} type="text" onChange={onChange} />
                         </Form.Group>
 
                        
