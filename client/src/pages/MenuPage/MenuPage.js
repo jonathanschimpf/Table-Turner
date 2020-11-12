@@ -42,7 +42,6 @@ function MenuPageComp(props) {
         console.log(value)
     }
 
-
     // #####################################################################################################
     //SEARCHING FOR MENU ITEMS AND FILTERING
 

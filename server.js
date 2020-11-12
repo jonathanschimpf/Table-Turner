@@ -53,15 +53,11 @@ app.use(passport.session());
 require('./passportConfig')(passport);
 
 
-
-
 // --- End of Middleware --- //
-
 
 // --- Routes for login --- //   
 
 // !! Can be Moved to routes folder when finished !! //
-
 
 
 app.post ("/login", (req, res, next) => {
@@ -106,8 +102,6 @@ app.get("/logout", function(req, res) {
 });
 
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
-
-
 
 // Send every request to the React app
 // Define any API routes before this runs
