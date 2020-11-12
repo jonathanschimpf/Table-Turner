@@ -88,7 +88,12 @@ import 'react-toastify/dist/ReactToastify.css';
                       
                   </thead>
                   <tbody>
-                    <tr>Small Plates</tr>
+                    <tr>
+                      <th className="tableRowCategoryTreatment">‏‏Small Plates</th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      </tr>
                   {smallPlates.map(item => {
                        return <tr>
 
@@ -99,7 +104,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
                        </tr>
                   })}
-                  <tr> Shared Plates </tr>
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‎Shared Plates</th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr>
+
                   {sharedPlates.map(item =>{
                       return  <tr>
 
@@ -110,7 +121,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
                        </tr>
  })}
-                  <tr>Main Course</tr>
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‎‎‎Main Course</th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr>
                   {mainCourse.map(item =>{
                       return  <tr>
 
@@ -121,7 +137,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
                        </tr>
   })}  
-                  <tr>Dessert</tr> 
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‏‏‎Dessert</th>
+                                    <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr> 
                   {dessert.map(item => {
                        return <tr>
 
@@ -298,7 +319,7 @@ function ImportMenuComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl importMenuButton" block 
+                        <Button variant="outline-dark" className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={()=> handleFormSubmit(event)} >+Add Menu Item</Button>
 
