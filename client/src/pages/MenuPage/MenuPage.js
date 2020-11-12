@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, setState } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
 import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
@@ -10,8 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-function MenuPageComp(props) {
-
+function MenuPageComp() {
+    
+    
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
 
@@ -417,7 +418,7 @@ function MenuPageComp(props) {
 
 
     function MyVerticallyCenteredModal(props) {
-
+        
         const [tableValue, setTableValue] = React.useState(
             localStorage.getItem('TableNumber')
         );
@@ -441,7 +442,8 @@ function MenuPageComp(props) {
             course: 0,
             allergies: "",
             extra_notes: "",
-            label: labelValue
+            label: labelValue,
+            
         })
 
         // Load all menu items and store them with setMenuObj
@@ -472,8 +474,38 @@ function MenuPageComp(props) {
         }
         
         function handleCheckbox(event){
-            const { name, value } = event.target;
-    
+            const { name, value } = event.target
+            
+            // const orderArr = []
+            
+            // if(value < 1) {
+            //     orderArr.push(event.target.value)
+            // }
+            
+            // value[i] = event.target.value
+            // this.state = {
+            //     days:[]
+            // }
+            // let dayArr;
+            
+            // handleDaySelect (event) {
+            
+            //     /*now we should check if the selected days
+            //     already exist so that we don't double entry it*/
+            
+            //     if (this.state.days.indexOf(event.target.value) < 1) {
+            //         dayArr.push(event.target.value)
+            //     }
+            
+            //     this.setState({
+            //        days: dayArr
+            //     })
+            // }
+            // this.setState({allergies: event.target.value});
+            // const ConfirmedAllergies = this.state.ConfirmedAllergies;
+            // ConfirmedAllergies[i] = event.target.value;
+            // this.setState({ConfirmedAllergies})
+            
             //arr.split(", ")
 
             //add value if exists 
