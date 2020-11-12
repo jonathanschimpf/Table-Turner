@@ -187,8 +187,9 @@ function ViewAllTablesComp() {
     function MyVerticallyCenteredModal(props) {
 
 
-       
-
+        React.useEffect(() => {
+            localStorage.setItem('TableNumber', modalTable)
+        }, []);
 
 
         return (
@@ -243,7 +244,7 @@ function ViewAllTablesComp() {
     
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="dark" size="sm" className="tableViewButtons" onClick={props.onHide}>+Add New Order Item </Button>
+                <a href="/takeOrder"><Button variant="dark" size="sm" className="tableViewButtons" onClick={props.onHide}>+Add New Order Item </Button></a>
                 </Modal.Footer>
             </Modal>
         );

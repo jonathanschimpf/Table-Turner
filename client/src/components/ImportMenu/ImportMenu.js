@@ -3,9 +3,142 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./ImportMenu.css";
 
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap";
+
+ // this function is for the table order details modal
+ function MyVerticallyCenteredModal(props) {
+
+  const [items, setItems] = useState([])
+  const [menuObj, setMenuObj] = useState({})
+
+  useEffect(() => {
+    loadItems()
+  }, [])
+
+  // Loads all menu items and sets the menu items
+  function loadItems() {
+    API.getMenus()
+      .then(res => 
+        setItems(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+      let smallPlates = items.filter(item => {
+       return item.section === "Small Plates"}).map(item => {
+         return {item: item.item, price: item.price, ingredients: item.ingredients, id: item._id};
+       })
+       let sharedPlates = items.filter(item => {
+        return item.section === "Shared Plates"}).map(item => {
+          return {item: item.item, price: item.price, ingredients: item.ingredients, id: item._id};
+        })
+        let mainCourse = items.filter(item => {
+          return item.section === "Main Course"}).map(item => {
+            return {item: item.item, price: item.price, ingredients: item.ingredients, id: item._id};
+          })
+        let dessert = items.filter(item => {
+            return item.section === "Dessert"}).map(item => {
+            return {item: item.item, price: item.price, ingredients: item.ingredients, id: item._id};
+            })
+        
+       
+            const deleteMenuItem = (id) => {
+              console.log("delete button clicked");
+              console.log(id, "id");
+              API.deleteMenu(id).then(console.log("Menu Item has been deleted"))
+      
+              .then(res => loadItems())
+              .catch(err => console.log(err));
+      
+      
+              // .then()
+          }
 
 
+  return (
+      <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+      >
+          <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                 All Menu Items
+        </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+              <p className="card-text"><small className="text-muted"><strong>Order Details</strong></small></p>
+              <Table responsive className="tableBlackGround" size="sm" striped bordered hover variant="dark">
+                  <thead>
+                      
+                      <tr>
+                          <th>Menu Item</th>
+                          <th>Ingredients</th>
+                          <th>Price</th>
+                          <th className="deleteFont">Delete</th>
+                      </tr>
+                      
+                  </thead>
+                  <tbody>
+                    <tr>Small Plates</tr>
+                  {smallPlates.map(item => {
+                       return <tr>
+
+                          <td>{item.item}</td>
+                          <td>{item.ingredients}</td>
+                          <td>{item.price}</td>
+                          <td className="removeRow" onClick={()=> deleteMenuItem(item.id)}><strong>x</strong></td>
+
+                       </tr>
+                  })}
+                  <tr> Shared Plates </tr>
+                  {sharedPlates.map(item =>{
+                      return  <tr>
+
+                          <td>{item.item}</td>
+                          <td>{item.ingredients}</td>
+                          <td>{item.price}</td>
+                          <td className="removeRow" onClick={()=> deleteMenuItem(item.id)}><strong>x</strong></td>
+
+                       </tr>
+ })}
+                  <tr>Main Course</tr>
+                  {mainCourse.map(item =>{
+                      return  <tr>
+
+                          <td>{item.item}</td>
+                          <td>{item.ingredients}</td>
+                          <td>{item.price}</td>
+                          <td className="removeRow" onClick={()=> deleteMenuItem(item.id)}><strong>x</strong></td>
+
+                       </tr>
+  })}  
+                  <tr>Dessert</tr> 
+                  {dessert.map(item => {
+                       return <tr>
+
+                          <td>{item.item}</td>
+                          <td>{item.ingredients}</td>
+                          <td>{item.price}</td>
+                          <td className="removeRow" onClick={()=> deleteMenuItem(item.id)}><strong>x</strong></td>
+
+                       </tr>
+ })} 
+                  </tbody>
+              </Table>
+
+              <p className="card-text"><small className="text-muted"><strong></strong></small></p>
+
+
+
+          </Modal.Body>
+          <Modal.Footer>
+             <br/>
+          </Modal.Footer>
+      </Modal>
+  );
+}
 
 function ImportMenuComp() {
   
@@ -76,9 +209,11 @@ function ImportMenuComp() {
       }
     };
 
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
 
+      
         <>
 
             <br />
@@ -129,10 +264,22 @@ function ImportMenuComp() {
                         <Button className="my-2 my-sm-0 formControl importMenuButton" block 
                   disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section )}
                   onClick={handleFormSubmit} >+Add Menu Item</Button>
+
+                  <br/>
+
+                        <Button variant="outline-dark" className="my-2 my-lg-0 formControl view viewDeleteMenuButtons" size="sm" variant="outline-danger" onClick={() => {
+    
+                                 setModalShow(true)
+                                 
+                                 }} block>View / Delete Menu Items</Button>
                         
                     </Form>
 
                 </Jumbotron>
+
+                <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)} />
 
             </Container>
             <br />
