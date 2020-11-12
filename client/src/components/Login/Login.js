@@ -87,7 +87,11 @@ function LoginComp(props) {
 
                         <br />
 
+<<<<<<< HEAD
+                        <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>
+=======
                         <p className="formControl">New user? Create an <a href="/signup" className="aLoginSignUpLink effect-shine">account.</a></p>
+>>>>>>> 6f49f920f2c12ac0799c0b2eea319bb92f667b22
 
                     </Form>
                     <br/>
@@ -106,6 +110,8 @@ function LoginComp(props) {
 
 export default LoginComp;
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -215,3 +221,4 @@ export default LoginComp;
 
 
 // export default LoginComp;
+>>>>>>> 6f49f920f2c12ac0799c0b2eea319bb92f667b22
