@@ -19,7 +19,12 @@
       /* form.menuImport {
         margin-top: 50px;
       } */
+    
+      .tableRowCategoryTreatment {
 
+        background: #DFDFDF!important;
+        color: black !important;
+      }
       .viewDeleteMenuButtons {
        
         color: white !important;

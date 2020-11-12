@@ -33,7 +33,7 @@ function App() {
       history.push("/login")
     }
     API.getUser()
-      .then(res => { console.log(res.data); setUser(res.data) })
+      .then(res => { setUser(res.data) ; console.log(res.data.id) })
       .catch(err => { console.log(err) })
   }
   
@@ -50,7 +50,7 @@ function App() {
               <Route exact path="/importmenu" >
               {user ? <ImportMenuComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/menu" >
-              {user ? <MenuPageComp/> : <Redirect to="/login"/>}</Route>
+              {user ? <MenuPageComp user={user}/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/startTable" >
               {user ? <AddNewTableComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/viewTables" >

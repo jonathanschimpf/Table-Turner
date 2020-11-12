@@ -5,13 +5,14 @@ import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Butt
 import "./MenuPage.css";
 
 //toastify
-import { ToastContainer, toast, Flip } from 'react-toastify';
+import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function MenuPageComp(props) {
-
+    
+    
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
 
@@ -93,19 +94,23 @@ function MenuPageComp(props) {
 
 
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(false);
+    const [modalShow4, setModalShow4] = React.useState(false);
+    const [modalShow5, setModalShow5] = React.useState(false);
 
     
 
     // toast
     const notify = () => toast.dark(`${modalTitle} Added!`, {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        transition: Flip
+        transition: Slide
         });
 
 
@@ -221,7 +226,7 @@ function MenuPageComp(props) {
                                         <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
                                             setModalTitle(item[0])
                                             setModalDesc(item[2])
-                                            setModalShow(true)
+                                            setModalShow2(true)
                                         }} >
                                             +Add
                                     </Button>
@@ -237,8 +242,8 @@ function MenuPageComp(props) {
                     )}
 
                         <MyVerticallyCenteredModal
-                            show={modalShow}
-                            onHide={() => setModalShow(false)} />
+                            show={modalShow2}
+                            onHide={() => setModalShow2(false)} />
 
                 </CardColumns>
             </Container>
@@ -273,7 +278,7 @@ function MenuPageComp(props) {
                                         <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
                                             setModalTitle(item[0])
                                             setModalDesc(item[2])
-                                            setModalShow(true)
+                                            setModalShow3(true)
                                         }} >
                                             +Add
                                     </Button>
@@ -290,8 +295,8 @@ function MenuPageComp(props) {
                     )}
 
                         <MyVerticallyCenteredModal
-                          show={modalShow}
-                            onHide={() => setModalShow(false)} />
+                          show={modalShow3}
+                            onHide={() => setModalShow3(false)} />
 
                 </CardColumns>
             </Container>
@@ -325,7 +330,7 @@ function MenuPageComp(props) {
                                         <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
                                             setModalTitle(item[0])
                                             setModalDesc(item[2])
-                                            setModalShow(true)
+                                            setModalShow4(true)
                                         }} >
                                             +Add
                                     </Button>
@@ -339,8 +344,8 @@ function MenuPageComp(props) {
                     )}
 
                         <MyVerticallyCenteredModal
-                          show={modalShow}
-                          onHide={() => setModalShow(false)} />
+                          show={modalShow4}
+                          onHide={() => setModalShow4(false)} />
 
                 </CardColumns>
             </Container>
@@ -376,7 +381,7 @@ function MenuPageComp(props) {
                                         <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
                                             setModalTitle(item[0])
                                             setModalDesc(item[2])
-                                            setModalShow(true)
+                                            setModalShow5(true)
                                         }} >
                                             +Add
                                      </Button>
@@ -392,8 +397,8 @@ function MenuPageComp(props) {
                     )}
 
                         <MyVerticallyCenteredModal
-                          show={modalShow}
-                         onHide={() => setModalShow(false)} />   
+                          show={modalShow5}
+                         onHide={() => setModalShow5(false)} />   
 
                 </CardColumns>
             </Container>
@@ -437,7 +442,9 @@ function MenuPageComp(props) {
             course: 0,
             allergies: "",
             extra_notes: "",
-            label: labelValue
+            label: labelValue,
+            waiterId: props.user[0]
+            // test: "test"
         })
 
         // Load all menu items and store them with setMenuObj

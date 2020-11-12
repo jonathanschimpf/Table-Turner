@@ -31,6 +31,7 @@ export default {
   },
   // Saves a item to the database
   saveOrders: function(ordersData) {
+    console.log(ordersData, "ordersData")
     return axios.post("/api/orders", ordersData);
   },
 

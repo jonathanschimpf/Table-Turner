@@ -81,7 +81,12 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
                       
                   </thead>
                   <tbody>
-                    <tr>Small Plates</tr>
+                    <tr>
+                      <th className="tableRowCategoryTreatment">‏‏Small Plates</th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      <th className="tableRowCategoryTreatment"></th>
+                      </tr>
                   {smallPlates.map(item => {
                        return <tr>
 
@@ -92,7 +97,13 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
 
                        </tr>
                   })}
-                  <tr> Shared Plates </tr>
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‎Shared Plates</th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr>
+
                   {sharedPlates.map(item =>{
                       return  <tr>
 
@@ -103,7 +114,12 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
 
                        </tr>
  })}
-                  <tr>Main Course</tr>
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‎‎‎Main Course</th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr>
                   {mainCourse.map(item =>{
                       return  <tr>
 
@@ -114,7 +130,12 @@ import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap
 
                        </tr>
   })}  
-                  <tr>Dessert</tr> 
+                  <tr>
+                  <th className="tableRowCategoryTreatment">‏‏‏‏‎Dessert</th>
+                                    <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  <th className="tableRowCategoryTreatment"></th>
+                  </tr> 
                   {dessert.map(item => {
                        return <tr>
 
