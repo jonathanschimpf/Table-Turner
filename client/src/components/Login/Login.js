@@ -36,7 +36,7 @@ function LoginComp(props) {
                 password: loginPassword,
             },
             withCredentials: true,
-            url: "http://localhost:3001/login",
+            url: "/api/login",
         }).then((res) => {
             console.log("LOOK HERE")
             console.log(res)
