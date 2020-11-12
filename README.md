@@ -3,10 +3,10 @@
 ‎‎![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
 ![License](https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow)
 ![License](https://img.shields.io/static/v1?label=Database&message=MongoDB&color=red)
-![License](https://img.shields.io/static/v1?label=Language&message=Node.js&color=blueviolet) 
+![License](https://img.shields.io/static/v1?label=Environment&message=Node.js&color=blueviolet) 
 
 ![License](https://img.shields.io/static/v1?label=Framework&message=React-Bootstrap&color=green)
-![License](https://img.shields.io/static/v1?label=Language&message=Express.js&color=yellowgreen)    ![License](https://img.shields.io/static/v1?label=Language&message=HTML5&color=orange) ![License](https://img.shields.io/static/v1?label=Language&message=CSS3&color=blue) 
+![License](https://img.shields.io/static/v1?label=Framework&message=Express.js&color=yellowgreen)    ![License](https://img.shields.io/static/v1?label=Language&message=HTML5&color=orange) ![License](https://img.shields.io/static/v1?label=Language&message=CSS3&color=blue) 
   
 
   ---
