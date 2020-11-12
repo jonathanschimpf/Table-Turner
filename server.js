@@ -62,10 +62,6 @@ require('./passportConfig')(passport);
 
 // !! Can be Moved to routes folder when finished !! //
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
 
 app.post ("/api/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
