@@ -108,6 +108,7 @@ function MenuPageComp(props) {
                     <Form inline>
                         <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
+                    <Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Add Items To New Seat</Button>
 
                     <br></br>
                     <br></br>
@@ -445,6 +446,13 @@ function MenuPageComp(props) {
         function handleCheckbox(event){
             const { name, value } = event.target;
     
+            //arr.split(", ")
+
+            //add value if exists 
+
+            //remove value if doesn't exist 
+
+            //arr.join(", ")
             console.log(name)
             console.log(value)
             
@@ -459,7 +467,10 @@ function MenuPageComp(props) {
             console.log(labelValue)
             console.log(modalObj)
             console.log("this is MODAL")
-            API.saveOrders(modalObj).then(res => console.log(res.data))
+            API.saveOrders(modalObj).then(res => {
+                console.log(res.data);
+                props.onHide();
+            })
                 .catch(err => console.log(err));
 
         };
@@ -584,7 +595,7 @@ function MenuPageComp(props) {
                 <Modal.Footer>
                     <Button variant="dark"
                         className="modalButtons"
-                        onClick={props.onHide, handleFormSubmit}>
+                        onClick={handleFormSubmit}>
                         +Add Item </Button>
                 </Modal.Footer>
             </Modal>
