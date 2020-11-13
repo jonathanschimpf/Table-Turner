@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -76,11 +75,11 @@ function LoginComp(props) {
                         
                         <Form.Group className="formControl">
                             <h6>Return User? Sign Into Your Account:</h6>
-                            <Form.Control className="formControl" placeholder="Username" onChange={e => setloginUsername(e.target.value)} />
+                            <Form.Control className="formControl" placeholder="Username" autocomplete="off" onChange={e => setloginUsername(e.target.value)} />
                         </Form.Group>
 
                         <Form.Group>
-                            <Form.Control className="formControl" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
+                            <Form.Control className="formControl" autocomplete="off" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
                         <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block>Sign In</Button>
@@ -90,7 +89,7 @@ function LoginComp(props) {
                         <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>
 
                     </Form>
-                    <br/>
+                   
                 </Jumbotron>
 
             </Container>
@@ -105,4 +104,3 @@ function LoginComp(props) {
 
 
 export default LoginComp;
-
