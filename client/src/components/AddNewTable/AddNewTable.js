@@ -48,7 +48,7 @@ function AddNewTableComp() {
 
                             <h6 className="centerText">Enter your table:</h6>
 
-                            <Form.Control className="formControl centerTextAddTable" placeholder="Enter Number" value={value} type="text" onChange={onChange}/>
+                            <Form.Control className="formControl centerTextAddTable" placeholder="Enter Number" value={value} type="number" onChange={onChange}/>
                         </Form.Group>
 
                         {/* <Form.Group>
@@ -56,7 +56,7 @@ function AddNewTableComp() {
                         </Form.Group> */}
 
                         
-                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block>+</Button></a>
+                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block disabled={!(value)}>+</Button></a>
 
                     </Form>
 
