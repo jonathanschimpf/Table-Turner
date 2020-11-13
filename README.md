@@ -1,6 +1,7 @@
-#  TableTurner ‎
-‏‏‎
-‎‎![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
+# Table Turner
+[CLICK HERE FOR LIVE HEROKU APPLICATION](https://tableturner.herokuapp.com/login)
+
+![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
 ![License](https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow)
 ![License](https://img.shields.io/static/v1?label=Database&message=MongoDB&color=red)
 ![License](https://img.shields.io/static/v1?label=Environment&message=Node.js&color=blueviolet) 
@@ -12,202 +13,67 @@
   ---
   
   <p>&nbsp;<p>
-    
 
-## Description 
+## Table of Contents
+* [Screenshots](#screenshots)
 
-<p>&nbsp;<p>
+* [User Story](#user-story)
 
-<strong><em>What is this project? Why did you make this project? How did you make this project?</strong></em>
+* [Application Description](#application-description)
 
-<p>&nbsp;<p>
-
-(DESCRIPTION HERE. COMING SOON..)
-
-<p>&nbsp;<p>
-
-
-View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`TableTurner`](https://tableturner.herokuapp.com/)
-
-
-<p>&nbsp;<p>
-
-
----
-
-<p>&nbsp;<p>
-
-
-## Table of Contents: 
-
-<p>&nbsp;<p>
+* [Installation](#installation)
 
 * [Usage](#usage)
-* [License](#license)
-* [Credits](#credits)
+
+* [Built With](#built-with)
+
 * [Contributors](#contributors)
+
+* [License](#license)
+
 * [Questions](#questions)
 
 <p>&nbsp;<p>
 
----
-
-
-<p>&nbsp;<p>
-
-
-## Usage
-
+## Screenshots 
+![screenshot1](./client/assets/getstarted.png))
+![screenshot2](./client/assets/tables.png)
+![screenshot3](./client/assets/tableview.png)
+![screenshot4](./client/assets/addmenu.png)
+![screenshot4](./client/assets/menu.png)
 
 <p>&nbsp;<p>
 
+## User Story
+```
+As a Manager, I want to be able to add new menu items to a point of service system and view the menu. I want to create new tables and attach guests to each table for all back of house employee's to see what the guest has ordered. I also want to delete tables as guests finish there dining experience. As the seasons change  I want to be able to update the menu.
 
-<strong><em>Instructions and examples for usage + development details:</strong></em>
+```
+<p>&nbsp;<p>
+
+## Application Description
+
+An application that lets the user create a menu for guests to view. The user a restaruant manager or employee can add and delete menu items. They can also create new tables of guests and save an order for the back of house to view. The application utilizes react.js using hooks and state to send information through the application. User information is saved in a mongoDB.
+
+## Installation 
+```
+npm i 
+```
+<p>&nbsp;<p>
+
+## Usage 
+```
+Run "npm start to start then navigate to a browser window 
+
+OR
+                                     
+Use the live application via the Heroku link provided above
+
+```
 
 <p>&nbsp;<p>
 
-
-Visit the application online @ [`Heroku`](https://tableturner.herokuapp.com/) 
-
-
-(DESCRIPTION HERE. COMING SOON..)
-
-
-<p>&nbsp;<p>
-
----
-
-<p>&nbsp;<p>
-
-(IMAGE COMING SOON..)
-<!-- View a video overview on usage here:
-
-[![IMAGE](public/img/trip-wishlist_video-player_scrngrb.jpg)](https://drive.google.com/file/d/13k1SuX7pMayu0ahN_L9TZ95Uns9oZQ9D/view)  -->
-
-<p>&nbsp;<p>
-
-
----
-
-
-<p>&nbsp;<p>
-
-(IMAGE COMING SOON..)
-
-<!-- [![IMAGE](public/img/trip-wishlist_log-in_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-
-<p>&nbsp;<p>
-
-
----
-
-
-<p>&nbsp;<p>
-
-
-(IMAGE COMING SOON..)
-
-<!-- [![IMAGE](public/img/trip-wishlist_hotelsearch_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-
-<p>&nbsp;<p>
-
-
----
-
-
-<p>&nbsp;<p>
-
-(IMAGE COMING SOON..)
-
-<!-- [![IMAGE](public/img/trip-wishlist_foodsearch_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-
-<p>&nbsp;<p>
-
-
----
-
-
-<p>&nbsp;<p>
-
-
-(IMAGE COMING SOON..)
-<!-- [![IMAGE](public/img/trip-wishlist_museumsearch_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-
-<p>&nbsp;<p>
-
-
-
----
-
-
-<p>&nbsp;<p>
-
-(IMAGE COMING SOON..)
-<!-- [![IMAGE](public/img/trip-wishlist_foodsearch-detail_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-<p>&nbsp;</p>
-
-
-
----
-
-<p>&nbsp;<p>
-
-(IMAGE COMING SOON..)
-<!-- [![IMAGE](public/img/trip-wishlist_mobile_scrngrb.jpg)](https://trip-wishlist.herokuapp.com/)  -->
-
-<p>&nbsp;</p>
-
-
-
----
-
-<p>&nbsp;</p>
-
-(IMAGE COMING SOON..)
-
-<!-- <p align= "center"><img src="public/img/TripWishlist_GIF.gif" alt="animated" href="https://trip-wishlist.herokuapp.com/" /></p> -->
-
-<p>&nbsp;</p>
-
-
----
-
-
-
-<p>&nbsp;<p>
-
-
-## License
-
-
-<p>&nbsp;<p>
-
-
-This project is covered under the MIT license. 
-
-
-<p>&nbsp;<p>
-
-
----
-
-
-<p>&nbsp;<p>
-
-
-## Credits
-
-
-<p>&nbsp;<p>
-
-
-<strong><em>Third party assets:</strong></em>
-
+## Built With
 
 <p>&nbsp;<p>
 
@@ -280,15 +146,7 @@ This project is covered under the MIT license.
 <p>&nbsp;<p>
 
 
-
----
-
-<p>&nbsp;<p>
-
-## Contributors
-
-
-<p>&nbsp;<p>
+## Contributors 
 
 James Lamb 
 * [GitHub](https://github.com/Lambaa94) 
@@ -316,24 +174,25 @@ Max Goldstein
 
 <p>&nbsp;<p>
 
+## License
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright 2020 ©James, Max Goldstein, Robert Greenawalt, Jonathan Schimpf
+
+<sup>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  
+<sup>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  
+<sup>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Questions
+
+If you have any questions regarding this repo, please contact any of the above mentioned contributors via Github or email.
 
 
-<p>&nbsp;<p>
 
 
 
-## Questions?
 
 
-<p>&nbsp;<p>
-
-
-Reach out to us via GitHub / Email.
-
-<p>&nbsp;<p>
-
-We'd love to discuss this project with you.
-
-<p>&nbsp;<p>
