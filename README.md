@@ -1,4 +1,4 @@
-#  TableTurner ‎
+#  Table Turner 
 ‏‏‎
 ‎‎![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
 ![License](https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow)
@@ -22,7 +22,7 @@
 
 <p>&nbsp;<p>
 
-Table Turner is an application for modern restaurants that are looking to expedite their order fulfillments and place greater visibility on allergy concerns and special order requests from customers. Orders can be placed on a tablet or other mobile device and are immediately available for the kitchen staff to view and begin preparing. The front of the house wait staff can add table numbers and seat labels within each table to add further clarity to orders and keep track of exactly who ordered what. They have the ability to select course numbers to track when dishes should be brought out, check boxes to indicate allergy categories the kitchen should be aware of, and enter additional information about allergy specifics/special requests the guests may have. All orders are stored in a table view section after being placed with their appropriate labels applied. These orders can be removed if customers decide to cancel, or at the end of a shift when the night is over. Tables can be removed as well if the layout changes within the establishment. The team has the abilitty to edit their menu items; they can add new menu items when they develop them, and remove menu items when they have been discontinued or are no longer available. This application is intuitive to use and is developed with tablet + mobile device use in mind.
+Table Turner is an application for modern restaurants that are looking to expedite their order fulfillments and place greater visibility on allergy concerns and special order requests from customers. Orders can be placed on a tablet or other mobile devices and are immediately available for the kitchen staff to view and begin preparing. The front of the house wait staff can add table numbers and seat labels within each table to add further clarity to orders and keep track of exactly who ordered what. They have the ability to select course numbers to track when dishes should be brought out, check boxes to indicate allergy categories the kitchen should be aware of, and enter additional information about special requests and allergy specifics the guests may have. All orders are stored in a table view section after being placed with their appropriate labels applied. These orders can be removed if customers decide to cancel, or at the end of a shift when the night is over. Tables can be removed as well if the layout changes within the establishment. The team has the ability to edit their menu items; they can add new menu items when they develop them, and remove menu items when they have been discontinued or are no longer available. This application is intuitive to use and is developed with tablet + mobile device use in mind.
 
 
 <p>&nbsp;<p>
@@ -39,7 +39,7 @@ View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`Table
 <p>&nbsp;<p>
 
 
-## Table of Contents: 
+## Table of Contents 
 
 <p>&nbsp;<p>
 
@@ -64,11 +64,12 @@ View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`Table
 
 <strong><em>Instructions and examples for usage + development details:</strong></em>
 
+
+
 <p>&nbsp;<p>
 
 
-Visit the application online @ [`Heroku`](https://tableturner.herokuapp.com/) 
-
+Establishments can get started taking orders by creating an account and adding the menu items that they currently offer. Each account will store this unique data and can be continuously updated. This application interface is intentionally designed to be easy to use and navigate throughout during the process of taking orders. Front of house can define their tables and the individual orders within those tables. Special requests and allergy concerns can be easily applied to each order and then viewed immediately by the kitchen staff. Course numbers can be added to each item to add clarity to preparation order. It's quite easy to remove items, add new ones, and to update the menu when it changes. ‏‏[`Log on`](https://tableturner.herokuapp.com/) now to begin quickly turning your tables.
 
 
 <p>&nbsp;<p>
