@@ -48,7 +48,7 @@ function AddNewTableComp() {
 
                             <h6 className="centerText">Enter your table:</h6>
 
-                            <Form.Control className="formControl centerTextAddTable" placeholder="Enter Number" value={value} type="text" onChange={onChange}/>
+                            <Form.Control className="formControl centerTextAddTable" placeholder="Enter Number" value={value} type="number" onChange={onChange}/>
                         </Form.Group>
 
                         {/* <Form.Group>
