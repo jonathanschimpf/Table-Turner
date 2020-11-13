@@ -283,7 +283,7 @@ function ImportMenuComp() {
 
                         <Form.Group className="formControl">
                             <h6>Enter Dish Name + Price + Ingredients (Required): </h6>
-                            <Form.Control className="formControl" placeholder="Dish Name.."
+                            <Form.Control className="formControl" autocomplete="off" placeholder="Dish Name.."
                             onChange={handleInputChange}
                             name="item" 
                             value={menuObj.item}/>
@@ -291,7 +291,7 @@ function ImportMenuComp() {
 
                         <Form.Group className="formControl">
                             {/* <h6>Enter Dish Price (Required): </h6> */}
-                            <Form.Control className="formControl" placeholder="Dish Price.." 
+                            <Form.Control className="formControl" autocomplete="off" placeholder="Dish Price.." 
                              onChange={handleInputChange}
                              name="price"
                              value={menuObj.price}/>
@@ -299,14 +299,14 @@ function ImportMenuComp() {
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
                             {/* <h6>List Dish Info + Ingredients (Required): </h6> */}
-                            <Form.Control as="textarea" className="dishInfoHeight" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
+                            <Form.Control as="textarea" className="dishInfoHeight" autocomplete="off" placeholder="Dish Info + Ingredients.." rows={3} onChange={handleInputChange}
                   name="ingredients"
                   value={menuObj.ingredients}/>
                         </Form.Group>
 
                         <Form.Group className="formControl">
                             <h6>Select Dish Category (Required): </h6>
-                            <Form.Control as="select" className="formControl" onChange={handleInputChange}
+                            <Form.Control as="select" className="formControl" autocomplete="off" onChange={handleInputChange}
                             name="section"
                             value={menuObj.section}
                             >

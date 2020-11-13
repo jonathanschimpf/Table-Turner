@@ -114,7 +114,6 @@ function ViewAllTablesComp(props) {
             <Container>
 
                 <br />
-                <br />
 
                 <div className="flexWrap">
                     
