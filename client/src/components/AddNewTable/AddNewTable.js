@@ -56,7 +56,7 @@ function AddNewTableComp() {
                         </Form.Group> */}
 
                         
-                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block>+</Button></a>
+                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block disabled={!(value)}>+</Button></a>
 
                     </Form>
 
