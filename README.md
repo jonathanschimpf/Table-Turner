@@ -1,7 +1,6 @@
-# Table Turner
-[CLICK HERE FOR LIVE HEROKU APPLICATION](https://tableturner.herokuapp.com/login)
-
-![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
+#  TableTurner ‎
+‏‏‎
+‎‎![License](https://img.shields.io/static/v1?label=Library&message=React&color=brightgreen) 
 ![License](https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow)
 ![License](https://img.shields.io/static/v1?label=Database&message=MongoDB&color=red)
 ![License](https://img.shields.io/static/v1?label=Environment&message=Node.js&color=blueviolet) 
@@ -13,67 +12,148 @@
   ---
   
   <p>&nbsp;<p>
+    
 
-## Table of Contents
-* [Screenshots](#screenshots)
+## Description 
 
-* [User Story](#user-story)
+<p>&nbsp;<p>
 
-* [Application Description](#application-description)
+<strong><em>What is this project? Why did you make this project? How did you make this project?</strong></em>
 
-* [Installation](#installation)
+<p>&nbsp;<p>
+
+Table Turner is an application for modern restaurants that are looking to expedite their order fulfillments and place greater visibility on allergy concerns and special order requests from customers. Orders can be placed on a tablet or other mobile device and are immediately available for the kitchen staff to view and begin preparing. The front of the house wait staff can add table numbers and seat labels within each table to add further clarity to orders and keep track of exactly who ordered what. They have the ability to select course numbers to track when dishes should be brought out, check boxes to indicate allergy categories the kitchen should be aware of, and enter additional information about allergy specifics/special requests the guests may have. All orders are stored in a table view section after being placed with their appropriate labels applied. These orders can be removed if customers decide to cancel, or at the end of a shift when the night is over. Tables can be removed as well if the layout changes within the establishment. The team has the abilitty to edit their menu items; they can add new menu items when they develop them, and remove menu items when they have been discontinued or are no longer available. This application is intuitive to use and is developed with tablet + mobile device use in mind.
+
+
+<p>&nbsp;<p>
+
+
+View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`TableTurner`](https://tableturner.herokuapp.com/)
+
+
+<p>&nbsp;<p>
+
+
+---
+
+<p>&nbsp;<p>
+
+
+## Table of Contents: 
+
+<p>&nbsp;<p>
 
 * [Usage](#usage)
-
-* [Built With](#built-with)
-
+* [Credits](#credits)
 * [Contributors](#contributors)
-
-* [License](#license)
-
 * [Questions](#questions)
 
 <p>&nbsp;<p>
 
-## Screenshots 
-![screenshot1](./client/assets/getstarted.png))
-![screenshot2](./client/assets/tables.png)
-![screenshot3](./client/assets/tableview.png)
-![screenshot4](./client/assets/addmenu.png)
-![screenshot4](./client/assets/menu.png)
+---
+
 
 <p>&nbsp;<p>
 
-## User Story
-```
-As a Manager, I want to be able to add new menu items to a point of service system and view the menu. I want to create new tables and attach guests to each table for all back of house employee's to see what the guest has ordered. I also want to delete tables as guests finish there dining experience. As the seasons change  I want to be able to update the menu.
 
-```
-<p>&nbsp;<p>
+## Usage
 
-## Application Description
-
-An application that lets the user create a menu for guests to view. The user a restaruant manager or employee can add and delete menu items. They can also create new tables of guests and save an order for the back of house to view. The application utilizes react.js using hooks and state to send information through the application. User information is saved in a mongoDB.
-
-## Installation 
-```
-npm i 
-```
-<p>&nbsp;<p>
-
-## Usage 
-```
-Run "npm start to start then navigate to a browser window 
-
-OR
-                                     
-Use the live application via the Heroku link provided above
-
-```
 
 <p>&nbsp;<p>
 
-## Built With
+
+<strong><em>Instructions and examples for usage + development details:</strong></em>
+
+<p>&nbsp;<p>
+
+
+Visit the application online @ [`Heroku`](https://tableturner.herokuapp.com/) 
+
+
+
+<p>&nbsp;<p>
+
+---
+
+<p>&nbsp;<p>
+
+
+[![IMAGE](./client/assets/viewmenu_screengrab.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+---
+
+<p>&nbsp;<p>
+
+
+[![IMAGE](./client/assets/tableview_screengrab.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+
+---
+
+
+<p>&nbsp;<p>
+
+
+
+[![IMAGE](./client/assets/vieworders_screengrab.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+
+---
+
+
+<p>&nbsp;<p>
+
+
+[![IMAGE](./client/assets/editmenuitems_screengrab.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+
+
+
+<!-- ---
+
+
+
+<p>&nbsp;<p>
+
+
+## License
+
+
+<p>&nbsp;<p>
+
+
+This project is covered under the MIT license. 
+
+
+<p>&nbsp;<p> -->
+
+
+---
+
+
+<p>&nbsp;<p>
+
+
+## Credits
+
+
+<p>&nbsp;<p>
+
+
+<strong><em>Third party assets:</strong></em>
+
 
 <p>&nbsp;<p>
 
@@ -146,7 +226,15 @@ Use the live application via the Heroku link provided above
 <p>&nbsp;<p>
 
 
-## Contributors 
+
+---
+
+<p>&nbsp;<p>
+
+## Contributors
+
+
+<p>&nbsp;<p>
 
 James Lamb 
 * [GitHub](https://github.com/Lambaa94) 
@@ -174,25 +262,24 @@ Max Goldstein
 
 <p>&nbsp;<p>
 
-## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+---
 
-Copyright 2020 ©James, Max Goldstein, Robert Greenawalt, Jonathan Schimpf
 
-<sup>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-  
-<sup>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-  
-<sup>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Questions
-
-If you have any questions regarding this repo, please contact any of the above mentioned contributors via Github or email.
+<p>&nbsp;<p>
 
 
 
+## Questions?
 
 
+<p>&nbsp;<p>
 
 
+Reach out to us via GitHub / Email.
+
+<p>&nbsp;<p>
+
+We'd love to discuss this project with you.
+
+<p>&nbsp;<p>
