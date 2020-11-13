@@ -21,7 +21,7 @@ function App() {
 
   const [user, setUser] = useState({})
   const [redirect, setRedirect] = useState(false);
-
+  
   let history = useHistory();
 
   useEffect(() => {
@@ -33,11 +33,15 @@ function App() {
       history.push("/login")
     }
     API.getUser()
-      .then(res => { console.log(res.data); setUser(res.data) })
+      .then(res => { setUser(res.data) ; console.log(res.data.id) })
       .catch(err => { console.log(err) })
+      
   }
+ 
+    
+    localStorage.setItem('UserId', user.id)
+ 
   
-
   return (
 
     <>
@@ -50,7 +54,7 @@ function App() {
               <Route exact path="/importmenu" >
               {user ? <ImportMenuComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/menu" >
-              {user ? <MenuPageComp/> : <Redirect to="/login"/>}</Route>
+              {user ? <MenuPageComp /> : <Redirect to="/login"/>}</Route>
               <Route exact path="/startTable" >
               {user ? <AddNewTableComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/viewTables" >

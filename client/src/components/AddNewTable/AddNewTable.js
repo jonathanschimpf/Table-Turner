@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 function AddNewTableComp() {
     const [value, setValue] = React.useState('');
     
+
     React.useEffect(() => {
     localStorage.setItem("TableNumber", value)
     }, [value]);
