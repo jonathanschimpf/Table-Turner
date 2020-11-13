@@ -137,8 +137,11 @@ function MenuPageComp() {
                     <Form inline>
                         <FormControl type="text" placeholder="Search Menu" autocomplete="off" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
-                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Add Items To New Seat</Button></a>
 
+                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></a>
+                    
+                    <br/>
+                    <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Complete Order</Button></a>
                     <br></br>
                     <br></br>
 
@@ -434,7 +437,14 @@ function MenuPageComp() {
         React.useEffect(() => {
             localStorage.setItem('Label', labelValue)
         }, [labelValue]);
+        
+       
+        const [userId, setUserId] = React.useState(
+            localStorage.getItem('UserId')
+        );
 
+          
+       
         const [items, setItems] = useState([])
         const [modalObj, setModalObj] = useState({
             table: tableValue,
@@ -443,6 +453,7 @@ function MenuPageComp() {
             allergies: "",
             extra_notes: "",
             label: labelValue,
+            waiterId: userId
             
         })
 

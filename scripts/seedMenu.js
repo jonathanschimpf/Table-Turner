@@ -92,13 +92,13 @@ const menuSeed = [
         item: "Linguini & Clams",
         price: "25.00",
         ingredients: "Linguini, Cockle Clams, Clam Broth, Garlic, White Wine, Lemon Juice, Butter, Parsely, Arugula, Aleppo",
-        section: "Main Course",
+        section: "Main Course"
     },
     {
         item: "Grilled Atlantic Salmon",
         price: "30.00",
         ingredients: "6oz Farm Raised Salmon, Snap Peas, Napa Cabbage, Morel Mushrooms, Dashi",
-        section: "Main Course",
+        section: "Main Course"
     },
     {
         item:"Atlantic Cod Piccata",

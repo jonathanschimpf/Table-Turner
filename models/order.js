@@ -8,7 +8,13 @@ const orderSchema = new Schema({
     allergies: String,
     extra_notes: String,
     label: String,
-    course: Number
+    course: Number,
+    createTime: { type: Date, default: Date.now },
+    updateTime: { type: Date, default: Date.now },
+    waiterId: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
 
 })
 

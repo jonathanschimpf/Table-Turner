@@ -294,7 +294,8 @@ function ImportMenuComp() {
                             <Form.Control className="formControl" autocomplete="off" placeholder="Dish Price.." 
                              onChange={handleInputChange}
                              name="price"
-                             value={menuObj.price}/>
+                             value={menuObj.price}
+                             type="number"/>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1" className="formControl">
