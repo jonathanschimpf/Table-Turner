@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-function MenuPageComp(props) {
+function MenuPageComp() {
     
     
     const [modalTitle, setModalTitle] = useState([]);
@@ -418,7 +418,7 @@ function MenuPageComp(props) {
 
 
     function MyVerticallyCenteredModal(props) {
-
+        
         const [tableValue, setTableValue] = React.useState(
             localStorage.getItem('TableNumber')
         );
@@ -434,7 +434,14 @@ function MenuPageComp(props) {
         React.useEffect(() => {
             localStorage.setItem('Label', labelValue)
         }, [labelValue]);
+        
+       
+        const [userId, setUserId] = React.useState(
+            localStorage.getItem('UserId')
+        );
 
+          
+       
         const [items, setItems] = useState([])
         const [modalObj, setModalObj] = useState({
             table: tableValue,
@@ -443,8 +450,8 @@ function MenuPageComp(props) {
             allergies: "",
             extra_notes: "",
             label: labelValue,
-            waiterId: props.user[0]
-            // test: "test"
+            waiterId: userId
+            
         })
 
         // Load all menu items and store them with setMenuObj
@@ -474,7 +481,7 @@ function MenuPageComp(props) {
             setModalObj({ ...modalObj, course: parseInt(value) })
         }
         
-        function handleCheckbox(event, i){
+        function handleCheckbox(event){
             const { name, value } = event.target
             
             // const orderArr = []

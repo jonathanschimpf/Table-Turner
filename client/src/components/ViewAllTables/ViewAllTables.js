@@ -35,25 +35,33 @@ function ViewAllTablesComp(props) {
                 //I HAD TO INCLUDE THE ID: ITEM._ID HERE BECAUSE IT WAS NOT AVAILABLE BEFORE
                 return {table: item.table, label: item.label, order: item.order, notes: item.extra_notes, allergies: item.allergies, course: item.course, id: item._id};
             });
-            console.log(tables, "filtered")
+            // console.log(tables, "filtered")
             return(tables)
             
             
     }
 
-    
+
     
     //REDUCE METHOD
 
     const allTables = items.map(item => {
-            return [item.table];
+            return [item.table, item.waiterId];
         });
-    console.log(allTables, "allTables")
-        
-
+    // const userTable = items.map(item => {
+    //         return [item.waiterId];
+    //     });
+        // console.log(userTable[0], "ID OF TABLE")
+    
+        const userId = localStorage.getItem('UserId')
+    
+        // console.log(userId, "Logged in User")
+     
     const reducedTables = allTables.reduce((tableNumbs, table) => {
         
-        if(!tableNumbs.includes(table[0])){
+        if((!tableNumbs.includes(table[0])) && (table[1] == userId)) 
+                    
+        {
             
             tableNumbs.push(table[0])
             
@@ -62,11 +70,12 @@ function ViewAllTablesComp(props) {
         return tableNumbs
 
     }, [])
-    console.log(reducedTables, "reducedTables")
+    
+    // console.log(reducedTables, "reducedTables")
 
     const [modalTable, setModalTable] = useState([]);
     
-
+   
     const [modalShow, setModalShow] = React.useState(false);
 
     const [smallermodalShow, setSmallerModalShow] = React.useState(false);
@@ -76,8 +85,8 @@ function ViewAllTablesComp(props) {
 
      //creating a function for the onlick of the delete button
     const deleteOrder = (id) => {
-        console.log("delete button clicked");
-        console.log(id, "id");
+        // console.log("delete button clicked");
+        // console.log(id, "id");
         API.deleteOrders(id).then(console.log("order has been deleted"))
 
         .then(res => loadItems())
@@ -88,12 +97,12 @@ function ViewAllTablesComp(props) {
     
     //creating a function for the onclick of the button that deletes an entire table
     const deleteWholeTable = (tableNumb) => {
-        console.log("**deleting table**")
-        console.log("table number is: ", tableNumb)
+        // console.log("**deleting table**")
+        // console.log("table number is: ", tableNumb)
 
         API.deleteTable(tableNumb)
         .then(res=> {
-            console.log(res.data); 
+            // console.log(res.data); 
         })
         .then(()=> setSmallerModalShow(false))
 
