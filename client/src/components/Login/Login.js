@@ -8,11 +8,17 @@ import API from "../../utils/API";
 
 function LoginComp(props) {
 
+    const getUser = () => {
+        API.getUser()
+          .then(res => { setUser(res.data) ; console.log(res.data.id) })
+          .catch(err => { console.log(err) })
+          
+      }
     const [user, setUser] = useState({})
     const [loginUsername, setloginUsername] = useState("");
     const [loginPassword, setloginPassword] = useState("");
     
-
+    
     const login = () => {
         axios({
             method: "POST",
@@ -27,7 +33,7 @@ function LoginComp(props) {
             console.log(res)
             if ((user.title === "Wait Staff") || (user.title === "Manager")) {
             window.location.replace("/welcome")}
-            if(user.title === "Kitchen") {
+            if (user.title === "Kitchen") {
             window.location.replace("/kitchen")
             }
         })
@@ -71,7 +77,7 @@ function LoginComp(props) {
                             <Form.Control className="formControl" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block>Sign In</Button>
+                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block getUser={getUser} user={user}>Sign In</Button>
 
                         <br />
 
