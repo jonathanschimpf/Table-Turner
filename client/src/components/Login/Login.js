@@ -4,29 +4,14 @@ import axios from "axios";
 
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./Login.css";
-import { propTypes } from "react-bootstrap/esm/Image";
+import API from "../../utils/API";
 
 function LoginComp(props) {
 
-    // const [registerUsername, setRegisterUsername] = useState("");
-    //   const [registerPassword, setRegisterPassword] = useState("");
-    //   const [registerTitle, setRegisterTitle] = useState("");
+    const [user, setUser] = useState({})
     const [loginUsername, setloginUsername] = useState("");
     const [loginPassword, setloginPassword] = useState("");
-    //   const [data, setData] = useState(null);
-
-    //   const register = () => {
-    //   axios({
-    //     method:"POST",
-    //     data: {
-    //       username: registerUsername,
-    //       password: registerPassword,
-    //       title: registerTitle
-    //     },
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/register",
-    //   }).then((res) => console.log(res))
-    //   };
+    
 
     const login = () => {
         axios({
@@ -40,8 +25,11 @@ function LoginComp(props) {
         }).then((res) => {
             console.log("LOOK HERE")
             console.log(res)
-            window.location.replace("/welcome")
-        
+            if ((user.title === "Wait Staff") || (user.title === "Manager")) {
+            window.location.replace("/welcome")}
+            if(user.title === "Kitchen") {
+            window.location.replace("/kitchen")
+            }
         })
     };
 

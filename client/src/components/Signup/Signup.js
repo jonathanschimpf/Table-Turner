@@ -7,7 +7,7 @@ import "./Signup.css";
 
 
 function SignupComp() {
-
+    const [user, setUser] = useState({})
     const [registerUsername, setRegisterUsername] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerTitle, setRegisterTitle] = useState("");
@@ -37,7 +37,11 @@ function SignupComp() {
             }).then((res) => {
                 console.log("LOOK HERE")
                 console.log(res)
-                window.location.replace("/welcome")
+                if ((user.title === "Wait Staff") || (user.title === "Manager")){
+                window.location.replace("/welcome")}
+                if(user.title === "Kitchen") {
+                window.location.replace("/kitchen")
+                }
             
             })
     })}
@@ -123,12 +127,16 @@ function SignupComp() {
 
                         </Form.Group>
 
-
-
-
-
-                        <Form.Group>
-                            <Form.Control className="formControl" placeholder="What's your name?" onChange={e => setRegisterTitle(e.target.value)} />
+                        <Form.Group className="formControl">
+                            <h6>Select Title: </h6>
+                            <Form.Control as="select" className="formControl" onChange={e => setRegisterTitle(e.target.value)}
+                            >
+                                <option></option>
+                                <option>Wait Staff</option>
+                                <option>Kitchen</option>
+                                <option>Manager</option>
+                               
+                            </Form.Control>
                         </Form.Group>
 
                         <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} block>Create New Account</Button>
