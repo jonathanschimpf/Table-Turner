@@ -35,12 +35,20 @@ function NavbarComp({ user, getUser }) {
                     <Nav className="d-lg-flex ml-auto">
 
 
-                        {((user.title === "Manager") || (user.title === "Wait Staff")) ?
+                        {(user.title === "Wait Staff") ?
                         <Nav.Link className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} 
                         href={user ? "/welcome" : "/login"}>Get Started
                         </Nav.Link>
                         : ""
-                        }   
+                        } 
+
+                        
+                        {(user.title === "Manager") ?
+                        <Nav.Link className={location.pathname === "/manager" ? "nav-link active": "nav-link"} 
+                        href={user ? "/manager" : "/login"}>Manager Home
+                        </Nav.Link>
+                        : ""
+                        }     
 
 
                         {((user.title === "Manager") || (user.title === "Wait Staff")) ?

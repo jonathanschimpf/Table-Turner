@@ -14,7 +14,7 @@ import AddNewTableComp from "./components/AddNewTable/AddNewTable";
 import ViewAllTablesComp from "./pages/ViewAllTables/ViewAllTables";
 import KitchenComp from "./pages/Kitchen/Kitchen";
 import ViewRestaurantComp from "./pages/ViewRestaurant/ViewRestaurant";
-
+import ManagerComp from "./pages/ManagerPage/ManagerPage";
 
 
 function App() {
@@ -53,6 +53,8 @@ function App() {
         <Switch>
             <Route exact path="/welcome" >
               {user ? <WelcomePageComp/> : <Redirect to="/login"/>}</Route>
+              <Route exact path="/manager" >
+              {user ? <ManagerComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/importmenu" >
               {user ? <ImportMenuComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/menu" >

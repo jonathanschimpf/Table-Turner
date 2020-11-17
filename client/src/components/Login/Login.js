@@ -31,8 +31,10 @@ function LoginComp(props) {
             url: "/api/login",
         }).then((res) => {
            
-            if ((loginTitle === "Wait Staff") || (loginTitle === "Manager")) {
+            if (loginTitle === "Wait Staff"){
             window.location.replace("/welcome")}
+            if (loginTitle === "Manager") {
+            window.location.replace("/manager")}
             if (loginTitle === "Kitchen") {
             window.location.replace("/kitchen")
             }

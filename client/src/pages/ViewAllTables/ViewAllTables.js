@@ -4,7 +4,7 @@ import "./ViewAllTables.css";
 import API from "../../utils/API";
 
 
-function ViewAllTablesComp(props) {
+function ViewAllTablesComp({ user, getUser }) {
     
     useEffect(() => {
         loadItems()
@@ -126,7 +126,7 @@ function ViewAllTablesComp(props) {
                 <Jumbotron className="jumbotronStyle">
 
                     <br></br>
-                    <h1 className="responsiveText"><strong>Active Tables</strong></h1>
+                    <h1 className="responsiveText"><strong>My Active Tables</strong></h1>
                     <br></br>
 
                     <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
@@ -170,6 +170,7 @@ function ViewAllTablesComp(props) {
                             </Col>
 
                             <Col xs={3}>
+                            
                                 <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
                                 size="sm" block 
                                 onClick={() => {setSmallerModalShow(true);  setModalTable(tableNumb)}} 
@@ -177,7 +178,7 @@ function ViewAllTablesComp(props) {
                                 >
                                 
                                 <strong>x</strong></Button>
-
+                                
                                 
                             </Col>
                         </Row>
