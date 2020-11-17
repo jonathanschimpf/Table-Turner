@@ -13,7 +13,7 @@ import AddNewOrderComp from "./components/AddNewOrder/AddNewOrder";
 import AddNewTableComp from "./components/AddNewTable/AddNewTable";
 import ViewAllTablesComp from "./pages/ViewAllTables/ViewAllTables";
 import KitchenComp from "./pages/Kitchen/Kitchen";
-
+import ViewRestaurantComp from "./pages/ViewRestaurant/ViewRestaurant";
 
 
 
@@ -22,6 +22,7 @@ function App() {
   const [user, setUser] = useState({})
   const [redirect, setRedirect] = useState(false);
   console.log(user)
+  
   
   let history = useHistory();
 
@@ -41,7 +42,7 @@ function App() {
  
     
     localStorage.setItem('UserId', user.id)
- 
+ localStorage.setItem('Username', user.username)
   
   return (
 
@@ -60,6 +61,8 @@ function App() {
               {user ? <AddNewTableComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/viewTables" >
               {user ? <ViewAllTablesComp/> : <Redirect to="/login"/>}</Route>
+              <Route exact path="/viewRestaurant" >
+              {user ? <ViewRestaurantComp/> : <Redirect to="/login"/> }</Route>
               <Route exact path="/takeOrder" >
               {user ? <AddNewOrderComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/importMenu" >

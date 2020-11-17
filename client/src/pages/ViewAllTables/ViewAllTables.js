@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck } from "react-bootstrap";
+import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
 import "./ViewAllTables.css";
 import API from "../../utils/API";
 
@@ -110,6 +110,7 @@ function ViewAllTablesComp(props) {
         .catch(err => console.log(err));
     }
 
+  
 
 
 // ================================================================
@@ -120,6 +121,26 @@ function ViewAllTablesComp(props) {
 
 
         <>
+<br/>
+<Container className="maxContainerWidth">
+                <Jumbotron className="jumbotronStyle">
+
+                    <br></br>
+                    <h1 className="responsiveText"><strong>Active Tables</strong></h1>
+                    <br></br>
+
+                    <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+  
+                    <br/>
+                    <a href="/viewRestaurant"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View Restaurant</Button></a>
+                    
+
+                </Jumbotron>
+            </Container>
+
+
+
+
             <Container>
 
                 <br />

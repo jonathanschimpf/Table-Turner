@@ -4,7 +4,7 @@ import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
 
 
-function KitchenComp(props) {
+function ViewRestaurantComp(props) {
     
     useEffect(() => {
         loadItems()
@@ -32,8 +32,8 @@ function KitchenComp(props) {
                 return item.table === tableNumb
             }).map(item => {
 
-                
-                return {table: item.table, label: item.label, order: item.order, notes: item.extra_notes, allergies: item.allergies, course: item.course, id: item._id, username: item.username, createTime: item.createTime};
+                //I HAD TO INCLUDE THE ID: ITEM._ID HERE BECAUSE IT WAS NOT AVAILABLE BEFORE
+                return {table: item.table, label: item.label, order: item.order, notes: item.extra_notes, allergies: item.allergies, course: item.course, id: item._id};
             });
             // console.log(tables, "filtered")
             return(tables)
@@ -46,13 +46,13 @@ function KitchenComp(props) {
     //REDUCE METHOD
 
     const allTables = items.map(item => {
-            return [item.table, item.waiterId, item.order, item.course, item.allergies, item.extra_notes, item.label, item.username, item.createTime];
+            return [item.table, item.waiterId];
         });
         <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
     
         const userId = localStorage.getItem('UserId')
     
-        
+        // console.log(userId, "Logged in User")
      
     const reducedTables = allTables.reduce((tableNumbs, table) => {
         
@@ -115,14 +115,19 @@ function KitchenComp(props) {
     return (
 
 
-                <>
-                <br/>
-                <Container className="maxContainerWidth">
+        <>
+<br/>
+<Container className="maxContainerWidth">
                 <Jumbotron className="jumbotronStyle">
 
                     <br></br>
-                    <h1 className="responsiveText"><strong>All Active Orders</strong></h1>
+                    <h1 className="responsiveText"><strong>All Active Tables</strong></h1>
                     <br></br>
+
+                    <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+                    
+                    <br/>
+                    <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View My Tables</Button></a>
                     
 
                 </Jumbotron>
@@ -136,7 +141,9 @@ function KitchenComp(props) {
                 <br />
 
                 <div className="flexWrap">
-
+                    
+               
+                
                 {reducedTables.map(tableNumb =>   
                 
                 <Jumbotron className="jumbotronTableView">
@@ -145,49 +152,45 @@ function KitchenComp(props) {
 
                     <Form>
 
-                        
-                        <Table responsive className="tableBlackGround" size="sm" striped bordered hover variant="dark">
-                        <thead>
-                            
-                            <tr>
-                                <th>Item</th>
-                                <th>Allergy Category</th>
-                                <th>Requests &amp; Allergy Specifics</th>
-                                <th>Order Label</th>
-                                <th>Course#</th>
-                                <th>Username</th>
-                                <th>Created At</th>
-                                <th className="deleteFont">Delete</th>
-                            </tr>
-                            
-                        </thead>
-                        <tbody>
-                        {reducedTables.map(item => { 
-                        const table = filteredOrders(item); 
-                        return table.map(order  => { if (order.table === tableNumb) 
-                        return  <tr>
-                                <td>{order.order}</td>
-                                <td>{order.allergies}</td>
-                                <td>{order.notes}</td>
-                                <td>{order.label}</td>
-                                <td className="centeredCourseNumber">{order.course}</td>
-                                <td>{order.username}</td>
-                                <td>{order.createTime}</td>
-                                <td className="removeRow" onClick={()=> deleteOrder(order.id)}><strong>x</strong></td>
+                        <Row>
+                            <Col xs={9}>
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => {
+                                 setModalTable(tableNumb)
+                                 setModalShow(true)
+                                 
+                                 }} block>View Details</Button>
 
-                             </tr>
-                        })}
-                             )} 
-                            
-                        </tbody>
-                    </Table>
-                      
+                                
+                            </Col>
+
+                            <Col xs={3}>
+                                <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons" 
+                                size="sm" block 
+                                onClick={() => {setSmallerModalShow(true);  setModalTable(tableNumb)}} 
+                                
+                                >
+                                
+                                <strong>x</strong></Button>
+
+                                
+                            </Col>
+                        </Row>
 
                     </Form>
 
                 </Jumbotron>
               
              )}
+
+            <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)} 
+            />
+
+            <MySmallerVerticallyCenteredModal
+            show={smallermodalShow}
+            onHide={() => setSmallerModalShow(false)}
+           />
             
             </div>
 
@@ -303,4 +306,4 @@ function KitchenComp(props) {
 
 };
 
-export default KitchenComp;
+export default ViewRestaurantComp;
