@@ -41,61 +41,22 @@ function SignupComp() {
                 data: {
                     username: registerUsername,
                     password: registerPassword,
+                    title: registerTitle
                 },
                 withCredentials: true,
                 url: "/api/login",
             }).then((res) => {
-                console.log("LOOK HERE")
-                console.log(res)
-                if ((user.title === "Wait Staff") || (user.title === "Manager")){
+                
+                if((registerTitle === "Wait Staff") || (registerTitle === "Manager")){
                 window.location.replace("/welcome")}
-                if(user.title === "Kitchen") {
+                
+                if(registerTitle === "Kitchen") {
                 window.location.replace("/kitchen")
                 }
             
             })
     })}
 
-    // const login = () => {
-    //     axios({
-    //         method: "POST",
-    //         data: {
-    //             username: registerUsername,
-    //             password: registerPassword,
-    //         },
-    //         withCredentials: true,
-    //         url: "http://localhost:3001/login",
-    //     }).then((res) => {
-    //         console.log("LOOK HERE")
-    //         console.log(res)
-    //         window.location.replace("/welcome")
-        
-    //     })
-    // };
-
-    //   const login = () => {
-    //   axios({
-    //     method:"POST",
-    //     data: {
-    //       username: loginUsername,
-    //       password: loginPassword,
-    //     },
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/login",
-    //   }).then((res) => console.log(res))
-    // };
-    //   const getUser = () => {
-    //   axios({
-    //     method:"GET",
-
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/user",
-    //   }).then((res) => {
-    //       setData(res.data);
-    //       console.log(res.data)
-    //   })
-
-    // };
 
 
     function showPassword() {

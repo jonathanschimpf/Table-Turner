@@ -8,32 +8,32 @@ import API from "../../utils/API";
 
 function LoginComp(props) {
 
-    const getUser = () => {
-        API.getUser()
-          .then(res => { setUser(res.data) ; console.log(res.data.id) })
-          .catch(err => { console.log(err) })
-          
-      }
-    const [user, setUser] = useState({})
+    
+    
     const [loginUsername, setloginUsername] = useState("");
     const [loginPassword, setloginPassword] = useState("");
+    const [loginTitle, setLoginTitle] = useState("");
+    
     
     
     const login = () => {
+        
         axios({
             method: "POST",
+            
             data: {
                 username: loginUsername,
                 password: loginPassword,
+                title: loginTitle
+                
             },
             withCredentials: true,
             url: "/api/login",
         }).then((res) => {
-            console.log("LOOK HERE")
-            console.log(res)
-            if ((user.title === "Wait Staff") || (user.title === "Manager")) {
+           
+            if ((loginTitle === "Wait Staff") || (loginTitle === "Manager")) {
             window.location.replace("/welcome")}
-            if (user.title === "Kitchen") {
+            if (loginTitle === "Kitchen") {
             window.location.replace("/kitchen")
             }
         })
@@ -74,11 +74,22 @@ function LoginComp(props) {
                         </Form.Group>
 
                         <Form.Group>
-                            <Form.Control className="formControl" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
+                            <Form.Control className="formControl" placeholder="Password" type="password" onChange={e =>  setloginPassword(e.target.value)}/>
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block getUser={getUser} user={user}>Sign In</Button>
+                        <Form.Group className="formControl">
+                            <h6>Select Title: </h6>
+                            <Form.Control as="select" className="formControl" onChange={e => setLoginTitle(e.target.value)}
+                            >
+                                <option></option>
+                                <option>Wait Staff</option>
+                                <option>Kitchen</option>
+                                <option>Manager</option>
+                               
+                            </Form.Control>
+                        </Form.Group>
 
+                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block >Sign In</Button>
                         <br />
 
                         <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>
