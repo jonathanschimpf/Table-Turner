@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
 import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
+import Clock from 'react-live-clock';
 
 
 function KitchenComp(props) {
     
+    
+
     useEffect(() => {
         loadItems()
     }, [])
@@ -78,7 +81,7 @@ function KitchenComp(props) {
     const [smallermodalShow, setSmallerModalShow] = React.useState(false);
 
 
-
+    
 
      //creating a function for the onlick of the delete button
     const deleteOrder = (id) => {
@@ -106,8 +109,10 @@ function KitchenComp(props) {
         .then(res => loadItems())
         .catch(err => console.log(err));
     }
+    
+    
 
-
+    
 // ================================================================
 
 
@@ -122,6 +127,7 @@ function KitchenComp(props) {
 
                     <br></br>
                     <h1 className="responsiveText"><strong>All Active Orders</strong></h1>
+                    <Clock format={'MMMM Do YYYY, h:mm:ss a'} ticking={true} timezone={'US/EASTERN'} />
                     <br></br>
                     
 
@@ -299,7 +305,7 @@ function KitchenComp(props) {
           </Modal>
         );
       }
-    
+  
 
 };
 

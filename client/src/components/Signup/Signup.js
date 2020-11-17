@@ -47,9 +47,9 @@ function SignupComp() {
                 url: "/api/login",
             }).then((res) => {
                 
-                if (loginTitle === "Wait Staff"){
+                if (registerTitle === "Wait Staff"){
                 window.location.replace("/welcome")}
-                if (loginTitle === "Manager") {
+                if (registerTitle === "Manager") {
                 window.location.replace("/manager")}
                 if(registerTitle === "Kitchen") {
                 window.location.replace("/kitchen")
