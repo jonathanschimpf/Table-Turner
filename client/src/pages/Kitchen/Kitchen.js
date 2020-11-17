@@ -4,7 +4,6 @@ import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
 import Clock from 'react-live-clock';
 
-
 function KitchenComp(props) {
     
     
@@ -51,7 +50,7 @@ function KitchenComp(props) {
     const allTables = items.map(item => {
             return [item.table, item.waiterId, item.order, item.course, item.allergies, item.extra_notes, item.label, item.username, item.createTime];
         });
-        <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+       
     
         const userId = localStorage.getItem('UserId')
     
@@ -112,8 +111,6 @@ function KitchenComp(props) {
     
 
     
-
-    
 // ================================================================
 
 
@@ -128,7 +125,7 @@ function KitchenComp(props) {
 
                     <br></br>
                     <h1 className="responsiveText"><strong>All Active Orders</strong></h1>
-                    <Clock format={'MMMM Do YYYY, h:mm:ss a'} ticking={true} timezone={'US/EASTERN'} />
+                    <Clock format={'MMMM Do YYYY, HH:mm:ss'} ticking={true} timezone={'US/EASTERN'} />
                     <br></br>
                     
 
