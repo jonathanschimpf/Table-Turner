@@ -3,44 +3,40 @@ import axios from "axios";
 
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./Login.css";
-import { propTypes } from "react-bootstrap/esm/Image";
+import API from "../../utils/API";
 
 function LoginComp(props) {
 
-    // const [registerUsername, setRegisterUsername] = useState("");
-    //   const [registerPassword, setRegisterPassword] = useState("");
-    //   const [registerTitle, setRegisterTitle] = useState("");
+    
+    
     const [loginUsername, setloginUsername] = useState("");
     const [loginPassword, setloginPassword] = useState("");
-    //   const [data, setData] = useState(null);
-
-    //   const register = () => {
-    //   axios({
-    //     method:"POST",
-    //     data: {
-    //       username: registerUsername,
-    //       password: registerPassword,
-    //       title: registerTitle
-    //     },
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/register",
-    //   }).then((res) => console.log(res))
-    //   };
-
+    const [loginTitle, setLoginTitle] = useState("");
+    
+    
+    
     const login = () => {
+        
         axios({
             method: "POST",
+            
             data: {
                 username: loginUsername,
                 password: loginPassword,
+                title: loginTitle
+                
             },
             withCredentials: true,
             url: "/api/login",
         }).then((res) => {
-            console.log("LOOK HERE")
-            console.log(res)
-            window.location.replace("/welcome")
-        
+           
+            if (loginTitle === "Wait Staff"){
+            window.location.replace("/welcome")}
+            if (loginTitle === "Manager") {
+            window.location.replace("/manager")}
+            if (loginTitle === "Kitchen") {
+            window.location.replace("/kitchen")
+            }
         })
     };
 
@@ -82,8 +78,19 @@ function LoginComp(props) {
                             <Form.Control className="formControl" autocomplete="off" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block>Sign In</Button>
+                        <Form.Group className="formControl">
+                            <h6>Select Title: </h6>
+                            <Form.Control as="select" className="formControl" onChange={e => setLoginTitle(e.target.value)}
+                            >
+                                <option></option>
+                                <option>Wait Staff</option>
+                                <option>Kitchen</option>
+                                <option>Manager</option>
+                               
+                            </Form.Control>
+                        </Form.Group>
 
+                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block >Sign In</Button>
                         <br />
 
                         <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>

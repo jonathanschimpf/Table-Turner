@@ -1,13 +1,23 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-
+import API from "../../utils/API";
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import "./Signup.css";
 
 
 function SignupComp() {
-
+    
+    const getUser = () => {
+        if(window.location.pathname === "/") {
+          history.push("/login")
+        }
+        API.getUser()
+          .then(res => { setUser(res.data) ; console.log(res.data.id) })
+          .catch(err => { console.log(err) })
+          
+      }
+    const [user, setUser] = useState({})
     const [registerUsername, setRegisterUsername] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerTitle, setRegisterTitle] = useState("");
@@ -31,57 +41,23 @@ function SignupComp() {
                 data: {
                     username: registerUsername,
                     password: registerPassword,
+                    title: registerTitle
                 },
                 withCredentials: true,
                 url: "/api/login",
             }).then((res) => {
-                console.log("LOOK HERE")
-                console.log(res)
-                window.location.replace("/welcome")
+                
+                if (registerTitle === "Wait Staff"){
+                window.location.replace("/welcome")}
+                if (registerTitle === "Manager") {
+                window.location.replace("/manager")}
+                if(registerTitle === "Kitchen") {
+                window.location.replace("/kitchen")
+                }
             
             })
     })}
 
-    // const login = () => {
-    //     axios({
-    //         method: "POST",
-    //         data: {
-    //             username: registerUsername,
-    //             password: registerPassword,
-    //         },
-    //         withCredentials: true,
-    //         url: "http://localhost:3001/login",
-    //     }).then((res) => {
-    //         console.log("LOOK HERE")
-    //         console.log(res)
-    //         window.location.replace("/welcome")
-        
-    //     })
-    // };
-
-    //   const login = () => {
-    //   axios({
-    //     method:"POST",
-    //     data: {
-    //       username: loginUsername,
-    //       password: loginPassword,
-    //     },
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/login",
-    //   }).then((res) => console.log(res))
-    // };
-    //   const getUser = () => {
-    //   axios({
-    //     method:"GET",
-
-    //     withCredentials: true,
-    //     url: "http://localhost:3001/user",
-    //   }).then((res) => {
-    //       setData(res.data);
-    //       console.log(res.data)
-    //   })
-
-    // };
 
 
     function showPassword() {
@@ -123,11 +99,19 @@ function SignupComp() {
 
                         </Form.Group>
 
-                        {/* <Form.Group>
-                            <Form.Control className="formControl" autocomplete="off" placeholder="What's your name?" onChange={e => setRegisterTitle(e.target.value)} />
-                        </Form.Group> */}
+                        <Form.Group className="formControl">
+                            <h6>Select Title: </h6>
+                            <Form.Control as="select" className="formControl" onChange={e => setRegisterTitle(e.target.value)}
+                            >
+                                <option></option>
+                                <option>Wait Staff</option>
+                                <option>Kitchen</option>
+                                <option>Manager</option>
+                               
+                            </Form.Control>
+                        </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} block>Create New Account</Button>
+                        <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} block getUser={getUser} user={user}>Create New Account</Button>
 
                         <br />
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck } from "react-bootstrap";
-import "./ViewAllTables.css";
+import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
+import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
 
 
-function ViewAllTablesComp(props) {
+function ViewRestaurantComp(props) {
     
     useEffect(() => {
         loadItems()
@@ -48,10 +48,7 @@ function ViewAllTablesComp(props) {
     const allTables = items.map(item => {
             return [item.table, item.waiterId];
         });
-    // const userTable = items.map(item => {
-    //         return [item.waiterId];
-    //     });
-        // console.log(userTable[0], "ID OF TABLE")
+        <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
     
         const userId = localStorage.getItem('UserId')
     
@@ -59,7 +56,7 @@ function ViewAllTablesComp(props) {
      
     const reducedTables = allTables.reduce((tableNumbs, table) => {
         
-        if((!tableNumbs.includes(table[0])) && (table[1] == userId)) 
+        if(!tableNumbs.includes(table[0])) 
                     
         {
             
@@ -111,6 +108,7 @@ function ViewAllTablesComp(props) {
     }
 
 
+// ================================================================
 
 
 
@@ -118,8 +116,31 @@ function ViewAllTablesComp(props) {
 
 
         <>
+<br/>
+<Container className="maxContainerWidth">
+                <Jumbotron className="jumbotronStyle">
+
+                    <br></br>
+                    <h1 className="responsiveText"><strong>All Active Tables</strong></h1>
+                    <br></br>
+
+                    <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+                    
+                    <br/>
+                    <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View My Tables</Button></a>
+                    <br></br>
+                    <br></br>
+                    
+
+                </Jumbotron>
+            </Container>
+
+
+
             <Container>
 
+                <br />
+                <br />
 
                 <div className="flexWrap">
                     
@@ -287,4 +308,4 @@ function ViewAllTablesComp(props) {
 
 };
 
-export default ViewAllTablesComp;
+export default ViewRestaurantComp;

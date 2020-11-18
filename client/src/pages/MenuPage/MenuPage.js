@@ -1,6 +1,5 @@
 import React, { useState, useEffect, setState } from "react";
 import API from "../../utils/API";
-import { useParams } from "react-router-dom";
 import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
 import "./MenuPage.css";
 
@@ -82,16 +81,6 @@ function MenuPageComp() {
             .catch(err => console.log(err));
     };
 
-    // const [menuItem, setMenuItem] = useState({});
-    // const { id, item, price } = useParams()
-    // useEffect(() => {
-    //     API.getMenu(id, item, price)
-
-    //         .then(res => setMenuItem(res.data))
-    //         .catch(err => console.log(err));
-
-    // }, [])
-
 
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
@@ -117,6 +106,7 @@ function MenuPageComp() {
     return (
 
         <>
+        
         <ToastContainer className="toastContainer"/>
 
             <br />
@@ -443,6 +433,10 @@ function MenuPageComp() {
             localStorage.getItem('UserId')
         );
 
+        const [username, setUsername] = React.useState(
+            localStorage.getItem('Username')
+        );
+
           
        
         const [items, setItems] = useState([])
@@ -453,7 +447,8 @@ function MenuPageComp() {
             allergies: "",
             extra_notes: "",
             label: labelValue,
-            waiterId: userId
+            waiterId: userId,
+            username: username
             
         })
 

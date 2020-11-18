@@ -6,21 +6,23 @@ import API from "./utils/API"
 import SignupComp from "./components/Signup/Signup";
 import LoginComp from "./components/Login/Login";
 import NavbarComp from "./components/Navbar/Navbar"
-import WelcomePageComp from "./components/WelcomePage/WelcomePage"
+import WelcomePageComp from "./pages/WelcomePage/WelcomePage"
 import MenuPageComp from "./pages/MenuPage/MenuPage";
-import ImportMenuComp from "./components/ImportMenu/ImportMenu";
+import ImportMenuComp from "./pages/ImportMenu/ImportMenu";
 import AddNewOrderComp from "./components/AddNewOrder/AddNewOrder";
 import AddNewTableComp from "./components/AddNewTable/AddNewTable";
-import ViewAllTablesComp from "./components/ViewAllTables/ViewAllTables";
-
-
-
+import ViewAllTablesComp from "./pages/ViewAllTables/ViewAllTables";
+import KitchenComp from "./pages/Kitchen/Kitchen";
+import ViewRestaurantComp from "./pages/ViewRestaurant/ViewRestaurant";
+import ManagerComp from "./pages/ManagerPage/ManagerPage";
 
 
 function App() {
 
   const [user, setUser] = useState({})
   const [redirect, setRedirect] = useState(false);
+  console.log(user)
+  
   
   let history = useHistory();
 
@@ -40,7 +42,7 @@ function App() {
  
     
     localStorage.setItem('UserId', user.id)
- 
+ localStorage.setItem('Username', user.username)
   
   return (
 
@@ -51,6 +53,8 @@ function App() {
         <Switch>
             <Route exact path="/welcome" >
               {user ? <WelcomePageComp/> : <Redirect to="/login"/>}</Route>
+              <Route exact path="/manager" >
+              {user ? <ManagerComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/importmenu" >
               {user ? <ImportMenuComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/menu" >
@@ -59,10 +63,15 @@ function App() {
               {user ? <AddNewTableComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/viewTables" >
               {user ? <ViewAllTablesComp/> : <Redirect to="/login"/>}</Route>
+              <Route exact path="/viewRestaurant" >
+              {user ? <ViewRestaurantComp/> : <Redirect to="/login"/> }</Route>
               <Route exact path="/takeOrder" >
               {user ? <AddNewOrderComp/> : <Redirect to="/login"/>}</Route>
               <Route exact path="/importMenu" >
               {user ? <ImportMenuComp/> : <Redirect to="/login"/>}</Route>
+              <Route exact path="/kitchen" >
+              {user ? <KitchenComp/> : <Redirect to="/login"/> }
+              </Route>  
               <Route path="/login"><LoginComp setUser={setUser}/></Route>
               <Route path="/register"><SignupComp setUser={setUser}/></Route>
         </Switch>

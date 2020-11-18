@@ -14,7 +14,10 @@ const orderSchema = new Schema({
     waiterId: {
         type: Schema.Types.ObjectId,
         ref: "User"
-      }
+      },
+    username: String  
+  
+      
 
 })
 
