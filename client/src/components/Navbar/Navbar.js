@@ -27,12 +27,14 @@ function NavbarComp({ user, getUser }) {
             <Navbar className="navbar" fixed="top sticky-top" variant="dark" expand="lg" bg="black">
 
                 <Navbar.Brand to="/welcome"><strong>Table</strong><span className="redFont nav-item">Turner</span></Navbar.Brand>
-
+                <p className="invisibleTrickery">‏‏‎ ‎</p>    
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav navButtonMargin" />
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="d-lg-flex ml-auto">
+
+                        
 
 
                         {(user.title === "Wait Staff") ?
