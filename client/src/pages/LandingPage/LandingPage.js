@@ -53,14 +53,15 @@ function LandingPageComp() {
 
 
               <Card style={{ border: 'none' }}>
+              
+              <i className="fas fa-tachometer-alt fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
 
-              <i className="fa fa-github-square fa-7x" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+                <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
 
-                <Card.Body className="infoCardBody">
+                <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Expedite Order Fulfillment</Card.Title>
 
-                <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Info Item</Card.Title>
                   
-                <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Enter in order information quickly: tap or type to add menu items to your table orders. Quickly add order specifics and have your guests requests immediately viewable by the kitchen. Busy days have never been easier.
                 </Card.Text>
 
                 </Card.Body>
@@ -69,14 +70,14 @@ function LandingPageComp() {
 
 
               <Card style={{ border: 'none' }}>
+              
+              <i className="fas fa-comment-medical fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
 
-              <i className="fa fa-github-square fa-7x" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+            <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
 
-            <Card.Body className="infoCardBody">
-
-            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Info Item</Card.Title>
+            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Allergy Labeling</Card.Title>
             
-            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Tag any order with a specific category to notify the kitchen beforehand of your guests allergy concerns. Each order will include this categorical label to help minimize re-fires and keep your guests happy + healthy.
             </Card.Text>
 
             </Card.Body>
@@ -85,14 +86,47 @@ function LandingPageComp() {
 
 
             <Card style={{ border: 'none' }}>
+        
+            <i className="fas fa-hand-sparkles fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
 
-            <i className="fa fa-github-square fa-7x" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+            <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
 
-            <Card.Body className="infoCardBody">
-
-            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Info Item</Card.Title>
+            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Special Request Tracking</Card.Title>
             
-            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Help keep the communication line between front + back of house clear, with our specific requests input field. Whether it's a medium-rare steak request or the omission of cilantro, your kitchen staff will always be in the know.
+            </Card.Text>
+
+            </Card.Body>
+            </Card>
+
+            {/* row 2  */}
+
+            <Card style={{ border: 'none' }}>
+
+              <i className="fas fa-users fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+
+                <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
+
+                <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Fully Integrated System</Card.Title>
+
+                  
+                <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Sign up/Sign on under three positions to customize your experience: Wait Staff, Manager, or Kitchen. Each view will have access to the same data, but different capabilities in terms of: menu updating, adding + viewing tables, and viewing current orders.
+                </Card.Text>
+
+                </Card.Body>
+              </Card>
+
+
+
+              <Card style={{ border: 'none' }}>
+              
+              <i className="far fa-eye fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+
+            <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
+
+            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>View All Orders + Tables</Card.Title>
+            
+            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Increase transparency by viewing all tables and each guest's orders in one place. Easily add and delete new orders on the fly or entire tables if your restaraunt layout changes. Simultaneously view allergy concerns, course numbers, and special requests.
             </Card.Text>
 
             </Card.Body>
@@ -100,19 +134,20 @@ function LandingPageComp() {
 
 
 
-            {/* <Card style={{ border: 'none' }}>
-
-            <i className="fa fa-github-square fa-7x" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
-
-            <Card.Body className="infoCardBody">
-
-            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Info Item</Card.Title>
+            <Card style={{ border: 'none' }}>
             
-            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            <i className="fas fa-search fa-7x wow animate__animated animate__fadeIn animate__slower" aria-hidden="true" style={{ paddingTop: '10px', textAlign: 'center', color: 'black' }}></i>
+
+            <Card.Body className="infoCardBody wow animate__animated animate__fadeIn animate__slower">
+
+            <Card.Title className="" style={{ paddingTop: '10px', textAlign: 'center', fontWeight: 'bold', color: 'black' }}>Live Search Feature</Card.Title>
+            
+            <Card.Text className="" style={{ paddingTop: '1px', textAlign: 'center'}}>Speed up your order adding process when receiving information from guests with the live search feature. Menu items are automatically sorted to the top of the page and easily accessible as soon as you begin typing, helping you keep up with fast paced requests. 
             </Card.Text>
 
             </Card.Body>
-            </Card> */}
+            </Card>
+
             
           </CardDeck>
         </Container>
