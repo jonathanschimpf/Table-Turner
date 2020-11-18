@@ -15,6 +15,7 @@ import ViewAllTablesComp from "./pages/ViewAllTables/ViewAllTables";
 import KitchenComp from "./pages/Kitchen/Kitchen";
 import ViewRestaurantComp from "./pages/ViewRestaurant/ViewRestaurant";
 import ManagerComp from "./pages/ManagerPage/ManagerPage";
+import LandingPageComp from "./pages/LandingPage/LandingPage";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
               </Route>  
               <Route path="/login"><LoginComp setUser={setUser}/></Route>
               <Route path="/register"><SignupComp setUser={setUser}/></Route>
+              <Route path="/landing"><LandingPageComp/></Route>
         </Switch>
             </>
 

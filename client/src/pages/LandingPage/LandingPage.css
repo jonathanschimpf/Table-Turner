@@ -1,0 +1,191 @@
+
+/* header text  */
+
+.jumbotronHeader {
+
+    min-height: 600px !important;
+    /* background-size: 1400px;  */
+    background-color: rgb(216, 216, 216) !important;
+    /* position: relative;
+    overflow: hidden; */
+    margin-bottom: 0 !important
+} 
+
+.centerHeader {text-align: center !important;
+align-content: center !important
+}
+
+.whited {
+    color: whitesmoke !important;
+    font-weight: bold !important;
+    font-size: 80px;
+
+}
+
+.blacked {
+    color: black !important;
+    font-size: 30px;
+    
+}
+
+.redded {
+
+    color:#DC3545 !important;
+    font-weight: normal !important;
+    font-size: 80px;
+
+}
+
+/* responsive h1 for white table header font */
+@media screen and (max-width: 450px) {
+    h1.responsiveH1Font {
+      font-size: 60px;
+    }
+  }
+
+
+  @media screen and (max-width: 400px) {
+    h1.responsiveH1Font {
+      font-size: 50px;
+    }
+  }
+
+  @media screen and (max-width: 290px) {
+    h1.responsiveH1Font {
+      font-size: 40px;
+    }
+  }
+
+
+  /* repsonsive span to the red turner */
+  @media screen and (max-width: 450px) {
+    span.responsiveSpanFont {
+      font-size: 60px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    span.responsiveSpanFont {
+      font-size: 50px;
+    }
+  }
+
+  @media screen and (max-width: 290px) {
+    span.responsiveSpanFont {
+      font-size: 40px;
+    }
+  }
+
+  /* responsive slogan font  */
+  @media screen and (max-width: 450px) {
+    h3.responsiveH3Font {
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    h3.responsiveH3Font {
+      font-size: 20px;
+    }
+  }
+
+
+
+
+  /* hero image  */
+
+  .heroIMAGE {
+    
+    width: 100%;
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    background-color: rgb(216, 216, 216) !important;
+    background-image: url("./restaurant_linecooks.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-background-repeat: no-repeat;
+    -moz-background-repeat: no-repeat;
+    -o-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -webkit-background-position: center;
+    -moz-background-position: center;
+    -o-background-position: center;
+    background-position: center;
+    -webkit-background-attachment: scroll;
+    -moz-background-attachment: scroll;
+    -o-background-attachment: scroll;
+    background-attachment: scroll;
+
+    }
+
+.heroHEIGHT:before{
+
+    z-index:0;
+    position: fixed;
+    overflow: hidden; 
+}
+
+/* card deck  */
+
+.infoCardBody {
+
+    text-align: center !important;
+    min-height: 250px !important;
+    max-height: 350px !important; 
+    overflow-y: auto !important;
+
+}
+
+.card-deck {
+    margin-top: 10px !important;
+    margin-left: auto !important;
+    display: grid !important;
+    /* pixel count after minmax sets how much each column shares */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    grid-gap: .5rem !important;
+}
+
+/* card deck width control support for the most narrow of devices (below 300px) */
+@media screen and (max-width: 310px) {
+
+    .card-deck {
+  
+        margin-top: 10px !important;
+        margin-left: auto !important;
+        display: grid !important;
+        /* pixel count after minmax sets how much each column shares */
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+        grid-gap: .5rem !important;
+  
+    }
+  }
+
+
+  /* get started button  */
+
+  .formControlGetStarted {
+    
+    max-width: 250px !important;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center !important;
+    
+  }
+
+  .centerText {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align: center !important;
+  }
+
+  form.add {
+    margin-top: 50px;
+    max-width: 200px !important;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center !important;
+    
+  }
