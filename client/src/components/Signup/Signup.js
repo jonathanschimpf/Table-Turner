@@ -87,7 +87,7 @@ function SignupComp() {
 
                         <Form.Group className="formControl">
                             <h6>Enter a Username + Password: </h6>
-                            <Form.Control className="formControl" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
+                            <Form.Control className="formControl" autocomplete="off" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
 
                             {/* <input type="checkbox" onClick={showPassword} /> */}
 
@@ -95,7 +95,7 @@ function SignupComp() {
 
                         <Form.Group >
 
-                            <Form.Control id="myPass" type="password" className="formControl" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+                            <Form.Control id="myPass" type="password" className="formControl" autocomplete="off"  placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
 
                         </Form.Group>
 

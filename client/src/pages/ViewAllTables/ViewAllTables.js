@@ -113,8 +113,6 @@ function ViewAllTablesComp({ user, getUser }) {
   
 
 
-// ================================================================
-
 
 
     return (
@@ -145,8 +143,6 @@ function ViewAllTablesComp({ user, getUser }) {
 
             <Container>
 
-                <br />
-                <br />
 
                 <div className="flexWrap">
                     

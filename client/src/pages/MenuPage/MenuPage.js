@@ -125,7 +125,7 @@ function MenuPageComp() {
 
 
                     <Form inline>
-                        <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
+                        <FormControl type="text" placeholder="Search Menu" autocomplete="off" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
 
                     <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></a>
@@ -652,6 +652,7 @@ function MenuPageComp() {
                             type="text"
                             className="formControlSizing"
                             placeholder="Allergy/Requests"
+                            autocomplete="off"
                         // aria-label="Text input with checkbox"
                         />
                     </div>
