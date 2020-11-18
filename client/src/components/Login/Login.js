@@ -75,11 +75,7 @@ function LoginComp(props) {
                         </Form.Group>
 
                         <Form.Group>
-<<<<<<< HEAD
-                            <Form.Control className="formControl" placeholder="Password" type="password" onChange={e =>  setloginPassword(e.target.value)}/>
-=======
                             <Form.Control className="formControl" autocomplete="off" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
->>>>>>> 787d6c7138dae98d19caaf7fe32d86a51495ff2d
                         </Form.Group>
 
                         <Form.Group className="formControl">
