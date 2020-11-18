@@ -127,23 +127,25 @@ function KitchenComp(props) {
                     <h1 className="responsiveText"><strong>All Active Orders</strong></h1>
                     <Clock format={'MMMM Do YYYY, HH:mm:ss'} ticking={true} timezone={'US/EASTERN'} />
                     <br></br>
-                    
+                    <br></br>
+                    <br></br>
 
                 </Jumbotron>
             </Container>
 
 
 
-            <Container>
+            <Container className="maxContainerWidth">
 
                 <br />
                 <br />
 
-                <div className="flexWrap">
+                
 
                 {reducedTables.map(tableNumb =>   
                 
-                <Jumbotron className="jumbotronTableView">
+                <Jumbotron className="jumbotronStyle" style={{marginBottom: "50px"}}>
+                    <br/>
                     <h2 className="text-center responsiveH2Font">Table {tableNumb}</h2>
                     <hr style={{ height: '4px' }} />
 
@@ -188,13 +190,14 @@ function KitchenComp(props) {
                       
 
                     </Form>
-
+                    
                 </Jumbotron>
-              
-             )}
-            
-            </div>
 
+               
+             )};
+            
+            
+                       
             </Container>
 
             <br />

@@ -1,6 +1,6 @@
 import { Container, Jumbotron, Form, Button, Col, Row } from "react-bootstrap";
 import "../WelcomePage/WelcomePage.css";
-
+import "../ViewAllTables/ViewAllTables"
 
 function ManagerComp () {
 

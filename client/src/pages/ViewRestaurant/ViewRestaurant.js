@@ -128,6 +128,8 @@ function ViewRestaurantComp(props) {
                     
                     <br/>
                     <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View My Tables</Button></a>
+                    <br></br>
+                    <br></br>
                     
 
                 </Jumbotron>

@@ -133,6 +133,8 @@ function ViewAllTablesComp({ user, getUser }) {
   
                     <br/>
                     <a href="/viewRestaurant"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View Restaurant</Button></a>
+                    <br></br>
+                    <br></br>
                     
 
                 </Jumbotron>
