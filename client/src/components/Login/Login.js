@@ -63,7 +63,7 @@ function LoginComp(props) {
             <Container className="vertical-center">
 
                 <Jumbotron className="jumbotronLoginSignUp" >
-                    <h2 className="text-center responsiveH1Font">Get Back To Work</h2>
+                    <h2 className="text-center responsiveH1Font">Sign In</h2>
                     <hr style={{ height: '4px' }} />
                     <h4 className="text-center"></h4>
                     <h6 className="text-center text-muted">Welcome back. Sign in to get back to turning tables.</h6>
