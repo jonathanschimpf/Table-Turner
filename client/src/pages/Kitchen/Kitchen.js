@@ -194,7 +194,7 @@ function KitchenComp(props) {
                 </Jumbotron>
 
                
-             )};
+             )}
             
             
                        
