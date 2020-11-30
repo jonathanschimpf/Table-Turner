@@ -33,7 +33,7 @@ function App() {
 
   const getUser = () => {
     if(window.location.pathname === "/") {
-      history.push("/login")
+      history.push("/")
     }
     API.getUser()
       .then(res => { setUser(res.data) ; console.log(res.data.id) })
@@ -75,7 +75,7 @@ function App() {
               </Route>  
               <Route path="/login"><LoginComp setUser={setUser}/></Route>
               <Route path="/register"><SignupComp setUser={setUser}/></Route>
-              <Route path="/landing"><LandingPageComp/></Route>
+              <Route path="/"><LandingPageComp/></Route>
         </Switch>
             </>
 
