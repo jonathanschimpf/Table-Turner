@@ -444,7 +444,7 @@ function MenuPageComp() {
             table: tableValue,
             order: modalTitle,
             course: 0,
-            allergies: "",
+            allergies: [],
             extra_notes: "",
             label: labelValue,
             waiterId: userId,
@@ -480,37 +480,33 @@ function MenuPageComp() {
         }
         
         function handleCheckbox(event){
+            const allergyArr = []
             const { name, value } = event.target
-            
-            // const orderArr = []
-            
-            // if(value < 1) {
-            //     orderArr.push(event.target.value)
-            // }
-            
-            // value[i] = event.target.value
-            // this.state = {
-            //     days:[]
-            // }
-            // let dayArr;
-            
-            // handleDaySelect (event) {
-            
-            //     /*now we should check if the selected days
-            //     already exist so that we don't double entry it*/
-            
-            //     if (this.state.days.indexOf(event.target.value) < 1) {
-            //         dayArr.push(event.target.value)
-            //     }
-            
-            //     this.setState({
-            //        days: dayArr
-            //     })
-            // }
-            // this.setState({allergies: event.target.value});
-            // const ConfirmedAllergies = this.state.ConfirmedAllergies;
-            // ConfirmedAllergies[i] = event.target.value;
-            // this.setState({ConfirmedAllergies})
+            if(inlineCheckbox1.checked){
+                allergyArr.push("Gluten")
+            }
+            if(inlineCheckbox2.checked){
+                allergyArr.push("Dairy")
+            }
+            if(inlineCheckbox3.checked){
+                allergyArr.push("Shellfish")
+            }
+            if(inlineCheckbox4.checked){
+                allergyArr.push("Nuts")
+            }
+            if(inlineCheckbox5.checked){
+                allergyArr.push("Egg")
+            }
+            if(inlineCheckbox6.checked){
+                allergyArr.push("Lily")
+            }
+            if(inlineCheckbox7.checked){
+                allergyArr.push("Alcohol")
+            }
+            if(inlineCheckbox8.checked){
+                allergyArr.push("Pork")
+            }
+            console.log(allergyArr)
             
             //arr.split(", ")
 
@@ -519,10 +515,10 @@ function MenuPageComp() {
             //remove value if doesn't exist 
 
             //arr.join(", ")
-            console.log(name)
+            // console.log(name)
             console.log(value)
             
-            setModalObj({...modalObj, allergies: (value)})
+            setModalObj({...modalObj, allergies: (allergyArr)})
         }
 
 

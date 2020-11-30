@@ -5,7 +5,7 @@ const orderSchema = new Schema({
 
     table: Number,
     order: String,
-    allergies: String,
+    allergies: Array,
     extra_notes: String,
     label: String,
     course: Number,
