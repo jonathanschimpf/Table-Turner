@@ -11,14 +11,15 @@
     margin-bottom: 0 !important
 } 
 
-.centerHeader {text-align: center !important;
-align-content: center !important
+.centerHeader {
+    text-align: center !important;
+    align-content: center !important
 }
 
 .whited {
     color: whitesmoke !important;
     font-weight: bold !important;
-    font-size: 80px;
+    font-size: 110px;
 
 }
 
@@ -32,11 +33,23 @@ align-content: center !important
 
     color:#DC3545 !important;
     font-weight: normal !important;
-    font-size: 80px;
+    font-size: 110px;
 
 }
 
 /* responsive h1 for white table header font */
+@media screen and (max-width: 770px) {
+    h1.responsiveH1Font {
+      font-size: 90px;
+    }
+  }
+
+@media screen and (max-width: 576px) {
+    h1.responsiveH1Font {
+      font-size: 75px;
+    }
+  }
+
 @media screen and (max-width: 450px) {
     h1.responsiveH1Font {
       font-size: 60px;
@@ -58,6 +71,19 @@ align-content: center !important
 
 
   /* repsonsive span to the red turner */
+
+  @media screen and (max-width: 770px) {
+    span.responsiveSpanFont {
+      font-size: 90px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    span.responsiveSpanFont {
+      font-size: 75px;
+    }
+  }
+
   @media screen and (max-width: 450px) {
     span.responsiveSpanFont {
       font-size: 60px;
@@ -77,15 +103,40 @@ align-content: center !important
   }
 
   /* responsive slogan font  */
+
+  @media screen and (max-width: 770px) {
+    h3.responsiveH3Font {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    h3.responsiveH3Font {
+      font-size: 24px;
+    }
+  }
+
   @media screen and (max-width: 450px) {
     h3.responsiveH3Font {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 
   @media screen and (max-width: 400px) {
     h3.responsiveH3Font {
-      font-size: 20px;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    h3.responsiveH3Font {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 290px) {
+    h3.responsiveH3Font {
+      font-size: 13px;
     }
   }
 
@@ -101,7 +152,7 @@ align-content: center !important
     height: 800px;
     overflow: hidden;
     background-color: rgb(216, 216, 216) !important;
-    background-image: url("./restaurant_linecooks.jpg");
+    background-image: url("./restaurant_linecooks_final.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

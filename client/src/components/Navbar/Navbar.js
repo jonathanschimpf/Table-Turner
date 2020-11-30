@@ -85,7 +85,11 @@ function NavbarComp({ user, getUser }) {
                         <Nav.Link className="nav-link"
                         onClick={logout}>Logout
                         </Nav.Link>
-                        : ""
+                        :
+                        <>
+                        <Nav.Link className={location.pathname === "/register" ? "nav-link active": "nav-link"} href={"/register"}>Sign Up</Nav.Link>
+                        <Nav.Link className={location.pathname === "/login" ? "nav-link active": "nav-link"} href={"/login"}>Sign In</Nav.Link>
+                        </>
                         }
                         </Nav>
 
