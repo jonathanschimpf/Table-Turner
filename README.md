@@ -34,6 +34,20 @@ View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`Table
 <p>&nbsp;<p>
 
 
+Currently `TableTurner` is fully functional and works flawlessly for a single restaraunt environment on the database we have setup via `AtlasDB`. Any number of users can be added and categories chosen for each that would correspond with their role in the establishment. We are currently developing the application to accept multiple restaraunts with their own storage and users. To demonstrate it's functionality, feel free to sign in with our demo accounts we've created below.
+
+<p>&nbsp;<p>
+
+Demo accounts to test this BETA application (case-sensitive):
+
+Username: TableTurnerWaiter → Password: TableTurnerWaiter123 → "Wait Staff"  
+
+Username: TableTurnerManager → Password: TableTurnerManager123 → "Manager"
+
+Username: TableTurnerKitcher → Password: TableTurnerKitchen123 → "Kitchen"
+
+
+
 ---
 
 <p>&nbsp;<p>
@@ -71,8 +85,31 @@ View the application here =>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏[`Table
 
 Establishments can get started taking orders by creating an account and adding the menu items that they currently offer. Each account will store this unique data and can be continuously updated. This application interface is intentionally designed to be easy to use and navigate throughout during the process of taking orders. Front of house can define their tables and the individual orders within those tables. Special requests and allergy concerns can be easily applied to each order and then viewed immediately by the kitchen staff. Course numbers can be added to each item to add clarity to preparation order. It's quite easy to remove items, add new ones, and to update the menu when it changes. ‏‏[`Log on`](https://tableturner.herokuapp.com/) now to begin quickly turning your tables.
 
+landing_page_screengrab.jpg
 
 <p>&nbsp;<p>
+
+---
+
+<p>&nbsp;<p>
+
+
+[![IMAGE](./client/assets/landing_page_screengrab.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+---
+
+<p>&nbsp;<p>
+
+
+[![IMAGE](./client/assets/landing_page_screengrab_two.jpg)](https://tableturner.herokuapp.com/) 
+
+
+<p>&nbsp;<p>
+
+---
 
 ---
 
