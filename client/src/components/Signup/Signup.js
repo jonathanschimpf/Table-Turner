@@ -115,7 +115,7 @@ function SignupComp() {
 
                         <br />
 
-                        <p className="formControl">Existing user? <a href="/" className="aLoginSignUpLink effect-shine">Sign in.</a></p>
+                        <p className="formControl">Existing user? <a href="/login" className="aLoginSignUpLink effect-shine">Sign in.</a></p>
 
                     </Form>
 
