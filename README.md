@@ -85,7 +85,6 @@ Username: TableTurnerKitcher → Password: TableTurnerKitchen123 → "Kitchen"
 
 Establishments can get started taking orders by creating an account and adding the menu items that they currently offer. Each account will store this unique data and can be continuously updated. This application interface is intentionally designed to be easy to use and navigate throughout during the process of taking orders. Front of house can define their tables and the individual orders within those tables. Special requests and allergy concerns can be easily applied to each order and then viewed immediately by the kitchen staff. Course numbers can be added to each item to add clarity to preparation order. It's quite easy to remove items, add new ones, and to update the menu when it changes. ‏‏[`Log on`](https://tableturner.herokuapp.com/) now to begin quickly turning your tables.
 
-landing_page_screengrab.jpg
 
 <p>&nbsp;<p>
 
@@ -111,7 +110,6 @@ landing_page_screengrab.jpg
 
 ---
 
----
 
 <p>&nbsp;<p>
 
