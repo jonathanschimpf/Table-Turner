@@ -44,7 +44,7 @@ Username: TableTurnerWaiter → Password: TableTurnerWaiter123 → "Wait Staff"
 
 Username: TableTurnerManager → Password: TableTurnerManager123 → "Manager"
 
-Username: TableTurnerKitcher → Password: TableTurnerKitchen123 → "Kitchen"
+Username: TableTurnerKitchen → Password: TableTurnerKitchen123 → "Kitchen"
 
 
 
