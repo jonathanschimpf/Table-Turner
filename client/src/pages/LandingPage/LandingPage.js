@@ -25,7 +25,7 @@ function LandingPageComp() {
                 <h3 className=" blacked wow animate__animated animate__fadeIn animate__slower responsiveH3Font">Turn Your Tables. Quickly.</h3>
                 <br />
                 <br />
-                <a><i className="fas fa-angle-down fa-2x wow animate__animated animate_slower animate__backInUp" aria-hidden="true" /></a>
+                <span className="fa wow animate__animated animate__bounce animate__delay-1s"><span className="fa wow animate__animated animate__fadeIn animate__slower"><a><i className="fas fa-angle-down fa-2x wow animate__animated animate_slower animate__backInUp" aria-hidden="true" /></a></span></span>
                 <br />
                 <br /> 
                 <br />
@@ -160,7 +160,7 @@ function LandingPageComp() {
 
         
         <Container className="centerHeader">
-        <a><i className="fas fa-angle-down fa-2x wow animate__animated animate__bounce" aria-hidden="true" /></a>
+        <span className="fa wow animate__animated animate__fadeIn animate__slower"><a><i className="fas fa-angle-down fa-2x wow animate__animated animate__bounce animate__delay-1s" aria-hidden="true" /></a></span>
         <br/>
         <br/>
         </Container>
