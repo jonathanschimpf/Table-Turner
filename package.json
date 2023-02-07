@@ -16,8 +16,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.4"
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -33,7 +33,7 @@
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "mongoose": "^5.10.13",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-typeahead": "^5.1.2",
