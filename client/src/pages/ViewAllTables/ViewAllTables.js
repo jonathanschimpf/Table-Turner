@@ -158,7 +158,7 @@ function ViewAllTablesComp({ user, getUser }) {
 
                         <Row>
                             <Col xs={9}>
-                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" variant="dark" onClick={() => {
+                                <Button variant="outline-dark" className="my-2 my-lg-0 formControl view tableViewButtons" size="sm" onClick={() => {
                                  setModalTable(tableNumb)
                                  setModalShow(true)
                                  

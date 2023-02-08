@@ -80,8 +80,10 @@ function App() {
           <>
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/manager" element={<Manager />} />
+
             <Route path="/importmenu" element={<ImportMenu />} />
             <Route path="/menu" element={<MenuPage />} />
+            
             <Route path="/startTable" element={<AddNewTable />} />
             <Route path="/viewTables" element={<ViewAllTables />} />
             <Route path="/viewRestaurant" element={<ViewRestaurant />} />
