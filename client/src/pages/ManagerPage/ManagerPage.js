@@ -1,101 +1,53 @@
-import { Container, Form, Button, Col, Row } from "react-bootstrap";
-import "../WelcomePage/WelcomePage.css";
+import { Container, Col, Row } from "react-bootstrap";
+import BasicDiv from "../../components/BasicDiv/BasicDiv";
 import "../ViewAllTables/ViewAllTables"
+import "../WelcomePage/WelcomePage.css";
 
-function ManagerComp () {
+function ManagerComp() {
 
-    return (
+  return (
+    <>
+      <Container className="vertical-center">
 
+        <Row>
+          <Col>
+            <BasicDiv
+              title="Add a New Table"
+              btnText="+Add"
+              linkUrl="/startTable"
+            />
+          </Col>
 
-        <>
-<Container className="vertical-center">
-
-<br />
-<br />
-<br />    
-<Row>
-    <Col>
-<div className="divWelcome" >
-  <h2 className="text-center responsiveH2Font">Add A New Table</h2>
-  {/* <h4 className="text-center">Plaeholder Description</h4> */}
-  <hr style={{height: '4px'}} />
-  {/* <h4 className="text-center">Plaeholder Description</h4> */}
-  {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
-
-  <Form className="add">
-    
-   <a href="/startTable"><Button className="my-2 my-lg-0 formControl welcomeButtons"  block>+Add</Button></a>
-    
-  </Form>
-
-</div>
-    </Col>
-<br />
-<Col>
-<div className="divWelcome">
-  <h2 className="text-center responsiveH2Font">View All Tables</h2>
-  <hr style={{height: '4px'}} />
-  {/* <h4 className="text-center">Plaeholder Description</h4> */}
-  {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
-  
-  <Form className="add">
-    
-  <a href="/viewRestaurant"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>View</Button></a>
-    
-  </Form>
-
-</div>
-</Col>
-</Row>
-
-<Row>
-
-<Col>
-<div className="divWelcome">
-  <h2 className="text-center responsiveH2Font">Update Menu</h2>
-  <hr style={{height: '4px'}} />
-
-  
-  <Form className="add">
-    
-  <a href="/importMenu"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>Update</Button></a>
-    
-  </Form>
-
-</div>
-</Col>
-
-<Col>
-<div className="divWelcome">
-  <h2 className="text-center responsiveH2Font">View Kitchen</h2>
-  <hr style={{height: '4px'}} />
-  {/* <h4 className="text-center">Plaeholder Description</h4> */}
-  {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
-  
-  <Form className="add">
-    
-  <a href="/kitchen"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>View</Button></a>
-    
-  </Form>
-
-</div>
-</Col>
-
-</Row>
-
-</Container>
-<br />
-<br />
-<br />
-        
+          <Col>
+            <BasicDiv
+              title="View All Tables"
+              btnText="View"
+              linkUrl="/viewRestaurant"
+            />
+          </Col>
+        </Row>
 
 
+        <Row>
+          <Col>
+            <BasicDiv
+              title="Update Menu"
+              btnText="Update"
+              linkUrl="/importMenu"
+            />
+          </Col>
+          <Col>
+            <BasicDiv
+              title="View Kitchen"
+              btnText="View"
+              linkUrl="/kitchen"
+            />
+          </Col>
+        </Row>
+      </Container>
 
-
-        </>
-
-
-    );
+    </>
+  );
 
 };
 
