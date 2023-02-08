@@ -118,7 +118,7 @@ app.get("/user", (req, res) => {
 })
 
 app.get("/api/logout", function (req, res) {
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) { return next(err); }
     res.redirect('/');
   });
@@ -130,10 +130,8 @@ app.get("/api/logout", function (req, res) {
 
 // Send every request to the React app
 // Define any API routes before this runs
-
-
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  return res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(PORT, function () {

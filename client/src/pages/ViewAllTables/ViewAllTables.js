@@ -143,13 +143,13 @@ function ViewAllTablesComp({ user, getUser }) {
                                             setModalTable(tableNum)
                                             setModalShow(true)
 
-                                        }} block>View Details
+                                        }}>View Details
                                         </Button>
                                     </Col>
 
                                     <Col xs={3}>
                                         <Button variant="outline-danger" className="my-2 my-lg-0 formControl view deleteTableButtons"
-                                            size="sm" block
+                                            size="sm"
                                             onClick={() => { setSmallerModalShow(true); setModalTable(tableNum) }}
                                         >
                                             <strong>x</strong>

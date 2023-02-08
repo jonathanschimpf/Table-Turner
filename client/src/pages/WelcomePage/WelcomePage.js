@@ -5,10 +5,6 @@ import "./WelcomePage.css";
 
 export default function WelcomePage() {
 
-
-
-
-
   return (
     <>
       <Container className="vertical-center mb-4">

@@ -114,7 +114,7 @@ function SignupComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} block getUser={getUser} user={user}>Create New Account</Button>
+                        <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} getUser={getUser} user={user}>Create New Account</Button>
 
                         <br />
 

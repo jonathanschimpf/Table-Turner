@@ -90,7 +90,7 @@ function LoginComp(props) {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login} block >Sign In</Button>
+                        <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login}>Sign In</Button>
                         <br />
 
                         <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>

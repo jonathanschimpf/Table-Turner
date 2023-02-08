@@ -41,7 +41,7 @@ function AddNewOrderComp() {
                         </Form.Group>
 
                        
-                        <a href="/menu"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewButton" block>+</Button></a>
+                        <a href="/menu"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewButton">+</Button></a>
 
                         <br />
 

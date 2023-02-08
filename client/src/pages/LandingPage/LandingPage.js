@@ -1,18 +1,17 @@
 import React from "react";
-import "./LandingPage.css";
-import { Container, Card, Form, Button } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./LandingPage.css";
 
 
 
-
-function LandingPageComp() {
+export default function LandingPage() {
 
 
 
   const InfoCard = ({ iconClass, title, text }) => {
 
-    const baseStyle = "fas fa-tachometer-alt fa-7x wow animate__animated animate__fadeIn animate__slower"
+    const baseStyle = "fas fa-tachometer-alt fa-7x wow animate__animated animate__fadeIn animate__slower";
 
     return (
       <Card style={{ border: 'none' }}>
@@ -35,7 +34,7 @@ function LandingPageComp() {
 
     <>
       {/* header  */}
-      <div className="headerBgrndWhite centerHeader divHeader" fluid>
+      <div className="headerBgrndWhite centerHeader divHeader d-flex align-items-center">
         <Container>
 
           <h1 className="display-4 wow animate__animated animate__fadeIn animate__slower responsiveH1Font whited">Table<span className="redded responsiveSpanFont">Turner</span></h1>
@@ -43,7 +42,7 @@ function LandingPageComp() {
 
           <span className="fa wow animate__animated animate__bounce animate__delay-1s">
             <span className="fa wow animate__animated animate__fadeIn animate__slower">
-            <i className="fas fa-angle-down fa-2x wow animate__animated animate_slower animate__backInUp" aria-hidden="true" />
+              <i className="fas fa-angle-down fa-2x wow animate__animated animate_slower animate__backInUp" aria-hidden="true" />
             </span>
           </span>
 
@@ -59,7 +58,7 @@ function LandingPageComp() {
 
       {/* informational cards  */}
       <Container>
-        <div lg={2}>
+        <div>
 
 
 
@@ -97,8 +96,7 @@ function LandingPageComp() {
           <InfoCard
             iconClass="far fa-eye"
             title="View All Orders + Tables"
-            text="Increase transparency by viewing all tables and each guest's orders in one place. Easily add and delete new orders on the fly or entire tables if your restaraunt layout changes. Simultaneously view allergy concerns, course numbers, and special requests.
-            </Card.Text>"
+            text="Increase transparency by viewing all tables and each guest's orders in one place. Easily add and delete new orders on the fly or entire tables if your restaraunt layout changes. Simultaneously view allergy concerns, course numbers, and special requests."
           />
 
           <InfoCard
@@ -123,10 +121,11 @@ function LandingPageComp() {
 
       {/* get started button */}
 
-      <Form className="formControlGetStarted">
-        <Link to="/register"><Button variant="outline-dark" className="my-2 my-lg-0 formControlGetStarted add addNewTableButton" block>Get Started.</Button></Link>
-      </Form>
-
+      <div className='text-center mb-5'>
+        <Link to="/register">
+          <Button variant="outline-dark" className="my-2 my-lg-0 formControlGetStarted add addNewTableButton">Get Started.</Button>
+        </Link>
+      </div>
 
     </>
 
@@ -134,4 +133,3 @@ function LandingPageComp() {
   );
 }
 
-export default LandingPageComp;

@@ -327,7 +327,7 @@ function ImportMenuComp() {
               </Form.Control>
             </Form.Group>
 
-            <Button variant="outline-dark" className="my-2 my-sm-0 formControl importMenuButton" block
+            <Button variant="outline-dark" className="my-2 my-sm-0 formControl importMenuButton"
               disabled={!(menuObj.price && menuObj.ingredients && menuObj.item && menuObj.section)}
               onClick={() => handleFormSubmit(event)} >+Add Menu Item</Button>
 
@@ -337,7 +337,7 @@ function ImportMenuComp() {
 
               setModalShow(true)
 
-            }} block>View / Delete Menu Items</Button>
+            }}>View / Delete Menu Items</Button>
 
           </Form>
 

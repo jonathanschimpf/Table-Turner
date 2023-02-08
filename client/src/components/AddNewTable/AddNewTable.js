@@ -40,7 +40,7 @@ function AddNewTableComp() {
                         </Form.Group> */}
 
                         <Link to="/takeOrder">
-                            <Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" block disabled={!(value)}>+</Button>
+                            <Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton" disabled={!(value)}>+</Button>
                         </Link>
 
                     </Form>

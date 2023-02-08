@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import API from "./utils/API"
 
 
-
+// Pages
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
 import NavigationBar from "./components/NavigationBar/NavigationBar"
@@ -18,10 +18,16 @@ import ViewRestaurant from "./pages/ViewRestaurant/ViewRestaurant";
 import Manager from "./pages/ManagerPage/ManagerPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 
+// ProtectedRoute
+import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function App() {
 
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
+
+
+  const isLoggedIn = Object.keys(user).length > 0;
 
 
 
@@ -35,7 +41,7 @@ function App() {
 
   const getUser = () => {
     console.log('getting user...')
-    
+
     API.getUser()
       .then(res => {
         console.log('user: ', res.data);
@@ -57,65 +63,38 @@ function App() {
 
 
   return (
-
     <>
+      <NavigationBar getUser={getUser} user={user} />
 
 
-      <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
 
-        <NavigationBar getUser={getUser} user={user} />
-
-
-        <Routes>
-
-          <Route path="/" element={<LandingPage />} />
-
-          
-          <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="/register" element={<Signup setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/register" element={<Signup setUser={setUser} />} />
 
 
-          {/* {user ? */}
+        {/* Protected Routes below. User must be logged in to view these pages. */}
+        <Route element={<ProtectedRoute isAllowed={isLoggedIn} />}>
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/manager" element={<Manager />} />
 
-          <>
-            <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/manager" element={<Manager />} />
+          <Route path="/importmenu" element={<ImportMenu />} />
+          <Route path="/menu" element={<MenuPage />} />
 
-            <Route path="/importmenu" element={<ImportMenu />} />
-            <Route path="/menu" element={<MenuPage />} />
-            
-            <Route path="/startTable" element={<AddNewTable />} />
-            <Route path="/viewTables" element={<ViewAllTables />} />
-            <Route path="/viewRestaurant" element={<ViewRestaurant />} />
-            <Route path="/takeOrder" element={<AddNewOrder />} />
-            <Route path="/importMenu" element={<ImportMenu />} />
-            <Route path="/kitchen" element={<Kitchen />} />
-
-          </>
-          :
-          {/* <h1>you must login</h1> */}
-          {/* } */}
+          <Route path="/startTable" element={<AddNewTable />} />
+          <Route path="/viewTables" element={<ViewAllTables />} />
+          <Route path="/viewRestaurant" element={<ViewRestaurant />} />
+          <Route path="/takeOrder" element={<AddNewOrder />} />
+          <Route path="/importMenu" element={<ImportMenu />} />
+          <Route path="/kitchen" element={<Kitchen />} />
+        </Route>
 
 
+        <Route path="*" element={<h1>404 - Page not found</h1>} />
 
-
-
-
-          <Route path="*" element={<h1>Page not found</h1>} />
-
-
-        </Routes>
-
-      </Router>
-
-
-      <WelcomePage />
-
-
-
+      </Routes>
     </>
-
-
   );
 };
 
