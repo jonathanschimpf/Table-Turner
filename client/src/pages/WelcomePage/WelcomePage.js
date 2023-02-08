@@ -1,62 +1,49 @@
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./WelcomePage.css";
+
 
 
 export default function WelcomePage() {
 
+
+  const BasicDiv = ({ title, btnText, linkUrl }) => {
+
+
+    return (
+      <div className="divWelcome" >
+        <h2 className="text-center responsiveH2Font">{title}</h2>
+        <hr style={{ height: '4px' }} />
+
+        <Form className="add">
+          <Link to={linkUrl}>
+            <Button className="my-2 my-lg-0 formControl welcomeButtons" block>{btnText}</Button>
+          </Link>
+        </Form>
+
+      </div>
+
+    )
+  }
+
+
   return (
-
-
     <>
-      <Container className="vertical-center">
+      <Container className="vertical-center mb-4">
 
-        <br />
-        <br />
-        <br />
+        <BasicDiv
+          title="Add a New Table"
+          btnText="+Add"
+          linkUrl="/startTable"
+        />
 
-        <div className="divWelcome" >
-          <h2 className="text-center responsiveH2Font">Add A New Table</h2>
-          {/* <h4 className="text-center">Plaeholder Description</h4> */}
-          <hr style={{ height: '4px' }} />
-          {/* <h4 className="text-center">Plaeholder Description</h4> */}
-          {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
-
-          <Form className="add">
-
-            <a href="/startTable"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>+Add</Button></a>
-
-          </Form>
-
-        </div>
-
-        <br />
-
-        <div className="divWelcome">
-          <h2 className="text-center responsiveH2Font">View All Tables</h2>
-          <hr style={{ height: '4px' }} />
-          {/* <h4 className="text-center">Plaeholder Description</h4> */}
-          {/* <h6 className="text-center text-muted">Placeholder Text </h6> */}
-
-          <Form className="add">
-
-            <a href="/viewTables"><Button className="my-2 my-lg-0 formControl welcomeButtons" block>View</Button></a>
-
-          </Form>
-
-        </div>
+        <BasicDiv
+          title="View All Tables"
+          btnText="View"
+          linkUrl="/viewTables"
+        />
 
       </Container>
-      <br />
-      <br />
-      <br />
-
-
-
-
-
     </>
-
-
   );
-
 };
