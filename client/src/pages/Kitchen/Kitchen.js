@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
+import { Container, div, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
 import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
 import Clock from 'react-live-clock';
@@ -121,7 +121,7 @@ function KitchenComp(props) {
                 <>
                 <br/>
                 <Container className="maxContainerWidth">
-                <Jumbotron className="jumbotronStyle">
+                <div className="divStyle">
 
                     <br></br>
                     <h1 className="responsiveText"><strong>All Active Orders</strong></h1>
@@ -130,7 +130,7 @@ function KitchenComp(props) {
                     <br></br>
                     <br></br>
 
-                </Jumbotron>
+                </div>
             </Container>
 
 
@@ -144,7 +144,7 @@ function KitchenComp(props) {
 
                 {reducedTables.map(tableNumb =>   
                 
-                <Jumbotron className="jumbotronStyle" style={{marginBottom: "50px"}}>
+                <div className="divStyle" style={{marginBottom: "50px"}}>
                     <br/>
                     <h2 className="text-center responsiveH2Font">Table {tableNumb}</h2>
                     <hr style={{ height: '4px' }} />
@@ -191,7 +191,7 @@ function KitchenComp(props) {
 
                     </Form>
                     
-                </Jumbotron>
+                </div>
 
                
              )}

@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./ImportMenu.css";
 
-import { Container, Jumbotron, Form, Button,Modal, Table } from "react-bootstrap";
+import { Container, div, Form, Button,Modal, Table } from "react-bootstrap";
 
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -274,7 +274,7 @@ function ImportMenuComp() {
             <br />
             <Container className="vertical-center">
 
-                <Jumbotron className="importMenuJumbotron" >
+                <div className="importMenudiv" >
                     <h2 className=" text-center responsiveH2Font">Import Menu Item</h2>
                     <hr style={{ height: '4px', maxWidth: 375 }} />
                     <h6 className="text-center text-muted">Fill out the fields below to create a new menu item.</h6>
@@ -334,7 +334,7 @@ function ImportMenuComp() {
                         
                     </Form>
 
-                </Jumbotron>
+                </div>
 
                 <MyVerticallyCenteredModal
             show={modalShow}

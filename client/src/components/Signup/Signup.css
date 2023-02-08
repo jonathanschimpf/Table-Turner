@@ -24,9 +24,9 @@
         margin-top: 50px;
       }
     
-          /* jumbotron customization with box shadow addition for all browsers */
+          /* div customization with box shadow addition for all browsers */
     
-    .jumbotronLoginSIgnUp {
+    .divLoginSIgnUp {
     
         justify-content: center !important;
         background-color: #dfdfdf !important;

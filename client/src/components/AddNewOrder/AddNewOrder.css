@@ -25,9 +25,9 @@
         
       }
     
-          /* jumbotron customization with box shadow addition for all browsers */
+          /* div customization with box shadow addition for all browsers */
     
-    .jumbotronAddOrder{
+    .divAddOrder{
     
         justify-content: center !important;
         max-width: 350px !important;

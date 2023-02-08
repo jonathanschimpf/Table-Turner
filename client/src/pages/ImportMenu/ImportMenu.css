@@ -118,9 +118,9 @@
 
       }
     
-          /* jumbotron customization with box shadow addition for all browsers */
+          /* div customization with box shadow addition for all browsers */
     
-    .importMenuJumbotron {
+    .importMenudiv {
     
         justify-content: center !important;
         background-color: #dfdfdf !important;

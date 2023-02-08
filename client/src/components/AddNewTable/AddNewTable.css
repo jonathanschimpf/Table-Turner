@@ -37,9 +37,9 @@
         
       }
     
-          /* jumbotron customization with box shadow addition for all browsers */
+          /* div customization with box shadow addition for all browsers */
     
-    .jumbotronAddTable {
+    .divAddTable {
     
         justify-content: center !important;
         background-color: #dfdfdf !important;

@@ -1,4 +1,4 @@
-import { Container, Jumbotron, Form, Button, Col, Row } from "react-bootstrap";
+import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import "../WelcomePage/WelcomePage.css";
 import "../ViewAllTables/ViewAllTables"
 
@@ -15,7 +15,7 @@ function ManagerComp () {
 <br />    
 <Row>
     <Col>
-<Jumbotron className="jumbotronWelcome" >
+<div className="divWelcome" >
   <h2 className="text-center responsiveH2Font">Add A New Table</h2>
   {/* <h4 className="text-center">Plaeholder Description</h4> */}
   <hr style={{height: '4px'}} />
@@ -28,11 +28,11 @@ function ManagerComp () {
     
   </Form>
 
-</Jumbotron>
+</div>
     </Col>
 <br />
 <Col>
-<Jumbotron className="jumbotronWelcome">
+<div className="divWelcome">
   <h2 className="text-center responsiveH2Font">View All Tables</h2>
   <hr style={{height: '4px'}} />
   {/* <h4 className="text-center">Plaeholder Description</h4> */}
@@ -44,14 +44,14 @@ function ManagerComp () {
     
   </Form>
 
-</Jumbotron>
+</div>
 </Col>
 </Row>
 
 <Row>
 
 <Col>
-<Jumbotron className="jumbotronWelcome">
+<div className="divWelcome">
   <h2 className="text-center responsiveH2Font">Update Menu</h2>
   <hr style={{height: '4px'}} />
 
@@ -62,11 +62,11 @@ function ManagerComp () {
     
   </Form>
 
-</Jumbotron>
+</div>
 </Col>
 
 <Col>
-<Jumbotron className="jumbotronWelcome">
+<div className="divWelcome">
   <h2 className="text-center responsiveH2Font">View Kitchen</h2>
   <hr style={{height: '4px'}} />
   {/* <h4 className="text-center">Plaeholder Description</h4> */}
@@ -78,7 +78,7 @@ function ManagerComp () {
     
   </Form>
 
-</Jumbotron>
+</div>
 </Col>
 
 </Row>

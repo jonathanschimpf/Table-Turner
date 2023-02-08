@@ -1,6 +1,6 @@
 import React, { useState, useEffect, setState } from "react";
 import API from "../../utils/API";
-import { Container, CardColumns, Card, Jumbotron, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
+import { Container, Card, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
 import "./MenuPage.css";
 
 //toastify
@@ -112,7 +112,7 @@ function MenuPageComp() {
             <br />
 
             <Container className="maxContainerWidth">
-                <Jumbotron className="jumbotronStyle">
+                <div className="divStyle">
 
                     <br></br>
                     <h1 className="responsiveText"><strong>Menu</strong></h1>
@@ -135,14 +135,14 @@ function MenuPageComp() {
                     <br></br>
                     <br></br>
 
-                </Jumbotron>
+                </div>
             </Container>
 
 
             {/* Looping over the filtered Search Terms ################################################################## */}
             <Container className={search.length === 0 ? "d-none maxContainerWidth" : "d-block maxContainerWidth"}>
 
-                <CardColumns>
+                <div>
 
 
 
@@ -185,7 +185,7 @@ function MenuPageComp() {
                         show={modalShow}
                         onHide={() => setModalShow(false)} />
 
-                </CardColumns>
+                </div>
             </Container >
 
 
@@ -647,7 +647,6 @@ function MenuPageComp() {
                             placeholder="allergies/requests"
                             type="text"
                             className="formControlSizing"
-                            placeholder="Allergy/Requests"
                             autocomplete="off"
                         // aria-label="Text input with checkbox"
                         />

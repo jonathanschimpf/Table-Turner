@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, div, Form, Button } from "react-bootstrap";
 import "./Login.css";
 import API from "../../utils/API";
 
@@ -62,7 +62,7 @@ function LoginComp(props) {
             <br />
             <Container className="vertical-center">
 
-                <Jumbotron className="jumbotronLoginSignUp" >
+                <div className="divLoginSignUp" >
                     <h2 className="text-center responsiveH1Font">Sign In</h2>
                     <hr style={{ height: '4px' }} />
                     <h4 className="text-center"></h4>
@@ -97,7 +97,7 @@ function LoginComp(props) {
 
                     </Form>
                    
-                </Jumbotron>
+                </div>
 
             </Container>
             <br />

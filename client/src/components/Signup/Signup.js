@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import API from "../../utils/API";
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, div, Form, Button } from "react-bootstrap";
 import "./Signup.css";
 
 
@@ -77,7 +77,7 @@ function SignupComp() {
             <br />
             <Container className="vertical-center">
 
-                <Jumbotron className="jumbotronLoginSignUp" >
+                <div className="divLoginSignUp" >
                     <h2 className="text-center responsiveH1Font">Get Started</h2>
                     <hr style={{ height: '4px' }} />
                     <h4 className="text-center"></h4>
@@ -119,7 +119,7 @@ function SignupComp() {
 
                     </Form>
 
-                </Jumbotron>
+                </div>
 
             </Container>
             <br />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Jumbotron, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
+import { Container, div, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
 import "./ViewAllTables.css";
 import API from "../../utils/API";
 
@@ -121,7 +121,7 @@ function ViewAllTablesComp({ user, getUser }) {
         <>
 <br/>
 <Container className="maxContainerWidth">
-                <Jumbotron className="jumbotronStyle">
+                <div className="divStyle">
 
                     <br></br>
                     <h1 className="responsiveText"><strong>My Active Tables</strong></h1>
@@ -135,7 +135,7 @@ function ViewAllTablesComp({ user, getUser }) {
                     <br></br>
                     
 
-                </Jumbotron>
+                </div>
             </Container>
 
 
@@ -150,7 +150,7 @@ function ViewAllTablesComp({ user, getUser }) {
                 
                 {reducedTables.map(tableNumb =>   
                 
-                <Jumbotron className="jumbotronTableView">
+                <div className="divTableView">
                     <h2 className="text-center responsiveH2Font">Table {tableNumb}</h2>
                     <hr style={{ height: '4px' }} />
 
@@ -183,7 +183,7 @@ function ViewAllTablesComp({ user, getUser }) {
 
                     </Form>
 
-                </Jumbotron>
+                </div>
               
              )}
 

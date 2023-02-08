@@ -34,7 +34,7 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({
   origin: "http://localhost:3000", // <-- location of the react app we're connecting to
   credentials: true
@@ -63,7 +63,15 @@ require('./passportConfig')(passport);
 // !! Can be Moved to routes folder when finished !! //
 
 
-app.post ("/api/login", (req, res, next) => {
+app.get('/health-check', (req, res) => {
+  let date = new Date().toLocaleDateString();
+  let time = new Date().toLocaleTimeString();
+
+  res.send(`status up at ${date} ${time}`)
+})
+
+
+app.post("/api/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) res.send("No User Exists");
@@ -74,32 +82,42 @@ app.post ("/api/login", (req, res, next) => {
         console.log(req.user);
       });
     }
-  })(req, res, next) 
+  })(req, res, next)
 })
 
 
-app.post ("/api/register", (req, res) => {
-  User.findOne({username: req.body.username}, async (err, doc) => {
-   if (err) throw err;
-   if (doc) res.send("User Already Exists");
-   if(!doc){
-     const hashedPassword = await  bcrypt.hash(req.body.password, 10)
-     const newUser = new User({
-       username: req.body.username,
-       password: hashedPassword,
-       title: req.body.title
-     });
-     await newUser.save();
-     res.send("User Created");
-   }
- });  
+app.post("/api/register", (req, res) => {
+  User.findOne({ username: req.body.username }, async (err, doc) => {
+    if (err) throw err;
+    if (doc) res.send("User Already Exists");
+    if (!doc) {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+      const newUser = new User({
+        username: req.body.username,
+        password: hashedPassword,
+        title: req.body.title
+      });
+      await newUser.save();
+      res.send("User Created");
+    }
+  });
 });
 
-app.get ("/user", (req, res) => {
-  res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
+app.get("/user", (req, res) => {
+  console.log(`${req.method} ${req.url}`);
+
+  console.log('req.user: ', req.user);
+
+  if (req.user) {
+    res.send(req.user) // <--- this is where the entire user is stored .. can be used elsewhere in app
+
+  } else {
+    console.log('no user found')
+    res.status(403).send('no user')
+  }
 })
 
-app.get("/api/logout", function(req, res) {
+app.get("/api/logout", function (req, res) {
   req.logout();
   res.redirect("/");
 });
@@ -112,8 +130,9 @@ app.get("/api/logout", function(req, res) {
 // Define any API routes before this runs
 
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+app.get("*", function (req, res) {
+  // res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/index.html"));
 });
 
 app.listen(PORT, function () {

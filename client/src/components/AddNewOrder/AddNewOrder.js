@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import "./AddNewOrder.css";
 
 
@@ -25,7 +25,7 @@ function AddNewOrderComp() {
                 <br />
 
 
-                <Jumbotron className="jumbotronAddOrder">
+                <div className="divAddOrder">
                     <h2 className="text-center responsiveH2Font">Add Seat</h2>
                     <hr style={{ height: '4px' }} />
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
@@ -47,7 +47,7 @@ function AddNewOrderComp() {
 
                     </Form>
 
-                </Jumbotron>
+                </div>
 
 
             </Container>

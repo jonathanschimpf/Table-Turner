@@ -1,6 +1,12 @@
 import axios from "axios";
 
 export default {
+
+
+  // =================
+  // Menus
+  // =================
+
   // Gets all items
   getMenus: function() {
     return axios.get("/api/menus");
@@ -18,6 +24,11 @@ export default {
   saveMenu: function(menuData) {
     return axios.post("/api/menus", menuData);
   },
+
+  // =================
+  // Orders
+  // =================
+
   getOrders: function() {
     return axios.get("/api/orders");
   },
@@ -36,11 +47,21 @@ export default {
   },
 
 
+  // =================
+  // Tables
+  // =================
+
   //Route for deleting an entire table of orders
   deleteTable: function(id){
     return axios.delete("/api/table/" + id)
   },
 
+
+
+
+  // =================
+  // Auth
+  // =================
 
   getUser: function(){
     return axios.get("/user")

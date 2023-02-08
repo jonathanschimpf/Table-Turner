@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import { Container, div, Form, Button } from "react-bootstrap";
 import "./AddNewTable.css";
 import { Link, useLocation } from "react-router-dom";
 
@@ -38,7 +38,7 @@ function AddNewTableComp() {
                 <br />
 
 
-                <Jumbotron className="jumbotronAddTable">
+                <div className="divAddTable">
                     <h2 className="text-center responsiveH2Font">Add Table</h2>
                     <hr style={{ height: '4px' }} />
                     {/* <h4 className="text-center">Plaeholder Description</h4> */}
@@ -62,7 +62,7 @@ function AddNewTableComp() {
 
                     </Form>
 
-                </Jumbotron>
+                </div>
 
             </Container>
 
