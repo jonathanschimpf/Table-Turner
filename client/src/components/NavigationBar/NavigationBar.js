@@ -11,13 +11,14 @@ export default function NavigationBar({ user, getUser }) {
     const location = useLocation();
     
     const logout = async() => {
+        console.log('logging out...');
 
         await API.logoutUser();
 
         console.log("logging out!")
 
         await getUser();
-        location.pathname="/login"
+        window.location.replace("/login");
     }
 
     return (

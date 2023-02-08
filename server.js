@@ -118,8 +118,10 @@ app.get("/user", (req, res) => {
 })
 
 app.get("/api/logout", function (req, res) {
-  req.logout();
-  res.redirect("/");
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
 });
 
 // Serve up static assets (usually on heroku) -- commented out till we run npm build -- //
