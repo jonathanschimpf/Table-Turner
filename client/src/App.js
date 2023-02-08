@@ -69,7 +69,6 @@ function App() {
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
-          <Route path="/some-other-page" element={<h1>on some other page</h1>} />
 
           
           <Route path="/login" element={<Login setUser={setUser} />} />

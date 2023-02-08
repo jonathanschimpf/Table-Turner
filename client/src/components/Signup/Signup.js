@@ -7,16 +7,16 @@ import "./Signup.css";
 
 
 function SignupComp() {
-    
+
     const getUser = () => {
-        if(window.location.pathname === "/") {
-          history.push("/login")
+        if (window.location.pathname === "/") {
+            history.push("/login")
         }
         API.getUser()
-          .then(res => { setUser(res.data) ; console.log(res.data.id) })
-          .catch(err => { console.log(err) })
-          
-      }
+            .then(res => { setUser(res.data); console.log(res.data.id) })
+            .catch(err => { console.log(err) })
+
+    }
     const [user, setUser] = useState({})
     const [registerUsername, setRegisterUsername] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
@@ -35,7 +35,7 @@ function SignupComp() {
             },
             withCredentials: true,
             url: "/api/register",
-        }).then(function(res){
+        }).then(function (res) {
             axios({
                 method: "POST",
                 data: {
@@ -46,17 +46,20 @@ function SignupComp() {
                 withCredentials: true,
                 url: "/api/login",
             }).then((res) => {
-                
-                if (registerTitle === "Wait Staff"){
-                window.location.replace("/welcome")}
-                if (registerTitle === "Manager") {
-                window.location.replace("/manager")}
-                if(registerTitle === "Kitchen") {
-                window.location.replace("/kitchen")
+
+                if (registerTitle === "Wait Staff") {
+                    window.location.replace("/welcome")
                 }
-            
+                if (registerTitle === "Manager") {
+                    window.location.replace("/manager")
+                }
+                if (registerTitle === "Kitchen") {
+                    window.location.replace("/kitchen")
+                }
+
             })
-    })}
+        })
+    }
 
 
 
@@ -95,7 +98,7 @@ function SignupComp() {
 
                         <Form.Group >
 
-                            <Form.Control id="myPass" type="password" className="formControl" autocomplete="off"  placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+                            <Form.Control id="myPass" type="password" className="formControl" autocomplete="off" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
 
                         </Form.Group>
 
@@ -107,7 +110,7 @@ function SignupComp() {
                                 <option>Wait Staff</option>
                                 <option>Kitchen</option>
                                 <option>Manager</option>
-                               
+
                             </Form.Control>
                         </Form.Group>
 
