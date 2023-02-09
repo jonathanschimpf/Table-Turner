@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, div, Form, Button, Row, Col, Modal, Table, CardDeck, CardColumns, Card, FormControl } from "react-bootstrap";
 import "../ViewAllTables/ViewAllTables.css";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 
 function ViewRestaurantComp(props) {
@@ -48,7 +49,7 @@ function ViewRestaurantComp(props) {
     const allTables = items.map(item => {
         return [item.table, item.waiterId];
     });
-    <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+    <Link to="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></Link>
 
     const userId = localStorage.getItem('UserId')
 
@@ -122,10 +123,10 @@ function ViewRestaurantComp(props) {
                     <h1 className="responsiveText"><strong>All Active Tables</strong></h1>
                     <br></br>
 
-                    <a href="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></a>
+                    <Link to="/startTable"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add New Table</Button></Link>
 
                     <br />
-                    <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View My Tables</Button></a>
+                    <Link to="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">View My Tables</Button></Link>
                     <br></br>
                     <br></br>
 
@@ -273,7 +274,7 @@ function ViewRestaurantComp(props) {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <a href="/takeOrder"><Button variant="dark" size="sm" className="tableViewButtons" onClick={props.onHide}>+Add New Order Item </Button></a>
+                    <Link to="/takeOrder"><Button variant="dark" size="sm" className="tableViewButtons" onClick={props.onHide}>+Add New Order Item </Button></Link>
                 </Modal.Footer>
             </Modal>
         );

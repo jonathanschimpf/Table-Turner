@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Modal, Table } from "react-bootstrap";
 import API from "../../utils/API";
 import "./ViewAllTables.css";
+import { Link } from "react-router-dom";
 
 
 function ViewAllTablesComp({ user, getUser }) {

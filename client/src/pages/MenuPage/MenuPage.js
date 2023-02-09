@@ -6,6 +6,7 @@ import "./MenuPage.css";
 //toastify
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -128,10 +129,10 @@ function MenuPageComp() {
                         <FormControl type="text" placeholder="Search Menu" autocomplete="off" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
                     </Form>
 
-                    <a href="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></a>
+                    <Link to="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></Link>
                     
                     <br/>
-                    <a href="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Complete Order</Button></a>
+                    <Link to="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Complete Order</Button></Link>
                     <br></br>
                     <br></br>
 
@@ -198,7 +199,7 @@ function MenuPageComp() {
                 <br />
 
 
-                <CardColumns>
+                <div>
                     {smallPlates.map(item =>
                         <Card>
                             <Card.Header><strong>{item[0]}</strong></Card.Header>
@@ -238,7 +239,7 @@ function MenuPageComp() {
                             show={modalShow2}
                             onHide={() => setModalShow2(false)} />
 
-                </CardColumns>
+                </div>
             </Container>
 
             <br />
@@ -249,7 +250,7 @@ function MenuPageComp() {
                 <h3>Shared Plates</h3>
                 <br />
 
-                <CardColumns>
+                <div>
 
                     {sharedPlates.map(item =>
                         <Card>
@@ -291,7 +292,7 @@ function MenuPageComp() {
                           show={modalShow3}
                             onHide={() => setModalShow3(false)} />
 
-                </CardColumns>
+                </div>
             </Container>
 
             <br />
@@ -302,7 +303,7 @@ function MenuPageComp() {
                 <h3>Main Courses</h3>
                 <br />
 
-                <CardColumns>
+                <div>
                     {mainCourse.map(item =>
                         <Card>
                             <Card.Header><strong>{item[0]}</strong></Card.Header>
@@ -340,7 +341,7 @@ function MenuPageComp() {
                           show={modalShow4}
                           onHide={() => setModalShow4(false)} />
 
-                </CardColumns>
+                </div>
             </Container>
 
             <br />
@@ -351,7 +352,7 @@ function MenuPageComp() {
                 <h3>Dessert</h3>
                 <br />
 
-                <CardColumns>
+                <div>
                     {dessert.map(item =>
                         <Card>
 
@@ -393,7 +394,7 @@ function MenuPageComp() {
                           show={modalShow5}
                          onHide={() => setModalShow5(false)} />   
 
-                </CardColumns>
+                </div>
             </Container>
 
             <br />
