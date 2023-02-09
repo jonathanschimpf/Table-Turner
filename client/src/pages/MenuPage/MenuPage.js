@@ -1,65 +1,64 @@
-import React, { useState, useEffect, setState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import { Container, Card, Form, FormControl, Modal, Button, Row, Col } from "react-bootstrap";
+import { Container, Card, Form, FormControl, Button, Row, Col } from "react-bootstrap";
+// import { ToastContainer, toast, Slide } from 'react-toastify';
+import OrderModal from "../../components/Menu/OrderModal/OrderModal";
+import 'react-toastify/dist/ReactToastify.css';
 import "./MenuPage.css";
 
-//toastify
-import { ToastContainer, toast, Slide } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Link } from "react-router-dom";
 
 
+export default function MenuPageComp() {
 
-function MenuPageComp() {
-    
-    
+
     const [modalTitle, setModalTitle] = useState([]);
     const [modalDesc, setModalDesc] = useState([]);
 
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
 
-    const smallPlates = items.filter(item => {
-        return item.section === "Small Plates"
-    }).map(item => {
-        return [item.item, item.price, item.ingredients, item._id];
-    })
-
-    const sharedPlates = items.filter(item => {
-        return item.section === "Shared Plates"
-    }).map(item => {
-        return [item.item, item.price, item.ingredients, item._id];
-    })
-    const mainCourse = items.filter(item => {
-        return item.section === "Main Course"
-    }).map(item => {
-        return [item.item, item.price, item.ingredients, item._id];
-    })
-
-    const dessert = items.filter(item => {
-        return item.section === "Dessert"
-    }).map(item => {
-        return [item.item, item.price, item.ingredients, item._id];
-    })
+    // Loading state
+    const [isLoading, setIsLoading] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isError, setIsError] = useState(false);
 
 
-    const handleInputChange = event => {
-        const { name, value } = event.target;
-        setSearchTerm(value)
-        console.log(value)
-    }
+    const [smallPlates, setSmallPlates] = useState([]);
+    const [sharedPlates, setSharedPlates] = useState([]);
+    const [mainCourse, setMainCourse] = useState([]);
+    const [dessert, setDessert] = useState([]);
 
-    // #####################################################################################################
+
+    // ######################################################F###############################################
     //SEARCHING FOR MENU ITEMS AND FILTERING
-
 
     //setting the state for our search term
     const [search, setSearchTerm] = useState("")
-    
 
     const lowerCaseSearch = search.toLowerCase()
     const filteredArrayOfFood = items.filter(i => i.item.toLowerCase().includes(lowerCaseSearch))
     // console.log("filtered array is: ", filteredArrayOfFood)
     // #####################################################################################################
+
+
+
+    const [modalShow, setModalShow] = useState(false);
+    const [modalShow2, setModalShow2] = useState(false);
+    const [modalShow3, setModalShow3] = useState(false);
+    const [modalShow4, setModalShow4] = useState(false);
+    const [modalShow5, setModalShow5] = useState(false);
+
+
+
+
+
+
+
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+        setSearchTerm(value)
+    }
+
 
 
 
@@ -75,69 +74,111 @@ function MenuPageComp() {
 
     // Loads all menu items and sets the menu items
     function loadItems() {
+        setIsLoading(true);
         API.getMenus()
-            .then(res =>
+            .then(res => {
+                console.log('menu items: ', res);
                 setItems(res.data)
-            )
+
+                let smallPlates = items.filter(item => item.section === "Small Plates").map(item => {
+                    return [item.item, item.price, item.ingredients, item._id];
+                })
+
+                let sharedPlates = items.filter(item => item.section === "Shared Plates").map(item => {
+                    return [item.item, item.price, item.ingredients, item._id];
+                })
+                let mainCourse = items.filter(item => item.section === "Main Course").map(item => {
+                    return [item.item, item.price, item.ingredients, item._id];
+                })
+
+                let dessert = items.filter(item => item.section === "Dessert").map(item => {
+                    return [item.item, item.price, item.ingredients, item._id];
+                })
+
+
+                console.log('smallPLaates: ', smallPlates);
+
+                setSmallPlates(smallPlates);
+                setSharedPlates(sharedPlates);
+                setMainCourse(mainCourse);
+                setDessert(dessert);
+
+                setIsLoaded(true);
+                setIsLoading(false);
+
+            })
             .catch(err => console.log(err));
     };
 
 
-    const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow2, setModalShow2] = React.useState(false);
-    const [modalShow3, setModalShow3] = React.useState(false);
-    const [modalShow4, setModalShow4] = React.useState(false);
-    const [modalShow5, setModalShow5] = React.useState(false);
 
-    
+
 
     // toast
-    const notify = () => toast.dark(`${modalTitle} Added!`, {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        transition: Slide
-        });
+    // const notify = () => toast.dark(`${modalTitle} Added!`, {
+    //     position: "top-right",
+    //     autoClose: 2000,
+    //     hideProgressBar: true,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     transition: Slide
+    // });
+
+
+
+    const MyCard = ({ item, ingredients, price, _id }) => (
+        <Card>
+            <Card.Header><strong>{item}</strong></Card.Header>
+            <Card.Body>
+                <Card.Text>{ingredients}</Card.Text>
+            </Card.Body>
+
+            <Card.Footer>
+                <Row>
+                    <Col>
+                        <Card.Text className="priceLeft"><strong>${price}</strong></Card.Text>
+                    </Col>
+                    <Col>
+                        <Button id={_id} className="modalButtons" size="sm" variant="dark" onClick={() => {
+                            setModalTitle(item)
+                            setModalDesc(ingredients)
+                            setModalShow(true)
+                        }} >
+                            +Add
+                        </Button>
+                    </Col>
+                </Row>
+            </Card.Footer>
+        </Card>
+    )
+
+
+    const HeaderSection = () => (
+        <Container className="maxContainerWidth">
+            <div className="divStyle">
+
+                <h1 className="responsiveText"><strong>Menu</strong></h1>
+
+                <Form>
+                    <FormControl type="text" placeholder="Search Menu" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
+                </Form>
+
+                <Link to="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></Link>
+
+                <Link to="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Complete Order</Button></Link>
+
+            </div>
+        </Container>
+    )
 
 
     return (
-
         <>
-        
-        <ToastContainer className="toastContainer"/>
+            {/* <ToastContainer className="toastContainer" /> */}
 
-            <br />
-
-            <Container className="maxContainerWidth">
-                <div className="divStyle">
-
-                    <br></br>
-                    <h1 className="responsiveText"><strong>Menu</strong></h1>
-                    <br></br>
-
-
-
-      
-
-
-
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search Menu" autocomplete="off" className="mr-sm-2 centerText regularInput responsiveInput" name="search" onChange={handleInputChange} />
-                    </Form>
-
-                    <Link to="/takeOrder"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton menuButton">Add Items To New Seat</Button></Link>
-                    
-                    <br/>
-                    <Link to="/viewTables"><Button variant="outline-dark" className="my-2 my-lg-0 formControl add addNewTableButton regularButton responsiveButton">Complete Order</Button></Link>
-                    <br></br>
-                    <br></br>
-
-                </div>
-            </Container>
+            <HeaderSection />
 
 
             {/* Looping over the filtered Search Terms ################################################################## */}
@@ -145,44 +186,17 @@ function MenuPageComp() {
 
                 <div>
 
-
-
                     {filteredArrayOfFood.map(item =>
-
-                        <Card>
-                            <Card.Header><strong>{item.item}</strong></Card.Header>
-                            <Card.Body>
-
-                                <Card.Text>{item.ingredients}</Card.Text>
-
-                            </Card.Body>
-
-                            <Card.Footer>
-
-                                <Row>
-                                    <Col>
-                                        <Card.Text className="priceLeft"><strong>${item.price}</strong></Card.Text>
-                                    </Col>
-
-                                    <Col>
-                                        <Button id={item._id} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                            setModalTitle(item.item)
-                                            setModalDesc(item.ingredients)
-                                            setModalShow(true)
-                                        }} >
-                                            +Add
-                                    </Button>
-
-
-                                    </Col>
-                                </Row>
-
-                            </Card.Footer>
-
-                        </Card>
+                        <MyCard
+                            key={item._id}
+                            item={item.item}
+                            ingredients={item.ingredients}
+                            price={item.price}
+                            _id={item._id}
+                        />
                     )}
 
-                        <MyVerticallyCenteredModal
+                    <OrderModal
                         show={modalShow}
                         onHide={() => setModalShow(false)} />
 
@@ -190,486 +204,107 @@ function MenuPageComp() {
             </Container >
 
 
+            {isLoading && "Loading..."}
 
 
-            <Container className="maxContainerWidth">
+            {!isLoading && isLoaded &&
+                <>
 
-                <br />
-                <h3>Small Plates</h3>
-                <br />
+                    <Container className="maxContainerWidth">
 
+                        <h3>Small Plates</h3>
 
-                <div>
-                    {smallPlates.map(item =>
-                        <Card>
-                            <Card.Header><strong>{item[0]}</strong></Card.Header>
-                            <Card.Body>
+                        <div>
+                            {smallPlates.map(item =>
+                                <MyCard
+                                    key={item._id}
+                                    item={item.item}
+                                    ingredients={item.ingredients}
+                                    price={item.price}
+                                    _id={item._id}
+                                />
+                            )}
 
-                                <Card.Text>{item[2]}</Card.Text>
+                            <OrderModal
+                                show={modalShow2}
+                                onHide={() => setModalShow2(false)} />
 
-                            </Card.Body>
+                        </div>
+                    </Container>
 
-                            <Card.Footer>
 
-                                <Row>
-                                    <Col>
-                                        <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
-                                    </Col>
+                    <Container className="maxContainerWidth">
 
-                                    <Col>
-                                        <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                            setModalTitle(item[0])
-                                            setModalDesc(item[2])
-                                            setModalShow2(true)
-                                        }} >
-                                            +Add
-                                    </Button>
+                        <h3>Shared Plates</h3>
 
-                                        
+                        <div>
+                            {sharedPlates.map(item =>
+                                <MyCard
+                                    key={item._id}
+                                    item={item.item}
+                                    ingredients={item.ingredients}
+                                    price={item.price}
+                                    _id={item._id}
+                                />
+                            )}
 
-                                    </Col>
-                                </Row>
+                            <OrderModal
+                                show={modalShow3}
+                                onHide={() => setModalShow3(false)} />
 
-                            </Card.Footer>
+                        </div>
+                    </Container>
 
-                        </Card>
-                    )}
+                    <Container className="maxContainerWidth">
 
-                        <MyVerticallyCenteredModal
-                            show={modalShow2}
-                            onHide={() => setModalShow2(false)} />
+                        <h3>Main Courses</h3>
 
-                </div>
-            </Container>
+                        <div>
+                            {mainCourse.map(item =>
+                                <MyCard
+                                    key={item._id}
+                                    item={item.item}
+                                    ingredients={item.ingredients}
+                                    price={item.price}
+                                    _id={item._id}
+                                />
+                            )}
 
-            <br />
-            <br />
+                            <OrderModal
+                                show={modalShow4}
+                                onHide={() => setModalShow4(false)} />
 
-            <Container className="maxContainerWidth">
+                        </div>
+                    </Container>
 
-                <h3>Shared Plates</h3>
-                <br />
 
-                <div>
+                    <Container className="maxContainerWidth">
 
-                    {sharedPlates.map(item =>
-                        <Card>
-                            <Card.Header><strong>{item[0]}</strong></Card.Header>
-                            <Card.Body>
+                        <h3>Dessert</h3>
 
-                                <Card.Text>{item[2]}</Card.Text>
+                        <div>
+                            {dessert.map(item =>
+                                <MyCard
+                                    key={item._id}
+                                    item={item.item}
+                                    ingredients={item.ingredients}
+                                    price={item.price}
+                                    _id={item._id}
+                                />
+                            )}
 
-                            </Card.Body>
+                            <OrderModal
+                                show={modalShow5}
+                                onHide={() => setModalShow5(false)} />
 
-                            <Card.Footer>
+                        </div>
+                    </Container>
 
-                                <Row>
-                                    <Col>
-                                        <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
-                                    </Col>
-
-                                    <Col>
-                                        <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                            setModalTitle(item[0])
-                                            setModalDesc(item[2])
-                                            setModalShow3(true)
-                                        }} >
-                                            +Add
-                                    </Button>
-
-                                        
-
-                                    </Col>
-                                </Row>
-
-                            </Card.Footer>
-
-                        </Card>
-
-                    )}
-
-                        <MyVerticallyCenteredModal
-                          show={modalShow3}
-                            onHide={() => setModalShow3(false)} />
-
-                </div>
-            </Container>
-
-            <br />
-            <br />
-
-            <Container className="maxContainerWidth">
-
-                <h3>Main Courses</h3>
-                <br />
-
-                <div>
-                    {mainCourse.map(item =>
-                        <Card>
-                            <Card.Header><strong>{item[0]}</strong></Card.Header>
-                            <Card.Body>
-
-                                <Card.Text>{item[2]}</Card.Text>
-
-                            </Card.Body>
-
-                            <Card.Footer>
-
-                                <Row>
-                                    <Col>
-                                        <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
-                                    </Col>
-
-                                    <Col>
-                                        <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                            setModalTitle(item[0])
-                                            setModalDesc(item[2])
-                                            setModalShow4(true)
-                                        }} >
-                                            +Add
-                                    </Button>
-
-                                    </Col>
-                                </Row>
-
-                            </Card.Footer>
-
-                        </Card>
-                    )}
-
-                        <MyVerticallyCenteredModal
-                          show={modalShow4}
-                          onHide={() => setModalShow4(false)} />
-
-                </div>
-            </Container>
-
-            <br />
-            <br />
-
-            <Container className="maxContainerWidth">
-
-                <h3>Dessert</h3>
-                <br />
-
-                <div>
-                    {dessert.map(item =>
-                        <Card>
-
-                            <Card.Header><strong>{item[0]}</strong></Card.Header>
-
-                            <Card.Body>
-
-                                <Card.Text>{item[2]}</Card.Text>
-
-                            </Card.Body>
-
-                            <Card.Footer>
-
-                                <Row>
-                                    <Col>
-                                        <Card.Text className="priceLeft"><strong>${item[1]}</strong></Card.Text>
-                                    </Col>
-
-                                    <Col>
-                                        <Button id={item[3]} className="modalButtons" size="sm" variant="dark" onClick={() => {
-                                            setModalTitle(item[0])
-                                            setModalDesc(item[2])
-                                            setModalShow5(true)
-                                        }} >
-                                            +Add
-                                     </Button>
-                                        
-
-                                    </Col>
-                                </Row>
-
-                            </Card.Footer>
-
-                        </Card>
-
-                    )}
-
-                        <MyVerticallyCenteredModal
-                          show={modalShow5}
-                         onHide={() => setModalShow5(false)} />   
-
-                </div>
-            </Container>
-
-            <br />
-            <br />
-            <br />
-            <br />
-
-
+                </>
+            }
         </>
-
     );
-
-
-
-
-
-    function MyVerticallyCenteredModal(props) {
-        
-        const [tableValue, setTableValue] = React.useState(
-            localStorage.getItem('TableNumber')
-        );
-
-        React.useEffect(() => {
-            localStorage.setItem('TableNumber', tableValue)
-        }, [tableValue]);
-
-        const [labelValue, setLabelValue] = React.useState(
-            localStorage.getItem('Label')
-        );
-
-        React.useEffect(() => {
-            localStorage.setItem('Label', labelValue)
-        }, [labelValue]);
-        
-       
-        const [userId, setUserId] = React.useState(
-            localStorage.getItem('UserId')
-        );
-
-        const [username, setUsername] = React.useState(
-            localStorage.getItem('Username')
-        );
-
-          
-       
-        const [items, setItems] = useState([])
-        const [modalObj, setModalObj] = useState({
-            table: tableValue,
-            order: modalTitle,
-            course: 0,
-            allergies: [],
-            extra_notes: "",
-            label: labelValue,
-            waiterId: userId,
-            username: username
-            
-        })
-
-        // Load all menu items and store them with setMenuObj
-        useEffect(() => {
-            loadItems()
-        }, [])
-
-        // Loads all menu items and sets the menu items
-        function loadItems() {
-            API.getMenus()
-                .then(res =>
-                    setItems(res.data)
-                )
-                .catch(err => console.log(err));
-        };
-
-        function handleInputChange(event) {
-            const { name, value } = event.target;
-            setModalObj({ ...modalObj, [name]: value })
-        };
-
-        function handleRadioBtn(event) {
-            const { name, value } = event.target;
-
-            console.log(name)
-            console.log(value)
-            setModalObj({ ...modalObj, course: parseInt(value) })
-        }
-        
-        function handleCheckbox(event){
-            const allergyArr = []
-            const { name, value } = event.target
-            if(inlineCheckbox1.checked){
-                allergyArr.push("Gluten")
-            }
-            if(inlineCheckbox2.checked){
-                allergyArr.push("Dairy")
-            }
-            if(inlineCheckbox3.checked){
-                allergyArr.push("Shellfish")
-            }
-            if(inlineCheckbox4.checked){
-                allergyArr.push("Nuts")
-            }
-            if(inlineCheckbox5.checked){
-                allergyArr.push("Egg")
-            }
-            if(inlineCheckbox6.checked){
-                allergyArr.push("Lily")
-            }
-            if(inlineCheckbox7.checked){
-                allergyArr.push("Alcohol")
-            }
-            if(inlineCheckbox8.checked){
-                allergyArr.push("Pork")
-            }
-            console.log(allergyArr)
-            
-            //arr.split(", ")
-
-            //add value if exists 
-
-            //remove value if doesn't exist 
-
-            //arr.join(", ")
-            // console.log(name)
-            console.log(value)
-            
-            setModalObj({...modalObj, allergies: (allergyArr)})
-        }
-
-
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            console.log(tableValue)
-            console.log(labelValue)
-            console.log(modalObj)
-            console.log("this is MODAL")
-            API.saveOrders(modalObj).then(res => {
-                console.log(res.data);
-                props.onHide();
-            })
-                .catch(err => console.log(err));
-
-        };
-
-
-    
-    
-    
-        // const [menuItem, setMenuItem] = useState({});
-        // const { id, item, price } = useParams()
-        // useEffect(() => {
-        //     API.getMenu(id, item, price)
-    
-        //         .then(res => setMenuItem(res.data))
-        //         .catch(err => console.log(err));
-    
-        // }, [])
-    
-    
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        +Order Details
-              </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <h3>{modalTitle}</h3>
-                    <br></br>
-                    <p>{modalDesc}</p>
-
-                    <hr></hr>
-
-                    <p className="card-text"><small className="text-muted"><strong>Course Number (If Applicable):</strong></small></p>
-
-                    <div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={1} />
-                            <label className="form-check-label" htmlFor="inlineRadio1">1</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={2} />
-                            <label className="form-check-label" htmlFor="inlineRadio2">2</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={3} />
-                            <label className="form-check-label" htmlFor="inlineRadio1">3</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="course" id="inlineRadio2" onChange={handleRadioBtn} value={4} />
-                            <label className="form-check-label" htmlFor="inlineRadio2">4</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="course" id="inlineRadio1" onChange={handleRadioBtn} value={5} />
-                            <label className="form-check-label" htmlFor="inlineRadio1">5</label>
-                        </div>
-                    </div>
-
-                    <br />
-
-                    <p className="card-text"><small className="text-muted"><strong>Allergy Category (If Applicable):</strong></small></p>
-                    <div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox1" onChange={handleCheckbox} variant="dark" name="gluten" value={"Gluten"} />
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Gluten</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox2" onChange={handleCheckbox} name="dairy" value={"Dairy"}/>
-                        <label className="form-check-label" htmlFor="inlineCheckbox2">Dairy </label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox3" onChange={handleCheckbox} name="shellfish" value={"Shellfish"} />
-                        <label className="form-check-label" htmlFor="inlineCheckbox3">Shellfish</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox4" onChange={handleCheckbox}name="nuts" value={"Nuts"} />
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Nuts</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox5" onChange={handleCheckbox} name="egg" value={"Egg"}/>
-                        <label className="form-check-label" htmlFor="inlineCheckbox2">Egg</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox6" onChange={handleCheckbox} name="lily" value={"Lily"}/>
-                        <label className="form-check-label" htmlFor="inlineCheckbox3">Lily</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox7" onChange={handleCheckbox} name="alcohol" value={"Alcohol"}/>
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Alcohol</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox8" onChange={handleCheckbox} name="pork" value={"Pork"}/>
-                        <label className="form-check-label" htmlFor="inlineCheckbox2">Pork</label>
-                    </div>
-                    </div>
-
-                    <br />
-
-                    <p className="card-text"><small className="text-muted"><strong>Specific Allergy / Special Request:</strong></small></p>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-
-                        </div>
-                        <input
-                            onChange={handleInputChange}
-                            name="extra_notes"
-                            placeholder="allergies/requests"
-                            type="text"
-                            className="formControlSizing"
-                            autocomplete="off"
-                        // aria-label="Text input with checkbox"
-                        />
-                    </div>
-
-
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="dark"
-                        className="modalButtons"
-                        onClick={()=> {handleFormSubmit(event); notify()}}>
-                        +Add Item </Button>
-                </Modal.Footer>
-            </Modal>
-        );
-
-    }
-
-
 
 };
 
 
-
-export default MenuPageComp;
