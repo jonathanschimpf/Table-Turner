@@ -50,19 +50,12 @@ export default function Login() {
     };
 
 
-    const goTo = () => {
-        navigate("/register")
-    }
 
 
 
     return (
         <>
             <Container className="vertical-center">
-
-
-                <button onClick={goTo}>go</button>
-
 
                 <div className="divLoginSignUp mt-5" >
                     <h2 className="text-center responsiveH1Font">Sign In</h2>

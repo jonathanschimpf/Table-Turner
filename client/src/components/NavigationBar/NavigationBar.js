@@ -9,13 +9,18 @@ import API from "../../utils/API"
 
 export default function NavigationBar({ user, getUser, isLoggedIn }) {
     const location = useLocation();
+
+
+    const clearLocalStorage = () => {
+        localStorage.clear();
+    }
     
     const logout = async() => {
         console.log('logging out...');
 
         await API.logoutUser();
+        clearLocalStorage();
 
-        console.log("logging out!")
 
         await getUser();
         window.location.replace("/login");
