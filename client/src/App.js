@@ -64,7 +64,7 @@ function App() {
 
   return (
     <>
-      <NavigationBar getUser={getUser} user={user} />
+      <NavigationBar getUser={getUser} user={user} isLoggedIn={isLoggedIn}/>
 
 
       <Routes>

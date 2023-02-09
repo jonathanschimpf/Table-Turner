@@ -7,7 +7,7 @@ import API from "../../utils/API"
 
 
 
-export default function NavigationBar({ user, getUser }) {
+export default function NavigationBar({ user, getUser, isLoggedIn }) {
     const location = useLocation();
     
     const logout = async() => {
@@ -82,14 +82,14 @@ export default function NavigationBar({ user, getUser }) {
                         : ""
                         }
 
-                        {user ?
+                        {isLoggedIn ?
                         <Nav.Link className="nav-link"
                         onClick={logout}>Logout
                         </Nav.Link>
                         :
                         <>
-                        <Nav.Link className={location.pathname === "/register" ? "nav-link active": "nav-link"} href={"/register"}>Sign Up</Nav.Link>
-                        <Nav.Link className={location.pathname === "/login" ? "nav-link active": "nav-link"} href={"/login"}>Sign In</Nav.Link>
+                        <Nav.Link as={Link} className={location.pathname === "/register" ? "nav-link active": "nav-link"} to={"/register"}>Sign Up</Nav.Link>
+                        <Nav.Link as={Link} className={location.pathname === "/login" ? "nav-link active": "nav-link"} to={"/login"}>Sign In</Nav.Link>
                         </>
                         }
                         </Nav>

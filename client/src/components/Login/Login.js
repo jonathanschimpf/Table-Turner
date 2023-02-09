@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container, div, Form, Button } from "react-bootstrap";
 import "./Login.css";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 function LoginComp(props) {
 
@@ -69,8 +70,8 @@ function LoginComp(props) {
                     <h6 className="text-center text-muted">Welcome back. Sign in to get back to turning tables.</h6>
                     <Form className="login">
                         
-                        <Form.Group className="formControl">
-                            <h6>Return User? Sign Into Your Account:</h6>
+                        <Form.Group className="formControl mb-1">
+                            <label>Return User? Sign Into Your Account:</label>
                             <Form.Control className="formControl" placeholder="Username" autocomplete="off" onChange={e => setloginUsername(e.target.value)} />
                         </Form.Group>
 
@@ -78,9 +79,9 @@ function LoginComp(props) {
                             <Form.Control className="formControl" autocomplete="off" placeholder="Password" type="password" onChange={e => setloginPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Form.Group className="formControl">
-                            <h6>Select Title: </h6>
-                            <Form.Control as="select" className="formControl" onChange={e => setLoginTitle(e.target.value)}
+                        <Form.Group className="formControl mt-2">
+                            <label>Select Title: </label>
+                            <Form.Control as="select" className="form-select mb-2" onChange={e => setLoginTitle(e.target.value)}
                             >
                                 <option></option>
                                 <option>Wait Staff</option>
@@ -93,7 +94,7 @@ function LoginComp(props) {
                         <Button className="my-2 my-lg-0 formControl logInButton" variant="outline-dark" onClick={login}>Sign In</Button>
                         <br />
 
-                        <p className="formControl">New user? Create an <a href="/register" className="aLoginSignUpLink effect-shine">account.</a></p>
+                        <p className="formControl mt-2">New user? Create an <Link to="/register" className="aLoginSignUpLink effect-shine">account.</Link></p>
 
                     </Form>
                    

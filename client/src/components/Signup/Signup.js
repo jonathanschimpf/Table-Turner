@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import API from "../../utils/API";
-import { Container, div, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 
 function SignupComp() {
@@ -88,23 +89,19 @@ function SignupComp() {
 
                     <Form className="login">
 
-                        <Form.Group className="formControl">
-                            <h6>Enter a Username + Password: </h6>
-                            <Form.Control className="formControl" autocomplete="off" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
-
-                            {/* <input type="checkbox" onClick={showPassword} /> */}
-
+                        <Form.Group className="formControl mb-1">
+                            <label>Enter a Username + Password: </label>
+                            <Form.Control className="form-control" autocomplete="off" placeholder="Username" onChange={e => setRegisterUsername(e.target.value)} />
                         </Form.Group>
 
                         <Form.Group >
-
-                            <Form.Control id="myPass" type="password" className="formControl" autocomplete="off" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
+                            <Form.Control id="myPass" type="password" className="formControl mb-1" autocomplete="off" placeholder="Password" onChange={e => setRegisterPassword(e.target.value)} />
 
                         </Form.Group>
 
-                        <Form.Group className="formControl">
-                            <h6>Select Title: </h6>
-                            <Form.Control as="select" className="formControl" onChange={e => setRegisterTitle(e.target.value)}
+                        <Form.Group className="formControl mt-2">
+                            <label>Select Title: </label>
+                            <Form.Control as="select" className="form-select mb-1" onChange={e => setRegisterTitle(e.target.value)}
                             >
                                 <option></option>
                                 <option>Wait Staff</option>
@@ -114,11 +111,10 @@ function SignupComp() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button className="my-2 my-sm-0 formControl signUpButton" variant="outline-dark" onClick={register} getUser={getUser} user={user}>Create New Account</Button>
-
-                        <br />
-
-                        <p className="formControl">Existing user? <a href="/login" className="aLoginSignUpLink effect-shine">Sign in.</a></p>
+                        <div className="mt-3">
+                            <Button className="mt-2 mb-2 my-sm-0" variant="dark" onClick={register} getUser={getUser} user={user}>Create New Account</Button>
+                        </div>
+                        <p className="formControl mt-2">Existing user? <Link to="/login" className="aLoginSignUpLink effect-shine">Sign in.</Link></p>
 
                     </Form>
 
