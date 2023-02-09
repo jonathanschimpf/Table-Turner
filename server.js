@@ -72,14 +72,16 @@ app.get('/health-check', (req, res) => {
 
 
 app.post("/api/login", (req, res, next) => {
+  console.log('Attempting to log in user...')
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
-    if (!user) res.send("No User Exists");
+    if (!user) res.status(404).send("No User Exists");
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.send('Successfully Authenticated User');
+        // User is authenticated
         console.log(req.user);
+        res.send(req.user);
       });
     }
   })(req, res, next)
