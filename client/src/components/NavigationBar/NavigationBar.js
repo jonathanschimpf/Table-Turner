@@ -39,45 +39,45 @@ export default function NavigationBar({ user, getUser, isLoggedIn }) {
 
 
                         {(user.title === "Wait Staff") ?
-                        <Nav.Link className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} 
-                        href={user ? "/welcome" : "/login"}>Get Started
+                        <Nav.Link as={Link} className={location.pathname === "/welcome" ? "nav-link active": "nav-link"} 
+                        to={user ? "/welcome" : "/login"}>Get Started
                         </Nav.Link>
                         : ""
                         } 
 
                         
                         {(user.title === "Manager") ?
-                        <Nav.Link className={location.pathname === "/manager" ? "nav-link active": "nav-link"} 
-                        href={user ? "/manager" : "/login"}>Manager Home
+                        <Nav.Link as={Link} className={location.pathname === "/manager" ? "nav-link active": "nav-link"} 
+                        to={user ? "/manager" : "/login"}>Manager Home
                         </Nav.Link>
                         : ""
                         }     
 
 
                         {((user.title === "Manager") || (user.title === "Wait Staff")) ?
-                        <Nav.Link className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"}
-                        href={user ? "/viewTables" : "/login"}>View Tables
+                        <Nav.Link as={Link} className={location.pathname === "/viewTables" ? "nav-link active": "nav-link"}
+                        to={user ? "/viewTables" : "/login"}>View Tables
                         </Nav.Link>
                         : ""
                         }
 
                         {((user.title === "Manager") || (user.title === "Wait Staff")) ?
-                        <Nav.Link className={location.pathname === "/menu" ? "nav-link active": "nav-link"} 
-                        href={user ? "/menu" : "/login"}>View Menu
+                        <Nav.Link as={Link} className={location.pathname === "/menu" ? "nav-link active": "nav-link"} 
+                        to={user ? "/menu" : "/login"}>View Menu
                         </Nav.Link>
                         : ""
                         }
                         
                         {(user.title === "Manager") ?
-                        <Nav.Link className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} 
-                        href={user ? "/importMenu" : "/login"}>Update Menu
+                        <Nav.Link as={Link} className={location.pathname === "/importMenu" ? "nav-link active": "nav-link"} 
+                        to={user ? "/importMenu" : "/login"}>Update Menu
                         </Nav.Link>
                         : ""
                         }
 
                         {((user.title === "Manager") || (user.title === "Kitchen")) ?
-                        <Nav.Link className={location.pathname === "/kitchen" ? "nav-link active": "nav-link"} 
-                        href={user ? "/kitchen" : "/login"}>Kitchen
+                        <Nav.Link as={Link} className={location.pathname === "/kitchen" ? "nav-link active": "nav-link"} 
+                        to={user ? "/kitchen" : "/login"}>Kitchen
                         </Nav.Link>
                         : ""
                         }
