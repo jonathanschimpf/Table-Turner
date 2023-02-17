@@ -156,7 +156,7 @@ export default function MenuPageComp() {
 
 
     const HeaderSection = () => (
-        <Container className="maxContainerWidth">
+        <Container className="maxContainerWidth mt-4">
             <div className="divStyle">
 
                 <h1 className="responsiveText"><strong>Menu</strong></h1>
@@ -179,7 +179,6 @@ export default function MenuPageComp() {
             {/* <ToastContainer className="toastContainer" /> */}
 
             <HeaderSection />
-
 
             {/* Looping over the filtered Search Terms ################################################################## */}
             <Container className={search.length === 0 ? "d-none maxContainerWidth" : "d-block maxContainerWidth"}>

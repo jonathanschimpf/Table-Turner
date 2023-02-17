@@ -3,9 +3,9 @@ import { Container } from "react-bootstrap";
 import API from "../../utils/API";
 import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
-import ErrorAlert from "../Alerts/ErrorAlert";
-import "./Login.css";
+import ErrorAlert from "../../components/Alerts/ErrorAlert";
 import { getHomepageLink } from "../../utils/HomepageHelper";
+import "./Login.css";
 
 export default function Login() {
 
@@ -15,7 +15,7 @@ export default function Login() {
 
 
     const navigate = useNavigate();
-   
+
 
 
     function storeUserInLocalStorage(userData) {
@@ -24,6 +24,7 @@ export default function Login() {
         localStorage.setItem("_id", _id);
         localStorage.setItem("title", title);
     }
+
 
 
 
@@ -37,11 +38,16 @@ export default function Login() {
                 let { title } = userData;
                 storeUserInLocalStorage(userData);
 
+                console.log('title of user is: ', title);
+
                 // Redirect to homepage
                 let homepage = getHomepageLink(title);
+                console.log('homepage: ', homepage);
                 navigate(homepage);
-                
+
                 setIsError(false);
+
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err);
@@ -56,6 +62,7 @@ export default function Login() {
     return (
         <>
             <Container className="vertical-center">
+
 
                 <div className="divLoginSignUp mt-5" >
                     <h2 className="text-center responsiveH1Font">Sign In</h2>

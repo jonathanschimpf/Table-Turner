@@ -284,7 +284,11 @@ function ImportMenuComp() {
       {/* Container for toast notification*/}
       {/* <ToastContainer className="toastContainer" /> */}
 
-      <NewMenuItemForm submitForm={submit} />
+
+      <div className="mt-4">
+        <h1>Add dish</h1>
+        <NewMenuItemForm submitForm={submit} />
+      </div>
     </>
 
 

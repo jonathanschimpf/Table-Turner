@@ -5,45 +5,52 @@ import "../WelcomePage/WelcomePage.css";
 
 function ManagerComp() {
 
+  const rowClass = "mb-4"
+
   return (
     <>
       <Container className="vertical-center">
 
-        <Row>
-          <Col>
-            <BasicDiv
-              title="Add a New Table"
-              btnText="+Add"
-              linkUrl="/startTable"
-            />
-          </Col>
+        <div className="mt-4">
 
-          <Col>
-            <BasicDiv
-              title="View All Tables"
-              btnText="View"
-              linkUrl="/viewRestaurant"
-            />
-          </Col>
-        </Row>
+          <Row className={rowClass}>
+            <Col>
+              <BasicDiv
+                title="Add New Table"
+                btnText="+Add"
+                linkUrl="/startTable"
+              />
+            </Col>
+
+            <Col>
+              <BasicDiv
+                title="View All Tables"
+                btnText="View"
+                linkUrl="/viewRestaurant"
+              />
+            </Col>
+          </Row>
 
 
-        <Row>
-          <Col>
-            <BasicDiv
-              title="Update Menu"
-              btnText="Update"
-              linkUrl="/importMenu"
-            />
-          </Col>
-          <Col>
-            <BasicDiv
-              title="View Kitchen"
-              btnText="View"
-              linkUrl="/kitchen"
-            />
-          </Col>
-        </Row>
+          <Row className={rowClass}>
+            <Col>
+              <BasicDiv
+                title="Update Menu"
+                btnText="Update"
+                linkUrl="/importMenu"
+              />
+            </Col>
+            <Col>
+              <BasicDiv
+                title="View Kitchen"
+                btnText="View"
+                linkUrl="/kitchen"
+              />
+            </Col>
+          </Row>
+
+        </div>
+
       </Container>
 
     </>

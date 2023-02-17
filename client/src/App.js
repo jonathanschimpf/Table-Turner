@@ -5,7 +5,7 @@ import API from "./utils/API"
 
 // Pages
 import Signup from "./components/Signup/Signup";
-import Login from "./components/Login/Login";
+import Login from "./pages/Login/Login";
 import NavigationBar from "./components/NavigationBar/NavigationBar"
 import WelcomePage from "./pages/WelcomePage/WelcomePage"
 import MenuPage from "./pages/MenuPage/MenuPage";
