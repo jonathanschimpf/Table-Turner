@@ -3,21 +3,19 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
 
-    table: Number,
-    order: String,
-    allergies: Array,
-    extra_notes: String,
-    label: String,
-    course: Number,
-    createTime: { type: Date, default: Date.now },
-    updateTime: { type: Date, default: Date.now },
-    waiterId: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-      },
-    username: String  
-  
-      
+  table: { type: Number },
+  order: { type: String },
+  allergies: { type: Array },
+  extra_notes: { type: String },
+  label: { type: String },
+  course: { type: Number },
+  createTime: { type: Date, default: Date.now },
+  updateTime: { type: Date, default: Date.now },
+  waiterId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  username: { type: String }
 
 })
 

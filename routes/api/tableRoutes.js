@@ -3,7 +3,7 @@ const tableController = require("../../controllers/tableController");
 
 
 
-// Matches with "/api/table/:id"
+// Matches with "/api/tables"
 router.route("/:id")
   .delete(tableController.deleteMany);
 

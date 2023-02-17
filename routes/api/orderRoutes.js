@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const orderController = require("../../controllers/orderController");
 
-// Matches with "/api/order"
+// Matches with "/api/orders"
 router.route("/")
   .get(orderController.findAll)
   .post(orderController.create);

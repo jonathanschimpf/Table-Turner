@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "test": "mocha --timeout 10000",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -16,8 +17,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
     "concurrently": "^7.6.0",
-    "nodemon": "^2.0.20"
+    "mocha": "^2.4.5",
+    "nodemon": "^2.0.20",
+    "superagent": "^8.0.9",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -27,12 +33,14 @@
     "bootstrap": "^4.5.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "mongoose": "^5.10.13",
+    "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "react": "^18.2.0",

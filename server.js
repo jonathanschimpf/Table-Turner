@@ -12,7 +12,17 @@ const bodyParser = require("body-parser");
 const User = require("./models/user");
 const app = express();
 // const app = expressPassport();
+
+
+app.use(express.json());
+
+
+
+
 const routes = require("./routes");
+
+
+
 
 
 // -------------- End Of Imports ------------------- //
@@ -22,16 +32,20 @@ const routes = require("./routes");
 // --- Middleware --- //
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
+
 
 // --- Connect to Mongoose --- //
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+// db options
+const options = {
+  useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
+  server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+}
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project-Three", options);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -55,12 +69,22 @@ require('./passportConfig')(passport);
 
 
 
+// Add routes, both API and view
+app.use(routes);
+
+
+
+
+
 // --- End of Middleware --- //
 
 
 // --- Routes for login --- //   
 
 // !! Can be Moved to routes folder when finished !! //
+
+
+
 
 
 app.get('/health-check', (req, res) => {
@@ -71,16 +95,24 @@ app.get('/health-check', (req, res) => {
 })
 
 
+
+
+
+
+
+
+
 app.post("/api/login", (req, res, next) => {
-  console.log('Attempting to log in user...')
+  // console.log('--- Attempting to log in user...')
   passport.authenticate("local", (err, user, info) => {
+    // console.log('user after passport auth is: ', user);
     if (err) throw err;
     if (!user) res.status(404).send("No User Exists");
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
         // User is authenticated
-        console.log(req.user);
+        // console.log('req.user: ', req.user);
         res.send(req.user);
       });
     }
@@ -139,3 +171,7 @@ app.get("*", function (req, res) {
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+
+
+module.exports = app; // for testing
