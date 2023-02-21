@@ -37,6 +37,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
+    "joi": "^17.8.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "mongoose": "^5.10.13",
