@@ -2,7 +2,10 @@ const dotenv = require("dotenv");
 const joi = require("joi");
 const path = require("path");
 
+
+// Set up path to env file
 dotenv.config({ path: path.join(__dirname, "../.env") });
+
 
 const envVarsSchema = joi
     .object()
@@ -22,7 +25,7 @@ if (error) {
 }
 
 module.exports = {
-    env: envVars.NODE_ENV,
-    port: envVars.PORT,
-    apiSecret: envVars.API_SECRET,
+    PORT: envVars.PORT,
+    USER_NAME: envVars.USER_NAME,
+    PASSWORD: envVars.PASSWORD,
 };
